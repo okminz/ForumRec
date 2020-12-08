@@ -462,3 +462,6 @@ __pycache__/
 # OpenCover UI analysis results
 OpenCover/
 junit/
+
+# Ignore 7z files
+*.7z
