@@ -1,0 +1,1372 @@
+Id,Score,Body,OwnerUserId,ParentId
+1606335,1,"<p>This happened recently and I cannot say for sure why but the PSU needed to be replaced even if it was working but it seemed that it was right on the edge of providing enough power. If it will not power even if the disks are not connected, then it cannot be the operating system, just a coincidence which threw us off on a wrong track!</p>
+<p>To validate, unplug everything inside the case until you have just the motherboard and PSU. Power on and see what happens. If it powers on, add a screen and GPU if there is no builtin graphics, check again. Repeat until it no longer powers on to find the culprit.</p>
+<p>If it does not power on at all even just the PSU and MB, it's could be either. You'll have to replace one so try to borrow a PSU to see it is can run the MB but it's possible the motherboard just died.</p>
+",69544,1606330
+1606339,0,"<blockquote>
+<p>The case I've got is an Obsidian 500D case and the motherboard I have is an MSI MPG Z490. I've installed the CPU, RAM, and SSD on the board with no problem, but I've had an issue with screwing the board into the case itself.</p>
+</blockquote>
+<p>The case claims it supports MATX, ATX, and ITX.  The motherboard you purchase is an ATX board.</p>
+<blockquote>
+<p>The reason I bought the case was that it supported this motherboard (I used the site pcpartpicker.com to confirm this). When I go to place the motherboard in the case, the screw holes in the board don't fully align with the standoffs on the case. I've tried wiggling the board around to try and see if I can align it, but to no avail.</p>
+</blockquote>
+<p>You are aware that particular website isn't 100% accurate right?</p>
+<blockquote>
+<p>But funnily enough, I removed the IO-shield from the motherboard (It came pre-attached to it) and tried again with aligning the board. And, it aligned perfectly. With no problems at all. My question is, is this normal? Surely it should just fit on without having to go through the need to remove the IO-shield? That's needed, right?</p>
+</blockquote>
+<p>It's supposed to be tight.</p>
+<blockquote>
+<p>I've also tried taking the IO-shield off, placing it in the case, then attaching the motherboard but it doesn't align (like before). Although, the IO-shield doesn't snap into place when I put it in the case. After looking online most other builds I've seen have the IO-shield snap into place, so perhaps I'm being too gentle? One thing I did note was that the IO-shield seems to be a little too thin, i.e. it could be moved a little bit left and right in the slot (which I assume comes from it not being snapped into place?)</p>
+</blockquote>
+<p>It shouldn't be necessary but what you describe seems to be common with this particular case.  Since the I/O shield is typically just snapped into place, the fact the I/O shield is screwed in, it looks like it was intentionally designed to be removed.</p>
+",83283,1606328
+1606384,0,"<blockquote>
+<p>Why I can't access my Raspberry Pi webserver over the internet?</p>
+</blockquote>
+<p>At a guess, because you haven't set up the NUC web server to be a <a href=""https://en.wikipedia.org/wiki/Reverse_proxy"" rel=""nofollow noreferrer"">reverse proxy</a> (i.e. to forward web requests, based on your Dynamic DNS domain for the Raspberry Pi, to your Raspberry Pi itself).</p>
+<p>Typically, only one web server can be associated with an IP address at a time (independent of Dynamic DNS names). So when an external request (e.g. 4G) for ex.<code> mypi.noip.com</code> is received by your NUC, it likely simply drops it. You need to explicitly tell the NUC web server software to pass requests for ex.<code> mypi.noip.com</code> to the Raspberry Pi on your local network. The NUC would then return any messages from the Raspberry Pi (e.g. a web page) to any external client.</p>
+",302907,1606356
+1606393,0,"<p>Try few steps recommended below.</p>
+<blockquote>
+<p>Turn off the computer and then restart it.</p>
+<p>Press the Esc key repeatedly to see if a startup menu opens.</p>
+<p>If a setup menu does not open, the integrated keyboard hardware is not
+working. The integrated keyboard in the notebook should be serviced or
+replaced. To continue using the notebook, connect a USB-wired keyboard
+to a USB port and restart the computer.</p>
+<p>If a setup menu opens, use the arrow keys to navigate the menus. If
+these keys are working in the startup menu, but then fail when Windows
+loads, the problems might be related to the keyboard software.</p>
+<p>Restart the computer.</p>
+<p>In Device Manager, uninstall and reinstall the keyboard software:</p>
+<p>In Windows, search for and open Device Manager.</p>
+<p>Click View and select Show Hidden Devices.</p>
+<p>Click the arrow next to Keyboards, right-click the keyboard device
+name, then select Uninstall to remove the device from Windows.</p>
+<p>Continue removing device names in the Keyboards category until all
+device names have been uninstalled.</p>
+<p>Restart the notebook. Right-click Start (), select Shut down or sign
+out, then select Restart.</p>
+<p>Wait for the computer to restart and open Windows.</p>
+</blockquote>
+<p>Refer <a href=""https://support.hp.com/ca-en/document/c03738933"" rel=""nofollow noreferrer"">this</a> article to further troubleshoot keyboard issues with your PC.</p>
+",1221641,1606376
+1606424,1,"<p>Assuming you have no audio problems, be assured you have audio in this file, and also what type of audio you have, reading sources with <code>ffmpeg -i file.mkv</code> or with <code>MediaInfo</code>software.</p>
+<p>Then,</p>
+<p>Try with ffmpeg:</p>
+<pre><code>ffmpeg -i filename.mkv -c:v copy -c:a aac output.mp4
+</code></pre>
+<p>To see the results and I'm assuming here you're not trying to play it on internet.</p>
+<p>Also try with other players if it's Linux and Media Player Classic if it's Windows.</p>
+<blockquote>
+<p>There's a reason why I've mentioned ffmpeg.</p>
+</blockquote>
+<p>It needs to be the last version of ffmpeg and not to be compiled.</p>
+",682376,1606419
+1606449,2,"<p>The answer is fairly simple, and counter intuitive and was only able to find it from excel suggesting the correct answer. To insert a double quotation mark, simply concatenate four double quotation marks to your string:</p>
+<p><code>=...&amp;&quot;&quot;&quot;&quot;&amp;...</code></p>
+<p>e.g. <code>=&quot;&quot;&quot;&quot;</code>returns <code>&quot;</code> and  <code>=72&amp;&quot;&quot;&quot;&quot;&amp;&quot; text&quot;</code> returns <code>72&quot; text</code></p>
+<p>Altenatively  you can use <code>CHAR(34)</code></p>
+<p>e.g. <code>=CHAR(34)</code>returns <code>&quot;</code> and  <code>=72&amp;CHAR(34)&amp;&quot; text&quot;</code> returns <code>72&quot; text</code></p>
+",928156,1606448
+1606471,0,"<p>There's a hidden file called <code>desktop.ini</code> inside that folder. It gives it the icon and alternative name.</p>
+<p>Click the address bar like you did in the 2nd screenshot and instead of path type <code>cmd</code>, then press <kbd>Enter</kbd>. This will open command line. Then use this command to unhide the file:</p>
+<pre><code>attrib -s -h desktop.ini
+</code></pre>
+<p>Delete the file or edit it with Notepad to remove the alternative name. Then hide it again:</p>
+<pre><code>attrib +s +h desktop.ini
+</code></pre>
+<p>The program may however decide to restore this file to its original content. There's unfortunately nothing you can do about this.</p>
+",194694,1606465
+1606491,1,"<p>You're mixing up units. The uppercase <code>B</code> means &quot;byte&quot;, not &quot;bit&quot; (that's lowercase <code>b</code>).</p>
+<p>So 10 MiB means 10 mebi<em>bytes</em>, which would be 80 megabits, but the network link also has to carry IP/TCP/SMB packet headers, so the extra ~3% overhead makes it approximately 100 megabits.</p>
+",1686,1606482
+1606511,0,"<p>If you haven't already, try looking for the drive in Window's Disk Management. You can start it from Run (<kbd>Win</kbd>+<kbd>R</kbd>), with <code>diskmgmt.msc</code>. Find the Drive, and right click &gt; &quot;Delete Volume&quot;, on all partitions. Then you should be able to right click &gt; &quot;Format&quot;.</p>
+",1169769,1606377
+1606514,0,"<h3>Preliminary notes</h3>
+<p>Nowadays <code>sh</code> is <a href=""https://unix.stackexchange.com/a/98912/108618"">not necessarily the legacy Bourne shell</a>. Nowadays <code>sh</code> is a shell that supports <em>at least</em> the features required by POSIX (assuming a correct implementation). POSIX specifies the <a href=""https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html"" rel=""nofollow noreferrer""><code>sh</code> utility</a> and the <a href=""https://pubs.opengroup.org/onlinepubs/9699919799/idx/shell.html"" rel=""nofollow noreferrer"">Shell Command Language</a>.</p>
+<p>I assume you want your code to work in a POSIX shell and to be portable in general.</p>
+<hr />
+<h3>Issues</h3>
+<p><a href=""https://unix.stackexchange.com/a/278465/108618""><code>dd ibs=1 count=…</code> is a POSIX way to read an exact number of bytes</a>. It seems to be the only portable command line utility that can do the job reliably. But <code>dd</code> reads bytes, while <code>read -n</code> in Bash reads <em>characters</em>. <a href=""https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap06.html#tag_06_02"" rel=""nofollow noreferrer"">POSIX allows multi-byte characters in locales other than <code>POSIX</code></a>. Even if you run the entire script with <code>LC_ALL=POSIX</code>, the terminal (terminal emulator) may still generate a multi-byte sequence upon some single keystroke. Such sequence may not be a multi-byte character; it may be an escape sequence (<a href=""https://unix.stackexchange.com/q/211923/108618"">e.g. for <kbd>F1</kbd></a>, also see <a href=""https://unix.stackexchange.com/a/116630/108618"">this answer</a>).</p>
+<p>After you read just one byte, the rest will remain and it will be read by anything that tries to read from the terminal later (it may be a part of your script or the interactive shell you run the script from).</p>
+<p>Additionally if you run sole <code>dd ibs=1 count=1</code> then you will most likely discover that nothing gets to <code>dd</code> until you exceed <a href=""https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap11.html#tag_11_01_05"" rel=""nofollow noreferrer""><code>{MAX_INPUT}</code> or <code>{MAX_CANON}</code></a>, or press <kbd>Enter</kbd> or <a href=""https://unix.stackexchange.com/a/110248/108618""><kbd>Ctrl</kbd>+<kbd>D</kbd></a> (and in case of <code>count</code> being more than <code>1</code>, if you want to provide less bytes then you may need to press <kbd>Ctrl</kbd>+<kbd>D</kbd> <a href=""https://stackoverflow.com/a/21261742/10765659"">twice</a>).</p>
+<p>To deal with these issues you need the <a href=""https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap11.html#tag_11_01_07"" rel=""nofollow noreferrer"">non-canonical mode</a>. Use <a href=""https://pubs.opengroup.org/onlinepubs/9699919799/utilities/stty.html"" rel=""nofollow noreferrer""><code>stty -icanon</code></a>. In general starting with <code>stty raw</code> looks like a good idea.</p>
+<hr />
+<h3>Code</h3>
+<p>The following example is a proof of concept. Because it manipulates line settings of the terminal and reads from the terminal <strong>you <em>must not</em> paste it into an interactive shell, this won't work</strong>. Paste it into a file and run the file.</p>
+<pre class=""lang-sh prettyprint-override""><code>#!/bin/sh
+
+echo &quot;Press any key to continue.&quot;
+
+saveterm=&quot;$(stty -g)&quot;                     # save terminal state
+stty raw
+stty -echo -icanon min 1 time 0           # prepare to read one byte
+dd ibs=1 count=1 &gt;/dev/null 2&gt;/dev/null   # read one byte
+stty -icanon min 0 time 0                 # prepare to read lefotvers
+while read none; do :; done               # read leftovers
+stty $saveterm                            # restore terminal state
+</code></pre>
+<hr />
+<h3>Notes</h3>
+<ul>
+<li><p>The script doesn't check if its stdin is a terminal, but in general it should (<a href=""https://unix.stackexchange.com/a/401938/108618""><code>[ -t 0 ]</code></a>).</p>
+</li>
+<li><p>In a sane setup a modifier key (e.g. <kbd>Shift</kbd>), when pressed alone, sends no input to whatever reads from the terminal; therefore our code will not register such key as &quot;any key&quot;.</p>
+</li>
+<li><p>The &quot;read leftovers&quot; trick is taken from <a href=""https://superuser.com/a/1268886/432690"">this answer</a>.</p>
+</li>
+<li><p>Thanks to <code>stty raw</code> <kbd>Ctrl</kbd>+<kbd>C</kbd> or <kbd>Ctrl</kbd>+<kbd>Z</kbd> can be &quot;any key&quot; as well, instead of sending <code>SIGINT</code> or <code>SIGSTOP</code> respectively. Still the shell interpreting the script may get a signal from elsewhere, so in general it may happen it exits before it gets to <code>stty $saveterm</code>; so it may happen it leaves the terminal in a state not suitable for interactive use. You may want to trap relevant signals and restore the initial state of the terminal anyway.</p>
+</li>
+<li><p>It's true <a href=""https://unix.stackexchange.com/a/131767/108618"">one should double-quote variables</a> in general. Here <code>$saveterm</code> is deliberately not quoted because <code>stty -g</code> generates output that is unspecified. Implementations of <code>stty</code> are allowed to generate output with spaces and later expect the shell to split it and pass multiple arguments. What is specified is a constraint that the output of <code>stty -g</code> must be safe when unquoted, it must not trigger word expansion in a shell. For portability unquoted <code>$saveterm</code> is better.</p>
+</li>
+<li><p>To know what byte was read you need to save the output of <code>dd</code>, either to a regular file (<code>&gt;some_file</code>) that you will examine later, or to a variable (<code>variable=&quot;$(dd …)&quot;</code>). But:</p>
+<ul>
+<li>A terminal is able to generate a null byte (commonly with <kbd>Ctrl</kbd>+<kbd>@</kbd>) but most (all?) implementations of <code>sh</code> cannot store a null byte in a variable. Storing in a file is OK, if only you can examine/manipulate its content without reading it into a variable.</li>
+<li><code>dd</code> from the above code will give you only one byte, it may not be enough to tell the character or the key. OTOH a single byte should be enough to tell apart e.g. <kbd>Q</kbd> from anything else, so <code>Press Q to quit or any other key to continue.</code> or <code>P - proceed; B - back; Q - quit; H - help</code> seem possible to implement without analyzing more bytes.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3>What about more bytes?</h3>
+<p>The above should be fine for &quot;press any key&quot;. A real equivalent of <code>read -n</code> should read one byte at a time and decode the sequence until it gets the desired number of <em>characters</em>. I'm not going to try to build it here.</p>
+",432690,1606444
+1606516,1,"<p>From <a href=""https://landing.coolermaster.com/faq/what-are-the-definitions-of-ovp-opp-ocp-scp-otp-and-bop/"" rel=""nofollow noreferrer"">Coolermaster</a></p>
+<blockquote>
+<p><strong>OTP (Over Temperature Protection)</strong>: Shuts down the power supply when the internal temperature exceeds the maximum safe operating temperature.</p>
+</blockquote>
+<p>That seems pretty clear. It will simply switch off.</p>
+<p>You very probably wouldn't want a PSU to drop to lower voltages or even ampages. That may be somewhat chaotic.</p>
+",347380,1606500
+1606520,0,"<p><a href=""https://i.stack.imgur.com/teUNN.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/teUNN.png"" alt=""enter image description here"" /></a></p>
+<pre><code>CMD (as administrator)
+
+DISKPART
+
+LIST DISK (Find the USB disk number eg. disk 3)
+
+SELECT DISK 3
+
+CLEAN
+
+EXIT
+</code></pre>
+<p>Then you can go into windows disk manager and it will be back to normal</p>
+",34853,1606377
+1606528,2,"<p>How To Reset To Factory Settings (First Time Run) In Outlook?</p>
+<p>Since a long time, you may have made so many custom settings in Microsoft Outlook that you can’t reset to the default settings easily. These custom settings may affect your daily work or even make your Outlook collapse. Now you’d better reset your Microsoft Outlook to the factory settings (or first time run).</p>
+<p>To reset Microsoft Outlook to the factory settings (or first time run), please do as following:</p>
+<p>Step 1: Close your Microsoft Outlook, and open the Control Panel in your computer:</p>
+<p>In Windows 7, please click the Start button at the bottom-left corner of Taskbar &gt; Control Panel.
+<a href=""https://i.stack.imgur.com/L2jTI.png"" rel=""nofollow noreferrer"">enter image description here</a>
+In Windows 8, swipe the cursor to the very right edge of the screen, click the Settings button, and then click the Control Panel. See screen shot:
+<a href=""https://i.stack.imgur.com/wCUlv.png"" rel=""nofollow noreferrer"">enter image description here</a>
+In Windows 10, you can search the Control Panel in the search bar by clicking at the Start button, or click at the Start buuton &gt; Settings, in the Settings window, type Control Panel into the searching box, then enable the Control Panel.
+doc reset to factory settings 10doc reset to factory settings 11
+Step 2: Now you get into the Control Panel:</p>
+<p>(1) Change current view to Small icons (or Large icons) with clicking the text besides View by and select the Small icons (or Large icons) from drop down list;</p>
+<p>(2) Then click the Mail in the Control Panel.</p>
+<p>Step 3: In the popping up Mail Setup dialog box, please click the Show Profiles button.</p>
+<p>Step 4: In the coming Mail dialog box, please click the Add button.</p>
+<p>Step 5: In the popping up New Profile dialog box, enter a name for the new profile in the Profile Name box, and then click the OK button. See screen shot:</p>
+<p>Step 6: In the popping Add (New E-mail) Account dialog box, please click the Cancel to close it; and then click the OK button in the other warning dialog box.</p>
+<p>Step 7: Now you will get back to the Mail dialog box, please check the option of Always use this profile, and then click the box below it and select the new profile name from the drop down list, at last click the OK button.</p>
+<p>Step 8: Exit the Control Panel.</p>
+<p>After configuring the profile settings, the Microsoft Outlook will get back to the factory settings (the status you run for the first time). When you open Microsoft Outlook, it will show as following screen shot:</p>
+<p>Note: Resetting Microsoft Outlook to the factory settings will lose all account information. If you need to undo the resetting, please get into the Mail dialog box (Control Panel &gt; Mail &gt; Show Profiles), and then specify your original profile in the Always use this profile box.</p>
+",1134997,1606507
+1606560,4,"<p>Create a blank worksheet called <em>alpha</em> and put it <strong>before</strong> all your data sheets.  Create another blank worksheet called <em>omega</em> and put it <strong>after</strong> all your data sheets.</p>
+<p>Your formula becomes:</p>
+<pre><code>=sum('alpha:omega'!A1)
+</code></pre>
+<p>Whenever you add another worksheet, just place it between your last data sheet and <em>omega</em>;
+that way the <code>SUM()</code> will automatically include it.</p>
+",263458,1606517
+1606564,0,"<p>This is usually caused by an outdated pandoc version. The <code>--defaults</code> option was added in pandoc 2.8, which was released about a year ago (2019-11-22). If you installed pandoc through your package manager, try to download it directly from the <a href=""https://pandoc.org/releases.html"" rel=""nofollow noreferrer"">releases</a> page, or use a <a href=""https://github.com/pandoc/dockerfiles"" rel=""nofollow noreferrer"">Docker image</a>.</p>
+",857752,1606333
+1606565,0,"<p>Netmask error.</p>
+<pre><code>ifconfig eth0 10.42.0.43 netmask 255.255.255.0 broadcast 10.42.0.255 
+I can still have ping.
+</code></pre>
+<p>That is network 10.42.0<br />
+With 254 hosts starting at 10.42.0.1 and ending at 10.42.0.254.<br />
+<strong>Broadcast is  10.42.0.255</strong></p>
+<BR>
+<BR>
+<pre><code>But when I want change it from 10.42.0.173 for example to 10.42.1.43 by
+ifconfig eth0 10.42.1.43 netmask 255.255.0.0 broadcast 10.42.1.255 
+</code></pre>
+<p>That is a completely different network. Broadcast is at 10.42.1.255<br />
+And 10.42.0.255 is just a regular host IP.</p>
+<BR>
+Please get both on the same LAN. With the same netmask.
+",121352,1606561
+1606566,0,"<p>Your first device has an IP address of <code>10.42.0.1</code> most likely with a subnet mask of 24 bits (<code>255.255.255.0</code>). In order for it to see <code>10.42.1.255</code> without a gateway, you must set the subnet mask to 24 bits or less (<code>255.255.254.0</code> or less) on <strong>both</strong> machines</p>
+",300968,1606561
+1606568,0,"<p>Computer <code>10.42.1.43/255.255.0.0</code> thinks that the other is in its network of
+<code>10.42.x.x/255.255.0.0</code>. It will assume that the other is at
+<code>10.42.0.1/255.255.0.0</code> and so will happily launch the ping packet.</p>
+<p>However, the other way around, for <code>10.42.0.1/255.255.255.0</code> the IP of
+<code>10.42.1.43</code> is not in its network and it doesn't have any routing rule for
+passing packets to <code>10.42.1.x</code>. Therefore the ping will fail as there
+is no network route for it to take. In other words, <code>10.42.0.1</code>
+doesn't know how to send a network packet to <code>10.42.1.x</code>.</p>
+<p>A packet that is launched on the physical network will be received by
+every connected device. Each device will check each packet to see if
+it is addressed to it. Therefore the point is to launch the packet,
+which will happen in the first case, but not in the second one.</p>
+",8672,1606561
+1606587,1,"<p>The green arrows show the two screws holding the drive in place. Once released, the drive will slide upward (relative to the photo position) while remaining flat to the main board. Once the drive has moved upward, the lower connection to the board will release. Lifting at that point will permit removal.</p>
+<p>The red arrows point to screw holes which are &quot;industry standard&quot; for other mounting systems, as the hard drive can be used in computers from other manufacturers.</p>
+",661744,1606573
+1606588,0,"<p>I found all the states <a href=""https://en.wikipedia.org/wiki/Netstat"" rel=""nofollow noreferrer"">here</a> and just updated it to include the LAST and now they are all there. They are as follows below:</p>
+<p>CLOSE_WAIT, CLOSED, ESTABLISHED, FIN_WAIT_1, FIN_WAIT_2, LAST_ACK, LISTEN, SYN_RECEIVED, SYN_SEND, and TIME_WAIT.</p>
+",1242261,1606345
+1606590,0,"<p>Don't reinvent the wheel when you don't have to. Any legitimate question has potentially already been asked and answered, multiple times, in many ways all over the web. You may not find an absolute answer in one search, and you may need to search using a different string(s), string match, exact string match, partial string match, site-specific match, etc.</p>
+<p>Example:
+<a href=""https://duckduckgo.com/?q=%27powershell%20filter%20netstat%27&amp;t=h_&amp;ia=web"" rel=""nofollow noreferrer"">'powershell filter netstat'</a></p>
+<p>Hit(s)</p>
+<blockquote>
+<p>Get-NetworkStatistics - netstat -ano with filtering</p>
+<p>This code borrows from Shay Levy's Get-NetworkStatistics function.
+This function runs netstat -ano on a local or remote system and filters the results by process name, address, port, protocol or state if specified. Process names are pulled for each PID using get-process.</p>
+<p><a href=""https://gallery.technet.microsoft.com/scriptcenter/Get-NetworkStatistics-66057d71"" rel=""nofollow noreferrer"">https://gallery.technet.microsoft.com/scriptcenter/Get-NetworkStatistics-66057d71</a></p>
+<p>Download: <a href=""https://gallery.technet.microsoft.com/scriptcenter/Get-NetworkStatistics-66057d71/file/68504/10/Get-NetworkStatistics.ps1"" rel=""nofollow noreferrer"">https://gallery.technet.microsoft.com/scriptcenter/Get-NetworkStatistics-66057d71/file/68504/10/Get-NetworkStatistics.ps1</a></p>
+</blockquote>
+<p>Use as-is or modify as needed.</p>
+",863513,1606345
+1606591,0,"<p>here's one way to deal with what i think you want ... convert the lines of text to PoSh objects that you can filter as you want. this is old code that i wrote 3 or 4 years ago.</p>
+<p>what it does ...</p>
+<ul>
+<li>saves the result of a <code>netstat</code> call to a $Var</li>
+<li>cleans out the unwanted lines</li>
+<li>converts each line into a CSV line</li>
+<li>converts the collection of CSV lines into an array of PoSh objects</li>
+<li>displays the collection</li>
+<li>displays the <code>.PID</code> property of the 0th object</li>
+</ul>
+<p>the code ...</p>
+<pre><code>$Raw_Result = netstat -a -o -n
+
+# get rid of the unwanted 1st three lines
+$Raw_Result = $Raw_Result | Select-Object -Skip 3
+# remove the `---` line
+$Raw_Result = $Raw_Result | Select-String -Pattern '[^---]'
+
+$Cleaned_Result = foreach ($Line in $Raw_Result)
+    {
+    $Line = $Line.ToString().Trim()
+    if ($Line[53] -eq ' ')
+        {
+        $Line = $Line.Insert(53, '-NA-')
+        }
+    $Line = $Line -replace ' {2,}', ','
+
+    $Line
+    }
+
+
+$Final_Result = $Cleaned_Result | ConvertFrom-Csv
+
+
+#$Raw_Result
+#$Cleaned_Result
+$Final_Result
+Write-Output ''
+$Final_Result[0].PID
+</code></pre>
+<p>truncated output ...</p>
+<pre><code>Proto           : UDP
+Local Address   : [::]:55356
+Foreign Address : *:*
+State           : -NA-
+PID             : 3352
+
+[*...snip...*] 
+
+Proto           : UDP
+Local Address   : [fe80::d129:4be7:98da:e357%14]:53382
+Foreign Address : *:*
+State           : -NA-
+PID             : 3908
+
+
+1308
+</code></pre>
+<p>the benefit of all that work is that you now have an easy-to-sort-or-filter collection of fairly standard objects. [<em>grin</em>]</p>
+",962415,1606345
+1606600,0,"<p>Sounds like you want to go to File -&gt; Options -&gt; Trust Center -&gt; Automatic Download and see if the following settings are what you need.</p>
+<p><a href=""https://i.stack.imgur.com/goWAv.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/goWAv.png"" alt=""enter image description here"" /></a></p>
+<p>Outlook uses the Safe Senders/Safe Recipients Lists to make decisions.  That's accessible by going here:</p>
+<p><a href=""https://i.stack.imgur.com/1s4PD.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/1s4PD.png"" alt=""enter image description here"" /></a></p>
+<p>and then select the appropriate tab:</p>
+<p><a href=""https://i.stack.imgur.com/r7RkN.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/r7RkN.png"" alt=""enter image description here"" /></a></p>
+",51705,1606593
+1606609,1,"<p>It's absolutely possible. And there are tons of ways to do this on Windows, Linux, and OSX but I'll be covering Windows, as that's what I have experience with:</p>
+<ol>
+<li>First option if you're running windows, is to use the <a href=""https://www.howtogeek.com/howto/39532/how-to-enable-stereo-mix-in-windows-7-to-record-audio/"" rel=""nofollow noreferrer"">stereo mix virtual device</a>. Once it's enabled, set the microphone in discord/skype/telegram to &quot;stereo mix.&quot;</li>
+</ol>
+<blockquote>
+<p><strong>Pros</strong>: no additional software, quick setup, free.<br />
+<strong>Cons</strong>: Can't talk at the same time, and other people in discord will be able to hear themselves. Have to change to and from the <code>stereo mix</code> device everytime you want to start/stop sharing your audio.</p>
+</blockquote>
+<ol start=""2"">
+<li>Use a Virtual Audio cable. There are a few different options out there, but they mostly all work the same, and this one is free: <a href=""https://vb-audio.com/Cable/index.htm"" rel=""nofollow noreferrer"">https://vb-audio.com/Cable/index.htm</a> To use this, set the <code>Line 1 (VB-Audio Cable)</code> as your microphone in discord, and then go to the <code>Stereo Mix</code> device properties and check the box <code>listen to this device</code> and set it to the virtual cable:
+<a href=""https://i.stack.imgur.com/5aS1Q.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/5aS1Q.png"" alt=""enter image description here"" /></a></li>
+</ol>
+<blockquote>
+<p><strong>Pros</strong>: Minimal software, relatively simple setup, You can talk at the same time, less fiddling need to turn it 'on' or 'off'<br />
+<strong>Cons</strong>: Other discord users will be able to hear themselves, still requires you go into windows sound control panel to turn it 'on/off'</p>
+</blockquote>
+<ol start=""3"">
+<li>Use <a href=""https://vb-audio.com/Voicemeeter/index.htm"" rel=""nofollow noreferrer"">Voicemeeter</a>. (same developer of the virtual audio cable I included above). There are many setup videos for voicemeeter, setting it up to do exactly what you want without discord users being able to hear themselves. Here's one that I found at the top of my google video search for &quot;voicemeeter guide&quot;: <a href=""https://www.youtube.com/watch?v=j_fk5SqktJg"" rel=""nofollow noreferrer"">https://www.youtube.com/watch?v=j_fk5SqktJg</a></li>
+</ol>
+<blockquote>
+<p><strong>Pros</strong>: Incredibly flexible, Share arbitrary audio, audio effects, can be used for more than just sharing your audio, discord users can't hear themselves, very scalable free.
+<strong>Cons</strong>: Your audio setup is now reliant on voicemeeter (at least it's free), moderately complicated, it's easy to mess up the configuration.</p>
+</blockquote>
+<ol start=""4"">
+<li>Use <a href=""http://sar.audio/"" rel=""nofollow noreferrer"">Synchronous Audio Router</a>. <a href=""https://www.youtube.com/watch?v=Q4MfZdPii3c"" rel=""nofollow noreferrer"">https://www.youtube.com/watch?v=Q4MfZdPii3c</a> This is way more complicated than voicemeeter, though you can do so much more with it. I don't recommend going for this option unless you've run into limitations in voicemeeter. A similar software for OSX is <a href=""https://rogueamoeba.com/freebies/soundflower/"" rel=""nofollow noreferrer"">soundflower</a> or some implementations of <a href=""https://jackaudio.org/"" rel=""nofollow noreferrer"">Jack</a> for linux/unix (and sometimes windows).</li>
+</ol>
+<blockquote>
+<p><strong>Pros</strong>: Nothing is impossible, audio setup is more flexible/powerful than what most streamers have, open-source, mostly free<br />
+<strong>Cons</strong>: Incredibly complicated, not bug-free, lots of heavy software, easier to break than voicemeeter. Since it needs a Digital Audio Workstation (DAW) to be used, it's cost is whatever the supporting software/hardware is.</p>
+</blockquote>
+",684761,1606599
+1606610,0,"<p>Depending on what ports you have on your computer, you could just use a cable from <em>line out</em> to <em>line in/microphone in</em>. Older computers usually had two 3.5 mm audio jacks. Newer ones have them combined in one 4-pin 3.5 mm headset jack. That could also work with the right cable/adapter combination. You also have to get the volume levels right.</p>
+<p>Or you can do it with software like <a href=""https://jackaudio.org/"" rel=""nofollow noreferrer"">Jack Audio</a>. This is a more flexible approach.</p>
+",1246659,1606599
+1606618,0,"<p>Yes, what you are looking for is called <strong>conditional formatting</strong>. It is available both in Excel and in other spread sheet applications e.g. OpenOffice Calc/LibreOffice Calc.</p>
+<p>You can use this to let the formatting of a cell (e.g. the background color or text color) depend on the value of the cell.</p>
+<p>I'm not sure if it can depend on the value of a different cell, but perhaps you could calculate the difference in a dedicated cell and highlight that one.</p>
+<p>Further reading here: <a href=""https://support.microsoft.com/en-us/office/use-conditional-formatting-to-highlight-information-fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f"" rel=""nofollow noreferrer"">Use conditional formatting to highlight information</a></p>
+",1246659,1606613
+1606619,4,"<h2>It seems like these two machines have different hardware — BIOS settings or something else — despite your implication that both machines are similar.</h2>
+<p>In general, the kernel that is installed on the system is the kernel that the system should be using. Which sounds odd to say, but that is basically it.</p>
+<p>What is odd in your case is the disparity between two kernels for each Ubuntu 18.04.5 LTS install. One is <code>5.3.0-1039-gke</code> and the other is <code>4.15.0-124-generic</code>. This is what I know:</p>
+<ul>
+<li><code>5.3.0-1039-gke</code>: As far as I know the <code>gke</code> stands for “Google Kubernetes Engine” and it would seem that kernel is specific for that usage? Odd that you have that installed on a desktop system.</li>
+<li><code>4.15.0-124-generic</code>: That <code>generic</code> is what it means… That is a generic version of the Kernel for that install.</li>
+</ul>
+<p>In general those appended designations of <code>-gke</code> and <code>-generic</code> can be read as:</p>
+<blockquote>
+<p>“That is the optimized Kernel for those those specifications: <code>-gke</code> for one and <code>-generic</code> for another.”</p>
+</blockquote>
+<p>That said, whet you say this:</p>
+<blockquote>
+<p>“A few months ago I bought two used Dell Optiplex machines for use as a NAS and internet gateway, respectively.”</p>
+</blockquote>
+<p>While your post implies both machines are 100% the same, my personal feeling is something is different between the two of them. Perhaps the motherboards or BIOS’s are different? That is the only rational explanation I can see for why there is such a wide disparity between kernel versions here.</p>
+<p>In general though, I would not sweat it. Yes, kernel updates are important… But mainly in the context of servers that are exposed to the world. If these are just two personal machines I highly doubt you will notice a difference between the two boxes. Just enjoy them!</p>
+<hr />
+<p><strong>UPDATE</strong>: According to <a href=""https://superuser.com/questions/1606611/what-is-the-difference-between-linux-kernel-5-3-0-1039-gke-and-4-15-0-124-generi/1606619#comment2449412_1606619"">a comment left by the original poster</a>, the <code>linux-image-gke-5.3</code> kernel was installed when <a href=""https://www.wireguard.com"" rel=""nofollow noreferrer"">WireGuard</a> was installed for some reason. So this was not an issue with hardware or BIOS but rather with WireGuard’s own install process.</p>
+",167207,1606611
+1606629,0,"<p>Well, first of all, I hope that the steps you describe hardly point to Rufus having rendered your USB inoperable.</p>
+<p>Up to the point where you replugged the drive back onto your original machine, there was nothing wrong with it, since it had been properly detected then, and, as you should be able to tell, there's simply no way Rufus could have &quot;magically&quot; rendered your drive inoperable between the time you unplugged the drive from the computer you planned to boot it on and plugged it back on the computer you created the drive with (The message you saw when you tried to boot the USB is a simple text output produced by invoking basic BIOS functions, and not some kind of fancy executable that's accessing the USB. As a matter of fact, the <a href=""https://github.com/pbatard/rufus/blob/master/res/mbr/msg.S"" rel=""nofollow noreferrer"">code to display that message</a> requires no knowledge of USB, and even if it was buggy and wrote garbage data all over the drive —not a small feat considering that the code is designed to simply invoke BIOS calls to <strong>read</strong> and display data— you would just end up with an unpartitioned drive that any application could repartition and reformat since this would not, in any way, make the drive undetectable).</p>
+<p>So, by the looks of it, your flash drive simply <strong>failed</strong> when you plugged it back on that other computer, and <a href=""https://github.com/pbatard/rufus/wiki/FAQ#Help_Rufus_damaged_my_flash_drive"" rel=""nofollow noreferrer"">Rufus had nothing whatsoever to do with that</a>.</p>
+<p>Moreover, if it's not detected any longer on any of your computers, then there's nothing any software can do to salvage it. Your drive is dead and you will just have to replace it.</p>
+<p>What I usually recommend, as a last resort, is to see if your drive is recognized at all on a non Windows machine (e.g. Linux). But considering that your drive can't be listed in Rufus any longer, it is most likely dead.</p>
+",286681,1606377
+1606631,0,"<p>If you change your mind right after entering the equation, the keyboard shortcut of Ctrl + Z will take you back to the formula entry box with the equation as you originally typed it ... then you can make your revisions.</p>
+<p>If you are beyond the practical Undo functionality, clicking on the equation and using the pulldown menu arrow, select Linear and edit the formula as needed. When done, place your cursor insertion point at the end of the revised formula and click return.</p>
+",919624,1606621
+1606647,0,"<p>I understand that you would like to &quot;undownload&quot; the picture that you have downloaded in your message before, is it right?</p>
+<p>If so, I have performed some tests on my Outlook, the picture would be invisible when the message was moved to Junk Email folder, but it would display again once we move the message back. I also have tried to clear the local temp file, but it also doesn't work, it seems to the picture in message has been downloaded in your data file, and we may have no options to undownload(or delete) these pictures in Outlook.</p>
+",1239235,1606593
+1606658,2,"<p>Looking at this page for <a href=""https://ubuntu.pkgs.org/18.04/ubuntu-main-i386/fonts-deva-extra_3.0-4_all.deb.html"" rel=""nofollow noreferrer"">Devanagari fonts in Ubuntu 18.04 LTS</a> it looks like <code>ttf-devanagari-fonts</code> it has been replaced by <code>fonts-deva-extra</code>. So you would install it like this:</p>
+<pre><code>apt-get install fonts-deva-extra
+</code></pre>
+<p>If you scroll down that page you can see that <code>ttf-devanagari-fonts</code> is categorized under “Obsoletes.” nd clicking that link shows the last Ubuntu version to use <code>ttf-devanagari-fonts</code> was Ubuntu 14.04 LTS.</p>
+<p>As for how to do this on your own from the command line I assume you could use this <code>apt-get</code> command:</p>
+<pre><code>apt-cache search Devanagari
+</code></pre>
+<p>And it <em>might</em> show up in the list of returned items. But that is a solid <em>might</em> since the word “Devanagari” would need to be used in some part of the metadata. Many times when package names change like this it is kind of maddening to find out what replaced it; just have to play around with keywords and see what comes up.</p>
+<p>And past <em>all</em> of what I just posted, look at the error message you received; especially these two lines near the end:</p>
+<pre><code>However the following packages replace it:
+  fonts-deva-extra fonts-samyak-deva fonts-sahadeva fonts-nakula fonts-lohit-deva fonts-deva
+</code></pre>
+<p>You can see <code>fonts-deva-extra</code> and <code>fonts-deva</code> right there. Command line output can be hard to parse — I missed those last lines myself — but many times the clue to solve issues like this is conveyed in the error message itself.</p>
+",167207,1606657
+1606659,0,"<p>You can do it in, I assume, your Google Chrome tabs. It does require some programming type activities, at least the way I know of. Rather than steal credit from another, here is the link to the page where I found an answer for you.</p>
+<p><a href=""https://superuser.com/questions/436227/automatically-reload-page-in-chrome-without-plugin"">Automatically reload page in Chrome without plugin</a></p>
+<p>If you do not feel comfortable doing that, a plugin is your only way to go. Short of building a machine to hit the f5 key over and over again.</p>
+",1246751,1606625
+1606661,0,"<p>I have 32GB over memory, and 514MB non paged pool. Forgive me if I explain anything you already know. Your Paged memory is the data that was stored on the physical RAM, but has not been accessed for a period of time, and such gets moved into the page file. This is stored on your system boot drive, which can be adjusted by you if you wanted to. The non-paged pool is for things that RAM <em>cannot</em> move out of RAM. core system files, drivers, etc. The more processes that you have running critical to system functionality, the larger the non-page pool. I would not go messing about with programs and such in the non-page pool if I were you, at least not before creating a full backup and a system restore point or two.</p>
+<p>EDIT</p>
+<p><a href=""https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak"" rel=""nofollow noreferrer"">https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/using-the-kernel-debugger-to-find-a-kernel-mode-memory-leak</a></p>
+<p><a href=""https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/using-poolmon-to-find-a-kernel-mode-memory-leak"" rel=""nofollow noreferrer"">https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/using-poolmon-to-find-a-kernel-mode-memory-leak</a></p>
+<p>These two links will walk you through using poolmon to determine if you have a memory leak, or not, and how to track down the offending program.</p>
+",1246751,1606656
+1606663,1,"<p><em>System_service_exception Page_fault_in_nonpage_area</em>  The non-page area refers to the non-page pool of RAM. This is where the system stores the critical information necessary to function on the RAM, the stuff that cannot get moved out when it isn't being used, like a movie would be. I agree that you RAM is somehow the issue.</p>
+",1246751,1606602
+1606682,0,"<p>I would suggest you could use Magnifier with Lens (Ctrl+Alt+L) view. And you can change the size of the lens using the sliders in the menu as the following screenshot.</p>
+<p>You’ve got three different options for the type of zoom you can use on your screen.</p>
+<p><strong>Docked</strong> gives you a half and half view, so one side of your screen is normal, and the other half is zoomed in.</p>
+<p><strong>Full screen</strong> brings up the zoom across your whole monitor.</p>
+<p><strong>Lens</strong> (which in our opinion is the most useful for most scenarios) is a smaller box of magnification which follows your mouse around the screen, whilst the rest of the screen stays at normal magnification.</p>
+<p><a href=""https://i.stack.imgur.com/EKO0X.jpg"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/EKO0X.jpg"" alt=""enter image description here"" /></a></p>
+<p><strong>Example</strong></p>
+<p><a href=""https://i.stack.imgur.com/aG3c3.jpg"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/aG3c3.jpg"" alt=""enter image description here"" /></a></p>
+",1221641,1606655
+1606685,1,"<blockquote>
+<p>Is running LC_ALL=C sort -u on these files likely to strip them of any non-ASCII characters?</p>
+</blockquote>
+<p>Not in this case, no – <code>sort</code> will just directly work on the byte values instead of trying to convert them to characters.</p>
+<p>However, the same does not necessarily apply to other tools. Programs written in C (the language) are the most likely to behave this way. Programs written in languages with strong byte-vs-char distinction, such as in Python 3, should outright refuse to accept input that doesn't conform to the charset. And I can certainly imagine poorly-written programs which ignore the errors and output a � or a <code>?</code> instead.</p>
+<blockquote>
+<p>If it is, then what I can do instead to fix/remove all &quot;invalid or incomplete multibyte or wide characters&quot; from these files, allowing me to sort them without using LC_ALL=C?</p>
+</blockquote>
+<p>Ensure that they're all using the same file encoding (preferably UTF-8), and that your locale is using the same encoding. The error should never occur for a valid UTF-8 file no matter how large it is.</p>
+",1686,1606533
+1606703,1,"<p>Please check whether you have added the &quot;<a href=""https://docs.microsoft.com/en-us/deployoffice/office-deployment-tool-configuration-options#sourcepath-attribute-part-of-add-element"" rel=""nofollow noreferrer"">source path</a>&quot; attribute in configuration file (.xml). This attribute defines the location (Such as a shard folder) of the Office installation files both for download mode and configure mode of ODT.</p>
+<p>To deploy Office 2019 from a local source, you need to run ODT to download the instalation content first. There would be an Office folder created automatically.</p>
+<p>Then you may install Office 2019 on clients using the installation content which is specified on configuration file.</p>
+",1094459,1606678
+1606741,2,"<p>For the record, I answer my own question (although the credit really goes to a now-deleted comment to the OP).
+The &quot;grey disk&quot; turned out to be just another blue disk with a detachable half-metallic, half-cardbaord grey cover (note the small screws in the picture : you have to unscrew four of them to detach the cover) :</p>
+<p><a href=""https://i.stack.imgur.com/CYxye.jpg"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/CYxye.jpg"" alt=""enter image description here"" /></a></p>
+",183778,1606724
+1606759,0,"<p>You cannot do this by only setting the proxy parameter.
+You need to use the proxy autoconfig file (PAC) - I don't know if it's settable from command line or only from GUI. PAC files are written in Javascript, you can find more about the file format here: <a href=""https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_(PAC)_file"" rel=""nofollow noreferrer"">https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_(PAC)_file</a> . There are also several examples there. You probably need to use <code>dnsDomainIs()</code> or <code>shExpMatch()</code> function in your PAC file to return the correct proxy address/port for the specific URL and &quot;DIRECT&quot; for all others.</p>
+",1244126,1606735
+1606766,1,"<p>Use ssh-agent (or Pageant for PuTTY) – you can load keys into its memory and they will remain unlocked as long as the OS is running, but shutting down the system will forget all keys.</p>
+<p>(This <em>does not</em> work with the SSH client that comes with Windows, as it stores keys persistently in the Registry, protected with your login password.)</p>
+<hr />
+<p>If you never shut down your computer (e.g. only suspend it), ssh-agent also allows adding keys with a timeout:</p>
+<pre><code>$ ssh-add -t 6h ~/.ssh/id_rsa
+</code></pre>
+<p>If you have a recent OpenSSH version, you can have it automatically add the keys upon first connection by enabling the ~/.ssh/config option:</p>
+<pre><code>Host *
+    AddKeysToAgent 10h
+</code></pre>
+<p>Note that this might not work with the SSH client that comes with Windows. Likewise, PuTTY's Pageant does not support timeouts either.</p>
+",1686,1606760
+1606769,0,"<p>I've tried to boot my PC with a USB key with the latest version of Windows and it works.</p>
+<p>I've activate the boot menu with F12 (Toshiba brand PC) and then boot my PC on the USB key.</p>
+<p>I've back up the old version and install the new one.</p>
+",1206031,1606758
+1606771,1,"<p>I've found <a href=""https://milosophical.me/blog/2018/journald-experiments-0.html"" rel=""nofollow noreferrer"">this writeup</a> about <code>journald</code>, which pointed out there might be problems with buffering.</p>
+<p>It lead me to <a href=""https://unix.stackexchange.com/questions/164987/output-of-a-python-script-running-as-unit-is-out-of-order-while-shells-seems-unn"">this Python specific Unix StackExchange question</a> with a solution.</p>
+<p>Adding <code>Environment=&quot;PYTHONUNBUFFERED=1&quot;</code> under <code>[Service]</code> in the systemd service file solved the problem.</p>
+",1246838,1606737
+1606792,0,"<p>I have tried several fixes and the only method that worked was:</p>
+<ol>
+<li>Open Windows Search</li>
+<li>Edit Language and Keyboard options</li>
+<li>Under preferred languages, click Add a language</li>
+<li>select English (Australia) and install</li>
+<li>Click Keyboard at the top</li>
+<li>Under Override for default input method, select English (Australia)</li>
+</ol>
+<p>To keep the same keyboard layout, use English (Europe) instead of English (Australia).</p>
+",1017832,1606790
+1606793,-1,"<p>What is you system language set to? Microsoft Word may be defaulting to the system language, rather than the app default. Try changing the System default to your language of choice.</p>
+",1246751,1606790
+1606797,0,"<p>Frankly, there's not much to be done. If you're spending an excessive amount of time on that site, try using inspect element to hide it.</p>
+",1246608,1606794
+1606802,0,"<p>What <code>-timestamp now</code> does is forward the current time as the <code>creation time</code> to the muxer of the output file. The output muxer <em>may</em> then write it as creation time or origination time or similar, if it supports it. Major formats like MOV / MP4 / Matroska do.</p>
+",114058,1606799
+1606804,0,"<blockquote>
+<p>Is this possible?</p>
+</blockquote>
+<p>This likely depends on the settings available on your gateway hardware.</p>
+<blockquote>
+<p>How can I do that?</p>
+</blockquote>
+<p>If the unit includes router functionality and supports port forwarding, it may be possible to simply forward the range of ports you wish to monitor to the specific internal IP/port combination you wish to have listen for these requests.</p>
+<blockquote>
+<p>My aim is to log all the requests sent to my IP for these ports.</p>
+</blockquote>
+<p>The device listening for these requests might need separate software in order to do this. Depending on your needs, one suggestion I might make is to consider <a href=""https://www.wireshark.org/"" rel=""nofollow noreferrer"">Wireshark</a> for this. Note that Wireshark can listen to multiple ports on the same network interface, so there may be no need forward requests to a single port e.g. via your gateway.</p>
+<blockquote>
+<p>Does this make any sense?</p>
+</blockquote>
+<p>Without knowing why you want to do this, this is likely unanswerable. But from a technical perspective, this could be theoretically possible to do. Do note that this could &quot;break&quot; the functionality of certain software (ex. a web server on the internal device may not be able to connect to a port if another piece of software is connected to that port).</p>
+",302907,1606726
+1606820,0,"<p>use:</p>
+<pre><code>=SUMPRODUCT((DAY(ROW(INDEX($ZZ:$ZZ,A1):INDEX($ZZ:$ZZ,B1)))=C1)*(MOD(MONTH(ROW(INDEX($ZZ:$ZZ,A1):INDEX($ZZ:$ZZ,B1)))-1,12/D1)=0))
+</code></pre>
+<p>It iterates the days and tests whether it meets the requirements and adds up where they match.</p>
+<p><a href=""https://i.stack.imgur.com/VkjWI.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/VkjWI.png"" alt=""enter image description here"" /></a></p>
+<p>If one has Office 365 then we can shorten it with LET and SQUENCE:</p>
+<pre><code>=LET(dts,SEQUENCE(B1-A1+1,,A1),SUMPRODUCT((DAY(dts)=C1)*(MOD(MONTH(dts)-1,12/D1)=0)))
+</code></pre>
+<p>or:</p>
+<pre><code>=LET(dts,SEQUENCE(,B1-A1+1,A1),COUNT(FILTER(dts,(DAY(dts)=C1)*(MOD(MONTH(dts)-1,12/D1)=0))))
+</code></pre>
+",567231,1606798
+1606841,3,"<p>Each Office App (Excel, Word, Powerpoint, ...) has its own save location in options. It is not common across all apps.</p>
+<p>I have Office 365, One Drive, and Drop Box. I have my Default Save location set to a folder of mine on drive C:</p>
+<p>Using Excel as a sample app, it always saves on my Drive C: (locally) and never One Drive or Drop Box unless I point it that way.</p>
+<p>So just set your options correctly and your apps will not save to One Drive.</p>
+<p>The above is true for any reasonably modern version of Office.</p>
+<p>Here is a screenshot to aid you.</p>
+<p><a href=""https://i.stack.imgur.com/0I9MW.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/0I9MW.png"" alt=""enter image description here"" /></a></p>
+<p>Outside of Office, also check One Drive settings.</p>
+<p>Check OneDrive settings the option for office and turn  it off. The setting is <em>&quot;Use office applications to sync office files that I open&quot;</em></p>
+",1079976,1606837
+1606887,0,"<p>You are encoding with mpeg1video, not libx264.</p>
+<p>mpeg1video does not support <code>-profile:v high</code>.</p>
+<p>I'm guessing <code>-c:v</code>, and all other output options, are ignored for FFM output and the encoder is determined by <code>VideoCodec</code> in <code>ffserver.conf</code>. (But I was lazy and didn't confirm and have no experience with <code>ffserver</code>.) If you have no <code>VideoCodec</code> set then a default encoder will likely be selected determined by the chosen <code>Format</code> in <code>ffserver.conf</code>.</p>
+<p>To your <code>&lt;Stream&gt;</code> section add:</p>
+<pre><code>VideoCodec libx264
+AudioCodec aac
+AVOptionVideo profile main
+PixelFormat yuv420p
+</code></pre>
+",110524,1606882
+1606888,0,"<p>Added <code>relay_domains = $myhostname $hostname_of_CentOS</code> to the main.cf of the VS machine Postfix configuration, and removed port forwarding. This way both email servers can send and receive messages. $hostname_of_CentOS stands for what it is: the hostname of the CentOS home machine while connected via VPN to the VS machine. It took me asking the question to finally find the solution to this conundrum.</p>
+",526269,1606805
+1606889,0,"<p>Because I ended up needing to pipe my files through a lot of different Bash tools like <code>sort</code>, <code>grep</code>, <code>awk</code>, <code>wc</code> and <code>tr</code>, I decided it was safer to go for the &quot;proper solution&quot; indicated in the accepted answer; converting them all to UTF-8 first. This ended up being a little harder than expected, not least because it took me a while to realise that <code>file</code> isn't reliable at determining whether a file is ASCII or UTF-8 (because it doesn't check the whole of the file), so I'm putting this answer up here for posterity.</p>
+<p>To definitively determine what encoding your files are in, first make sure the <code>uchardet</code> package is installed via the Cygwin Installer or <a href=""https://github.com/kou1okada/apt-cyg"" rel=""nofollow noreferrer"">apt-cyg</a>, then run:</p>
+<pre><code>uchardet *.txt
+</code></pre>
+<p>Or if you're not on Cygwin:</p>
+<pre><code>chardet *.txt 
+</code></pre>
+<p>Move all of the files that <code>chardet</code> lists as <code>ASCII</code> to a folder of their own, and run the following <code>for</code> loop in that folder:</p>
+<pre><code>for i in *.txt; do iconv -f ASCII -t UTF-8 &quot;$i&quot; &gt;&gt; &quot;${i%.txt}_utf.txt&quot;; done;
+</code></pre>
+<p>It will loop through all <code>.txt</code> files in a folder and create UTF-8 versions of them with the <code>utf</code> suffix added.</p>
+<p>Running <code>uchardet *.txt</code> again may still show some files as being <code>ASCII</code>. This happens because ASCII is a subset of UTF-8, and <a href=""https://stackoverflow.com/a/36030982/1191147"">simply means</a> that those files don't contain characters outside the ASCII range of 128 bits.</p>
+<p>You should now be able to run <code>sort</code> without needing to use <code>LC_ALL=C</code>.</p>
+",323079,1606533
+1606892,0,"<p>As others stated, there is no easy way to <em>remove</em> Edge, either the old or the new Chrome-based version. That said, you can <em>disable</em> some of the more obnoxious privacy issues, such as sharing information on which sites you've visited with MS. A third-party tool, such as <a href=""https://www.oo-software.com/en/shutup10"" rel=""nofollow noreferrer"">O&amp;O ShutUp10</a>, makes this easier.</p>
+<p><a href=""https://i.stack.imgur.com/rjBl2.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/rjBl2.png"" alt=""Disable Edge privacy issues"" /></a></p>
+<p>You should also be aware that some other browsers might invade privacy. For example, <a href=""https://sputniknews.com/science/201804041063197557-chrome-files-scanning-concerns/"" rel=""nofollow noreferrer"">Chrome scans all files on your system</a>. Though ostensibly this is done as antimalware, one might be suspicious after reading that, &quot;Adobe... <a href=""https://www.eff.org/deeplinks/2014/10/adobe-spyware-reveals-again-price-drm-your-privacy-and-security"" rel=""nofollow noreferrer"">“Digital Editions,” logs every document...</a> and then sends those logs back to [Adobe].&quot; Of course, Google Chrome is not doing that, yet.</p>
+",401553,1606880
+1606921,1,"<p>You can use any computer as a NAS. NAS software doesn't really use much processing power, so a Chromebook should work just fine. You do need to use another software, or at least a VM inside the ChromeOS. FreeNAS is a good free option, centOS is a good Linux distro, but it will not be as easy as just running freeNAS. Your read and write speeds will be limited by the USB interface, unless you stick a massive SSD or 2.5&quot; HDD in your Chromebook.</p>
+<p>So to summarize, yes you can do it, yes you need some sort of third party software, either installed dual boot on the system, or running in a VM, or just as the only option.</p>
+",1246751,1606903
+1606926,0,"<p>It's the space before the second <code>set</code> causes the problem.</p>
+<pre><code>set http_proxy=&amp; set https_proxy=
+</code></pre>
+",965349,1606924
+1606957,1,"<p>Here are some tips. In case the tips don't help you, I also offer links to some possible workarounds.</p>
+<h3>PS/2 vs. USB</h3>
+<p>Make sure you created the &quot;CrashOnCtrlScroll&quot; value in the correct Registry key location.  There are different key locations for PS/2 vs. USB vs. Hyper-V keyboards.  Please see <a href=""https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/forcing-a-system-crash-from-the-keyboard"" rel=""nofollow noreferrer"">here</a>.</p>
+<p>If you're not sure which location to use: It's okay to create the same value in all three locations.</p>
+<h3>Reboot first</h3>
+<p>You must reboot your machine in order to make the Registry setting take effect.</p>
+<h3>Use the rightmost Ctrl key</h3>
+<p>Before pressing Scroll lock twice, you must hold down the <strong>rightmost</strong> Ctrl key.</p>
+<p>Do not use the other Ctrl key; it won't work.</p>
+<h3>Possible workarounds</h3>
+<p>If you've tried all three of the above tips, and you still can't trigger a crash, perhaps you could instead:</p>
+<ul>
+<li><a href=""https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/forcing-a-system-crash-from-the-debugger"" rel=""nofollow noreferrer"">Force a system crash from a debugger.</a></li>
+<li><a href=""https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/forcing-a-system-crash-with-the-power-button"" rel=""nofollow noreferrer"">Force a system crash with the power button.</a></li>
+<li><a href=""https://docs.microsoft.com/en-us/sysinternals/downloads/notmyfault"" rel=""nofollow noreferrer"">Force a system crash from the command line.</a></li>
+<li><a href=""https://docs.microsoft.com/en-ca/windows/client-management/generate-kernel-or-complete-crash-dump"" rel=""nofollow noreferrer"">Force a system crash using a non-maskable interrupt.</a></li>
+<li><a href=""https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/creating-a-dump-file-without-a-system-crash"" rel=""nofollow noreferrer"">Create a dump file without a system crash.</a></li>
+<li>Post a new question, either on <a href=""https://stackoverflow.com/"">Stack Overflow</a> or here on Super User, to seek our advice.</li>
+</ul>
+<h3>Conclusion</h3>
+<p>This post is partially based on an <a href=""https://stackoverflow.com/questions/26581551/force-bsod-on-windows-8-1#27637012"">older post</a> by Mohit Jain.</p>
+",113306,1606956
+1606969,0,"<p>Check the <a href=""https://download.msi.com/archive/mnu_exe/mb/E7B86v4.0.pdf"" rel=""nofollow noreferrer"">manual</a>, page 47:</p>
+<blockquote>
+<p><strong>→ Restore after AC Power Loss [Power Off]</strong></p>
+<p>Sets the system behaviors while encountering the AC power loss.</p>
+<ul>
+<li><code>[Power Off]</code> Leaves the system in power off state after restoring AC power</li>
+<li><code>[Power On]</code> Boot up the system after restoring AC power.</li>
+<li><code>[Last State]</code> Restores the system to the previous state (power on/ power off) before AC power loss.</li>
+</ul>
+</blockquote>
+<p>Your current setting seems to be <em>Power On</em>. Change it to <em>Power Off</em>.</p>
+",194694,1606964
+1606975,0,"<p>The Windows ISO can't simply be written to a USB. ISOs have to be specially crafted to support it and Microsoft doesn't do that. You need a dedicated tool.</p>
+<p>On Windows Rufus is the most reliable one. For Linux WoeUSB is available.</p>
+",194694,1606962
+1606983,0,"<p>In NAT mode your VMs are on a second network and your host acts as a router.  Just like how your other devices cannot be directly accessed from the internet due to your home router, your VMs cannot be directly accessed from your network because they are behind the host pc router.  In order to access them in this mode you need to <a href=""https://www.vmware.com/support/ws5/doc/ws_net_nat_advanced.html"" rel=""nofollow noreferrer"">setup port forwarding</a> in the VM software.</p>
+<p>If you want to be able to access the VMs directly and not have to setup forwarding then you need to configure them to use a <a href=""https://www.vmware.com/support/ws4/doc/network_bridged_ws.html"" rel=""nofollow noreferrer"">bridged network connection</a> instead of NAT.  This puts the VMs on the same network as the host and they will acquire a 192.168.0.x IP just like your other devices on the network.</p>
+",515238,1606913
+1606986,0,"<p>Nevermind, I found some rogue conditional formatting. Cleared it out and now it works perfectly.</p>
+",1247039,1606863
+1606987,1,"<p>Martin Brinkman gives a full explanation of what it is and how to remove it on his website
+<a href=""https://www.ghacks.net/2020/11/28/what-is-meet-now-in-windows-10-and-how-to-remove-it/"" rel=""nofollow noreferrer"">here</a>.</p>
+<p>Here's a copy/paste for archive purposes, the website itself might be easier on your eyes.</p>
+<blockquote>
+<p>How to remove the Meet Now icon on Windows 10
+Meet Now is useful to a subset of users. If you don't plan to use it, you may want to remove it from the taskbar as it takes up space without providing anything of use to you.</p>
+</blockquote>
+<blockquote>
+<p>Multiple options are available to remove Meet Now from the system. One of the easier options involves right-clicking on the Meet Now icon and selecting &quot;hide&quot; from the context menu that opens. Doing so removes the Meet Now icon from the Windows 10 taskbar.</p>
+</blockquote>
+<blockquote>
+<p>Another option that you have is to open the Settings application on the system, e.g. by using the shortcut Windows-I, or by selecting Start &gt; Settings, going to Personalization &gt; Taskbar, selecting &quot;turn system icons on or off&quot;, and toggling &quot;Meet Now&quot; on the page that opens to off. You may restore Meet Now at anytime using the Settings app, but need to make sure the feature is set to on this time.</p>
+</blockquote>
+<blockquote>
+<p>Removing Meet Now via the Group Policy
+System administrators may disable (or enable) the Meet Now icon on the Windows 10 taskbar using the Group Policy. The Group Policy is only available in professional editions of Windows 10, and not in Windows 10 Home.</p>
+</blockquote>
+<blockquote>
+<p>Here is how that is done:</p>
+</blockquote>
+<blockquote>
+<p>You need elevated rights to use the Group Policy.
+Use Windows-R to open the runbox.
+Type gpedit.msc and select OK.
+Go to User Configuration &gt; Administrative Templates &gt; Start Menu and Taskbar
+Double-click on &quot;Remove the Meet Now icon&quot;.
+Set the feature to &quot;Enabled&quot; to hide the icon on the taskbar of the Windows 10 operating system.
+Restart the PC.
+Removing Meet Now using the Registry
+You may also remove Meet Now on Windows 10 using the Registry.</p>
+</blockquote>
+<blockquote>
+<p>Use Windows-R to open the runbox.
+Type regedit.exe and select OK.
+For individual users, go to HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+Right-click on Explorer and select New &gt; Dword (32-bit) Value.
+Name it HideSCAMeetNow.
+Set its value to 1.
+For all users, go to HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
+Right-click on Explorer and select New &gt; Dword (32-bit) Value.
+Name it HideSCAMeetNow.
+Set its value to 1.
+Restart the PC.</p>
+</blockquote>
+",431945,1606967
+1606991,0,"<p><strong>Do the following:</strong></p>
+<p><a href=""https://i.stack.imgur.com/R0skO.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/R0skO.png"" alt=""enter image description here"" /></a></p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Select S1:S10.</li>
+<li>From HOME Tab hit Condition Formatting.</li>
+<li>Then New Rule, next is select Use a Formula to determine which cells to format.</li>
+<li>Use this =$T1=&quot;okay&quot;, as Format value where Formula is True.</li>
+<li>Hit Format button, apply an appropriate format and finish with Ok.</li>
+</ul>
+<p><strong>Since you have already tried, so do this:</strong></p>
+<ul>
+<li><p>Select the data range, reach to conditional Formatting.</p>
+</li>
+<li><p>Hit the Manage Command, you get this.</p>
+</li>
+</ul>
+<p><a href=""https://i.stack.imgur.com/2McvZ.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/2McvZ.png"" alt=""enter image description here"" /></a></p>
+<ul>
+<li>Select and click Edit button, apply necessary changes as I've shown above, and finish with Ok.</li>
+</ul>
+<p><strong>Note:</strong> <em>Adjust cell references in the formula as needed.</em></p>
+",711214,1606838
+1606994,0,"<ol>
+<li><p>Select Range you need- go to <strong>Conditional Formatting</strong>- <strong>Manage Rules...</strong>- <strong>New rule</strong>- <strong>Use a formula to determine which cells to format</strong>:
+<a href=""https://i.stack.imgur.com/GuTcO.gif"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/GuTcO.gif"" alt=""enter image description here"" /></a></p>
+</li>
+<li><p>Enter the formula: <strong>=$B1=&quot;okay&quot;</strong>- select the fill color you need- click OK:
+<a href=""https://i.stack.imgur.com/tJmJB.gif"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/tJmJB.gif"" alt=""enter image description here"" /></a></p>
+</li>
+</ol>
+",850079,1606838
+1607006,1,"<p>It is unclear from your question whether you are using Apache or Nginx.  I assume it is similar for nginx, but I'll answer for Apache which I am more familiar with.</p>
+<p><strong>/uv/ is typically relative to the DocumentRoot</strong> specified in the relevant Apache VirtualHost or main config, however there are a number of exceptions to this.</p>
+<ul>
+<li>If you have a config specifying an &quot;Alias&quot; this can graft in a directory from another place on the filesystem.</li>
+<li>Similarly it is possible to use RewriteRules to force (for example) /uv/ to be parsed into index.php or similar (which is used by Wordpress and other software - but usually only in the case /uv/ does not exist.</li>
+<li>It is possible that ProxyPass directives will do load-balance stuff under this from other servers.</li>
+</ul>
+",137786,1607002
+1607017,1,"<p>That's because the blue boot selection screen isn't really a bootloader - it's Windows in disguise.</p>
+<p>One of your Windows instances boots into the OS selection screen. If you select the same instance, it will appear to load almost instantly because it's actually already loaded. Selecting another OS will cause a reboot with another OS configured to boot just this single time.</p>
+<p>If you don't like this behavior, disable bootloader GUI using <code>msconfig</code>.</p>
+",194694,1606583
+1607051,22,"<p>Press Tab, then Enter or Space</p>
+",706868,1607050
+1607053,1,"<blockquote>
+<p>Is it just that the programs cannot handle this higher resolution</p>
+</blockquote>
+<p>That's the problem.</p>
+<p>You have display scaling enabled, so that things on your screen aren't tiny despite pixels being much smaller physically. Display scaling needs special support in programs to work correctly.</p>
+<p>Programs that are scaling-aware will take advantage of scaling. Others draw their window in a buffer as if scaling was disabled and Windows upscales them afterwards. The result is similar to zooming in on a photo, they become blurry.</p>
+<p>You can disable scaling on per-application basis in properties of the EXE or a shortcut, on the <em>Compatibility</em> tab. You can also disable it altogether for entire system in <em>Display settings</em>. This will increase available screen area at the cost of everything getting smaller.</p>
+",194694,1607052
+1607059,0,"<p>Here is a small C# program.</p>
+<pre><code>using System;
+using System.IO;
+
+namespace Move {
+class Program {
+    static void Main(string[] args) {
+        Console.Write(&quot;Folder: &quot;);
+        string path = Console.ReadLine();
+
+        foreach (var folders in Directory.GetDirectories(path)) {
+            Console.WriteLine(folders);
+
+            foreach (var subs in Directory.GetDirectories(folders)) {
+                Console.WriteLine($&quot;\t{subs}&quot;);
+
+                foreach (var source in Directory.GetDirectories(subs)) {
+                    Console.WriteLine($&quot;\t\t{source}&quot;);
+
+                    foreach (var item in Directory.GetFiles(source)) {
+                        Console.WriteLine($&quot;\t\t\t{item}&quot;);
+
+                        string filename = Path.GetFileName(item);
+
+                        string newPath = $@&quot;{subs}\{filename}&quot;;
+                        File.Move(item, newPath);
+                    }
+
+                        Directory.Delete(source);
+                    }
+                }
+
+            }
+
+
+            Console.ReadLine();
+        }
+    }
+}
+</code></pre>
+",706868,1607038
+1607061,1,"<p>Unless you give us the logfile describing why the reboot didn't happen it is difficult to guess what the issue is.</p>
+<p>You can probably workaround the issue by invoking bash in your ssh, executing the command, and terminating the ssh connection immediately, like this:</p>
+<pre class=""lang-bsh prettyprint-override""><code>ssh you@yourserver &quot;bash --rcfile &lt;(echo '. ~/.bashrc; /usr/bin/o3d3xx-reboot; exit') -l&quot;
+</code></pre>
+<p>The fact that you invoke <code>bash</code> with <code>-l</code> seems to indicate that your <code>o3d3xx-reboot</code> executable needs something from <code>/etc/profile</code>. You might want to look there to make a less hacky solution.</p>
+",426051,1607046
+1607075,0,"<p>After going through some reviews, I found that UEFI support is hard coded in the firmware and it simply does not support leagacy OS support.</p>
+<p>My further questions will be:</p>
+<p><strong>Q1.</strong> Is that even possible to hardcode UEFI support and not support legacy mode at all? (I guess yes, it all depends on how firmware is coded, but need confirmation)</p>
+<p><strong>Q2.</strong> Is it fixable? With say firmware updates / flashing or some other approaches?</p>
+<p>Including screenshots of the reviews mentioning the same:</p>
+<p><a href=""https://www.amazon.in/gp/product/B07DMM7Z7N/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&amp;psc=1#customerReviews"" rel=""nofollow noreferrer""><strong>Review from amazon</strong></a>
+<a href=""https://i.stack.imgur.com/HZwHN.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/HZwHN.png"" alt=""enter image description here"" /></a></p>
+<p><strong><a href=""https://www.newegg.com/gigabyte-brix-gb-blce-4105-bw/p/N82E16856164115"" rel=""nofollow noreferrer"">Reviews from newegg</a></strong></p>
+<p><a href=""https://i.stack.imgur.com/j2Q5A.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/j2Q5A.png"" alt=""enter image description here"" /></a></p>
+<p><a href=""https://i.stack.imgur.com/VWFHF.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/VWFHF.png"" alt=""enter image description here"" /></a></p>
+<p><a href=""https://i.stack.imgur.com/pbF9A.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/pbF9A.png"" alt=""enter image description here"" /></a></p>
+",144021,1606984
+1607080,1,"<blockquote>
+<p>Also at Microsoft website, where I download the image, I see a message &quot;This VM will expire on 1/10/21.&quot; So, what's after?</p>
+</blockquote>
+<p>It’s not looking for anything since it’s not possible to license the VM in question.  Furthermore, you cannot activate a Windows 10 Enterprise installation with a Windows 10 Home license.  Windows 10 Enterprise can only be purchased as a volume license key.</p>
+<blockquote>
+<p>Is there a way to get permanent copy?</p>
+</blockquote>
+<p>You would have to create your own VM and install Windows 10 Home.  This will only work if your license currently isn’t in use.</p>
+<blockquote>
+<p>Or is there a better location that I can download the image, never expires?</p>
+</blockquote>
+<p>There is no such thing as a free Windows installation.  Windows licenses never expired.  Any license provided to students are paid by their educational institution.</p>
+<blockquote>
+<p>Student version/personal learning.</p>
+</blockquote>
+<p>Your current VM is what Microsoft offers as a non-permanent solution.  If you want a permanent solution you will have to purchase Windows 10.</p>
+",83283,1607070
+1607127,0,"<p>To combine C &amp; D:
+<code>=ROUND(B6/0.0125,0)</code></p>
+<p>Regarding the rounding, if you divide 0.0311274637822757 by 0.0125, you will see the answer is actually 2.490197102582056, so it is correctly rounding down, to 2.</p>
+",690483,1607122
+1607129,0,"<p>I've edited the title of your question, because standard delete refers to deleting a file which is less worse than a format. However, deleting a partition is worse than a format.</p>
+<p>The difference is:</p>
+<p>You have an allocated space called partition, and you can format that in different layouts. Format clears the partition, but delete partition removes the partition alltogether, turning it into unallocated space. If you delete multiple partitions, the new unallocated space will not be segmented. If you want to restore the partition, you have to recreate it. If you want it to be the same size as it was, then it helps to know what it was.</p>
+<p>Recovering a formatted drive is easier than recovering a deleted partition. Most software can recover a formatted drive if you don't do anything with it since the format, but a deleted partition may require special tools and skills.</p>
+<p>Deleting just one partition, and recreating it is not that hard though.</p>
+<p>That said, you are in the Windows Setup screen, and if you go for either format or delete, it seems you do not have any sensitive data on the disk anyway. If you are considering repartitioning the entire drive to make windows use all of the space, the easiest trick is to delete all partitions, and then select the unallocated empty space and just install to that. Windows setup will then create 4 partitions. 1 big partition for your C and 3 for recovery purposes. That is the best practice, but it means you have to have backups before doing this, as the drives will be empty afterwards.</p>
+<p><strong>Take careful notice of the Drive 0 vs Drive 1. Limit yourself to only Drive 0 and leave Drive 1 untouched.</strong></p>
+",311586,1607126
+1607134,2,"<p>Use the <code>-loop</code> option for the GIF muxer</p>
+<pre><code>ffmpeg -i input -loop 2 output.gif
+</code></pre>
+<ul>
+<li><code>-1</code> no loop (plays once)</li>
+<li><code>0</code> infinite loop (default)</li>
+<li><code>1</code> loop once (plays 2 times)</li>
+<li><code>2</code> loop twice (plays 3 times)</li>
+<li>etc</li>
+</ul>
+<p>See <code>ffmpeg -h muxer=gif</code>.</p>
+",110524,1607099
+1607141,1,"<p>These files shouldn't exist. Windows 10 is very restrictive regarding files in the
+root of C, for which administrator permissions are required.</p>
+<p>Two possibilities:</p>
+<ul>
+<li>They are generated by some installed application,</li>
+<li>The computer is infected.</li>
+</ul>
+<p>For the second option, run deep anti-virus scans, at least by Windows Defender and
+<a href=""https://www.malwarebytes.com/"" rel=""nofollow noreferrer"">Malwarebytes</a>.
+For more information, see
+<a href=""https://superuser.com/questions/100360/how-can-i-remove-malicious-spyware-malware-adware-viruses-trojans-or-rootkit"">this post</a>.</p>
+<p>For the first option, you may use
+<a href=""https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns"" rel=""nofollow noreferrer"">Autoruns</a>
+to temporarily disable some choice startup applications and reboot to check
+if the problem has disappeared.</p>
+",8672,1607081
+1607147,0,"<p>Here's one way. First, switch the Mark and Grade columns in your reference table. Make the grade as your first column. Then, make sure it's sorted from lowest to highest by Mark.</p>
+<p>Then, here's the formula for cell D2:</p>
+<pre><code>    =VLOOKUP(C2+1,G:H,2,FALSE)-B2
+</code></pre>
+<p>Adjust the look-up array as needed (G:H in my case).</p>
+<p>Drag it down and you're done. This works as long as your data are correctly sorted in the reference table. It's looking for the <strong>first</strong> match. You may want to add an error handler in case someone already has a top grade.</p>
+<p><a href=""https://i.stack.imgur.com/11jaI.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/11jaI.png"" alt=""enter image description here"" /></a></p>
+",1234824,1607106
+1607149,1,"<p>If all you did was really just deleting partitions, you are in luck. Deleting a single partition is trivial to fix, just re-create it in place. Not with Windows tools though, they are too high-level. Instead, use Linux tools like <code>fdisk</code>. Fundamentally, a partition is just an entry in a table with start and end points (and some other stuff).</p>
+<p>Restoring multiple partitions is harder (unless you remember sizes down to the byte), but still very much possible if they contained popular filesystems (like NTFS, FAT32, ext2/3/4, …). <a href=""https://www.cgsecurity.org/wiki/TestDisk"" rel=""nofollow noreferrer"">Testdisk</a> can find many types of popular filesystems. This works by scanning the likely areas or the whole disk (so it can take a very long time) to discover the beginning of filesystems. Most filesystems record in their metadata their size, further easing recovery.</p>
+<p>Backing up your drive prior to any recovery attempt is prudent. However, most “consumer” image software will only operate on partitions, not drives. Instead, use <code>dd</code> (a Linux/Unix tool) to create a full exact copy of the drive. This requires as much space as the drive has. <code>dd</code> is very easy to use.</p>
+<p>First, use <code>fdisk</code> to identify the drive to back up:</p>
+<pre><code>daniel@vmx:~$ sudo fdisk -l
+[sudo] password for daniel:
+Disk /dev/sda: 477 GiB, 512110190592 bytes, 1000215216 sectors
+Disk model: Micron_1100_MTFD
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 5294E22E-B1FF-429E-B6D6-BB6F7BC4D343
+
+Device         Start        End   Sectors   Size Type
+/dev/sda1       2048       4095      2048     1M BIOS boot
+/dev/sda2       4096     266239    262144   128M Linux RAID
+/dev/sda3     266240    8654847   8388608     4G Linux swap
+/dev/sda4    8654848  113512447 104857600    50G Linux RAID
+/dev/sda5  113512448  155455487  41943040    20G Linux RAID
+/dev/sda6  155455488 1000215182 844759695 402.8G FreeBSD ZFS
+
+
+Disk /dev/sdb: 477 GiB, 512110190592 bytes, 1000215216 sectors
+Disk model: Micron_1100_MTFD
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 1FA2BBE3-C660-4F7A-9C55-3BAD5776D6CF
+
+Device         Start        End   Sectors   Size Type
+/dev/sdb1       2048       4095      2048     1M BIOS boot
+/dev/sdb2       4096     266239    262144   128M Linux RAID
+/dev/sdb3     266240    8654847   8388608     4G Linux swap
+/dev/sdb4    8654848  113512447 104857600    50G Linux RAID
+/dev/sdb5  113512448  155455487  41943040    20G Linux RAID
+/dev/sdb6  155455488 1000215182 844759695 402.8G FreeBSD ZFS
+
+Disk /dev/md1: 50 GiB, 53653536768 bytes, 104792064 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+</code></pre>
+<p>Here, <code>/dev/md1</code> does not have any partitions. It could be your source drive!</p>
+<p>Then, create a backup: <code>dd if=/dev/md1 of=/path/to/image.img bs=1M status=progress</code> (If your version of <code>dd</code> does not support <code>status=progress</code>, you can just remove it. You won’t see anything while <code>dd</code> is running then though.)</p>
+<p>You can create the backup anywhere. If you have another drive that is the exact same size as the source, you can also clone the drive (somewhat like <code>dd if=/dev/md1 of=/dev/sdx …</code>), but take extra care not to accidentally overwrite the wrong drive! If you have another storage location with enough free space, you can just store the backup in a file (as described above).</p>
+<p>You can use virtually any live Linux (Ubuntu, …) because they all contain tools like <code>dd</code> and <code>fdisk</code>. You’ll have to download Testdisk, but that’s it.</p>
+<p><strong>Update</strong>: You mention the partitions were encrypted using VeraCrypt. This makes recovery very difficult. Testdisk cannot find partition boundaries with VeraCrypt, only with older TrueCrypt volumes. You’ll have to do everything by hand.</p>
+<p>You have to guess where the first partition started (maybe at sector 2048). Create a single partition spanning the entire drive. You may then be able to mount it using VeraCrypt (preferably read-only) and, if successful, you might be able to determine the partition size. If not, try elsewhere.</p>
+<p>With the partition size in hand you would then have a rough position of where the second partition starts. Repeat the same process.</p>
+",219095,1607126
+1607153,1,"<p>The file is malformed at line 494, where the record seems to be just a fragment.</p>
+<p>This is how it looks in notepad++:</p>
+<p><a href=""https://i.stack.imgur.com/otB4q.jpg"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/otB4q.jpg"" alt=""enter image description here"" /></a></p>
+<p>It seems like there is spurious line-feed that splits line 493 in two.
+Manually joining lines 493 and 494 might fix the problem for this line
+(I haven't tried to import it).</p>
+<p>However, this line is not the only one. You should look for lines starting with <code>&quot;</code>,
+as all of them seem to belong to the preceding lines.</p>
+<p>Using notepad++, the following Replace All operation might fix all the lines:</p>
+<ul>
+<li>Find what : <code>\n&quot;</code></li>
+<li>Replace with : <code>&quot;</code></li>
+<li>Search mode : Extended</li>
+</ul>
+<p><a href=""https://i.stack.imgur.com/VGdhO.jpg"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/VGdhO.jpg"" alt=""enter image description here"" /></a></p>
+",8672,1607057
+1607154,0,"<p>Error 0xC000000F means Windows Boot Manager was unable to read the BCD store (Boot Configuration Data). However it may have been lost/become corrupted, doesn’t matter. With <code>bcdboot</code> you already discovered the magic healing tool. Whether you chose the correct partition to place the boot data, who knows.</p>
+<p>In case you changed something about where the Windows Boot Manager resides, you should regenerate the Grub configuration using <code>grub-mkconfig</code> (sometimes <code>grub2-mkconfig</code>).</p>
+<p>Discovering Windows using <code>grub-mkconfig</code> requires <code>os-prober</code>, which may be missing. <code>os-prober</code> needs to access partitions to inspect files, which may require the appropriate Grub modules (for <code>grub-mount</code>) or kernel modules (FUSE for <code>grub-mount</code> or others for regular <code>mount</code>).</p>
+",219095,1607090
+1607158,0,"<p>I can delete this answer if this doesn't resolve your issue. I don't understand how complex your data are, so this may not work.</p>
+<p>I sorted the data by Item, then Short (descending).</p>
+<p>Then here are the formulas for cell E2, F2 and G2:</p>
+<pre><code>    E2: =IF(AND($B2=$B1,$C2=0),A1,&quot;&quot;)
+
+    F2: =IF(AND($B2=$B1,$C2=0),C1,&quot;&quot;)
+
+    G2: =IF(AND($B2=$B1,$C2=0),D1,&quot;&quot;)
+</code></pre>
+<p>Drag 'em down.</p>
+<p><a href=""https://i.stack.imgur.com/IkLrH.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/IkLrH.png"" alt=""enter image description here"" /></a></p>
+",1234824,1607107
+1607182,0,"<p><code>NETWORKDAYS()</code> requires its parameters be shown differently than you are trying to enter them.</p>
+<p>You need at least two items in the <code>()</code>'s:  the start date (B1, presumably), and the end date (H12) AND they need a comma between them:</p>
+<pre><code>=IF(H12=&quot;&quot;,&quot;&quot;,NETWORKDAYS(B1,H12))
+</code></pre>
+<p>By doing the obvious subtraction, you are actually giving it just ONE value, which it sees as the start date, and not giving it anything else, hence the &quot;too few arguments&quot; problem.</p>
+<p>That's all you need to do to fix it! It's great otherwise.</p>
+",1247446,1607060
+1607189,0,"<p>The answer is documented in <a href=""https://en.m.wikipedia.org/wiki/IPv4#Addressing"" rel=""nofollow noreferrer"">Wikipedia</a>:</p>
+<blockquote>
+<p>Other address representations were in common use when classful networking was practiced. For example, the loopback address 127.0.0.1 is commonly written as 127.1, given that it belongs to a class-A network with eight bits for the network mask and 24 bits for the host number. When fewer than four numbers are specified in the address in dotted notation, the last value is treated as an integer of as many bytes as are required to fill out the address to four octets. Thus, the address 127.65530 is equivalent to 127.0.255.250.</p>
+</blockquote>
+",93929,1607184
+1607207,0,"<p>It's not a quirk. It's a feature.</p>
+<p>Remember that the dot notation of an IPv4 address is merely a way to represent the four-byte (i.e 32 bit) integer that is an IPv4 address (and that goes in the 32-bit destination field in an IP packet). Different utilities will accept different formats for this integer.</p>
+<p>I know that in the past some browsers accepted decimal integers like this as an address in the address bar. (I was surprised that my two current browsers, Firefox and Chrome, no longer do this.)</p>
+",679664,1607184
+1607220,0,"<p>You don't need <code>pad</code>. At first step do something with background, then overlay video.</p>
+<pre><code>#!/bin/bash
+ffmpeg -loop 1 -i in1.png \
+-i &quot;input 1.mp4&quot; \
+-ss 00:00:02.000 -to 00:00:14.999 -filter_complex &quot;
+[1:v]scale=ih:-2[1v];
+[0:v][1v]overlay=(W-w)/2:(H-h)/2:shortest=1,
+drawtext=fontfile=./DejaVuSerif.ttf:fontsize=30:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/5:text='Text_1':enable='between(t,5,8)',
+drawtext=fontfile=./DejaVuSerif.ttf:fontsize=30:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/5:text='Text_2':enable='between(t,8,10)',
+drawtext=fontfile=./DejaVuSerif.ttf:fontsize=30:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/5:text='Text_3':enable='between(t,10,12)'
+[v]
+&quot; -map [v] -map 1:a -c:v h264_nvenc -cq 20 -c:a copy /tmp/output.mp4 -hide_banner -y
+mpv /tmp/output.mp4
+</code></pre>
+",1225495,1606852
+1607222,0,"<p>Do you mean these reference information(&quot;obligatory,needed, obliged&quot; in the screenshoot)?</p>
+<p>If so, based on my research and tests, I also have tried to check the revelant settings, there seems to no option that could change it in Outlook. It would also be displayed even if my mailbox &quot;Work Offline&quot;. I guess these information is from system dictionary and is designed to work with spell checking, so we may not be albe to delete or disable it if we need to use spelling and autocorrect.</p>
+",1239235,1607079
+1607224,0,"<p>You can use a Add-on as described <a href=""http://www.technohelper24.com/password-protect-firefox-browser/"" rel=""nofollow noreferrer"">here</a>:</p>
+<blockquote>
+<ol>
+<li>First of all, open the Firefox browser and in the menu which presents on the top at the right side in which click on the options button and select ‘Add-ons‘ or you can apply this shortcut ctrl+shift+A.</li>
+<li>Now In Add-ons search “Master password +” and click on install button to install master password add-on on your Firefox browser. Master password add-ons help you in setting the startup password on Firefox.</li>
+<li>Now to complete the installation process restart the browser and again go option in the top right corner and click on customize option.</li>
+<li>Then search for the master password icon on the left side and drag it to the menu on the right side to add it to the main menu in the Firefox browser.</li>
+<li>Now click on the down arrow on the master password icon in the menu options and select  ‘set master password‘ option or directly apply shortcut ‘alt+l‘.</li>
+<li>Now fill a strong password in the field of New password to set as startup password and after that also select Startup menu from the same window in which tick on ‘ask for password on startup‘ checkbox and also click on OK option to apply changes. The figure is shown below. {Always remember that use a strong password as startup password which contains at least one uppercase and lower case letter, number, symbols and should be 12 characters long}
+<a href=""https://i.stack.imgur.com/y45ev.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/y45ev.png"" alt=""Change Master Password in Firefox"" /></a></li>
+<li>After that whenever you open your Firefox browser it will always ask for that password and no one can access your browser without that password.</li>
+</ol>
+</blockquote>
+",855367,1606932
+1607226,0,"<p>IPv4 addresses are unsigned 32-bit integers. In a misguided attempt to make them more human-readable, they are traditionally displayed in the UI in &quot;dotted decimal&quot; notation, where each octet (8-bit byte), starting with the most significant, is represented as a decimal number, separated from the next octet by a dot.</p>
+<p>It's not terribly surprising that some UIs might allow you to input anything they can interpret as a UInt32 and use the resulting UInt32 as the IPv4 address you intended.</p>
+",30792,1607184
+1607228,0,"<p>Yes, you can. You don't need Microsoft account to activate windows.</p>
+",1230118,1607196
+1607229,0,"<p>Just fixed the issue by installing a random package (acme, for this instance). Seems like the repo got corrupted. It's all okay now.</p>
+",1243076,1607225
+1607231,0,"<p><strong>&quot;.0&quot; can be omitted conditionally</strong></p>
+<p>You often use the &quot;ping 127.0.0.1&quot; command to do a loop test on the machine to verify whether the TCP/IP protocol suite of the machine is correctly installed. But did you find it? The same test result can be obtained by using the command &quot;ping 127.1&quot;. In fact, the two commands &quot;ping 127.1&quot; and &quot;ping 127.0.0.1&quot; are the same, both of which are performing loop tests.</p>
+<p>Why is this so? This is the skill of using IP address in Ping command application. Everyone knows that the IP address is composed of 32 binary digits. In order to make it easier for everyone to remember, every 8 binary digits are converted into decimal digits. Therefore, an easy-to-remember IP address consisting of four-part decimal digits (such as 127.0.0.1 ). Since the Windows operating system has the function of automatically filling &quot;.0&quot;, I can change &quot;127.0.0.1&quot; to &quot;127.1&quot;.</p>
+<p>However, the omission of this &quot;.0&quot; is conditionally restricted and cannot be omitted arbitrarily. In the application of the Ping command, you can only omit one or more &quot;.0&quot;s that appear before the last decimal number of the IP address, such as rewriting the &quot;ping 127.0.0.1&quot; command to &quot;ping 127.1&quot;.</p>
+<p>If the one or more &quot;.0&quot; is not next to the last part of the decimal number, but in other positions, then this &quot;.0&quot; cannot be omitted, such as &quot;ping 202.0.96.1&quot; cannot be written as &quot;ping 202.96.1&quot; &quot;. This is because the result returned by &quot;ping 202.96.1&quot; is the response message of &quot;202.96.0.1&quot; instead of the response message of &quot;202.0.96.1&quot;.</p>
+<p><strong>Number string instead of IP address</strong></p>
+<p>In the Ping command, you can also use a numeric string instead of an IP address. Run the &quot;ping 3658906394&quot; command, and you will see the return information of the IP address &quot;218.22.123.26&quot;.</p>
+<p>Why is this so? In fact, &quot;3658906394&quot; is another representation of the IP address &quot;218.22.123.26&quot;. Of course, you can also ping other IP addresses in the same way.</p>
+<p>How is the string converted? In fact, it is not complicated. Taking the IP address &quot;218.22.123.26&quot; as an example, the method of converting the IP address into a numeric string is as follows: first convert &quot;218.22.123.26&quot; to hexadecimal &quot;DA.16.7B.1A&quot;, and then remove it. After the decimal point, it becomes &quot;DA167B1A&quot;, and finally the hexadecimal number is converted to decimal &quot;3658906394&quot;, then &quot;218.22.123.26&quot; becomes &quot;3658906394&quot;. The same method is used to convert other IP addresses into numeric strings.</p>
+<p>Tip: In some LAN environments, using the &quot;Ping+number string&quot; command may fail, and the prompt message &quot;Unknown host number string&quot; appears. This is because the number string is resolved into a host name instead of an IP address.</p>
+",1221641,1607184
+1607246,0,"<p>Custom resolutions are sometimes achievable using the drivers/software for your graphics display hardware. Or by using third-party software such as this: <a href=""https://www.monitortests.com/forum/Thread-Custom-Resolution-Utility-CRU"" rel=""nofollow noreferrer"">https://www.monitortests.com/forum/Thread-Custom-Resolution-Utility-CRU</a></p>
+<p>Using the (deliberately well-hidden) customization capabilities of my Intel graphics
+software on my former Windows Vista machine, I was able to create an active display
+area of any size and position on my video screen. It was necessary to learn how to create suitable Detailed Timing Descriptors for my monitor to to that.</p>
+",99091,1607218
+1607271,1,"<p>Assuming there're no # in the text, you can do:</p>
+<ul>
+<li><kbd>Ctrl</kbd>+<kbd>H</kbd></li>
+<li>Find what: <code>^\h*(#.+)\R((?:(?!#)[\s\S])+#.+)</code></li>
+<li>Replace with: <code>$2 $1</code></li>
+<li><strong>CHECK</strong> <em>Wrap around</em></li>
+<li><strong>CHECK</strong> <em>Regular expression</em></li>
+<li><strong>UNCHECK</strong> <code>. matches newline</code></li>
+<li><kbd>Replace all</kbd></li>
+</ul>
+<p><strong>Explanation:</strong></p>
+<pre><code>^           # beginning of line
+    \h*         # optional horizontal spaces
+    (#.+)       # group 1, a &quot;#&quot; and 1 or more any character but newline
+    \R          # any kind of linebreak
+    (           # group 2
+        (?:         # non capture group
+            (?!#)       # negative lookahead, make we haven't a &quot;#&quot; just after current position
+            [\s\S]      # any character
+        )+          # end group, must appear 1 or more times
+        #           # a &quot;#&quot;
+        .+          # 1 or more any character but newline
+    )           # end group
+</code></pre>
+<p><strong>Screenshot (before):</strong></p>
+<p><a href=""https://i.stack.imgur.com/m6rg8.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/m6rg8.png"" alt=""enter image description here"" /></a></p>
+<p><strong>Screenshot (after):</strong></p>
+<p><a href=""https://i.stack.imgur.com/SvFZE.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/SvFZE.png"" alt=""enter image description here"" /></a></p>
+",763386,1607169
+1607277,0,"<p>If you're an admin, System Prefs &gt; Users &amp; Groups &gt; Login Options.<br />
+Unlock the panel with the padlock icon, bottom left.</p>
+<p><a href=""https://i.stack.imgur.com/AEgWU.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/AEgWU.png"" alt=""enter image description here"" /></a></p>
+<p>Once you've disabled or changed the default login, then you can deal with whether or not to keep the old user's account.</p>
+",347380,1607176
+1607290,0,"<p>All i found is to reset iptables by this command :</p>
+<pre><code>sudo ufw reset
+</code></pre>
+<p>And it helps! You just need to re-run daemon after this. Be carefully in case if you need to proxy outer connections to docker - so i think it will loose this functionality after this command, but for my purposes it is perfect.</p>
+",572151,1607289
+1607292,0,"<p>I figured it out. The problem was, that the &quot;Mapping&quot; was not set.
+After setting up the mapping, it works as expected.</p>
+",527439,1607286
+1607295,1,"<p>Unfortunately, there is no way to freeze a bottom row of a table. However, there are some solutions to recreate this behavior.</p>
+<ol>
+<li><p>The solution you mentioned yourself is in my opinion the best option, you can create a row total above the table heading and refer it to the table's total row. Then you can freeze the top rows.</p>
+</li>
+<li><p>Another solution is to use the split screen function. To do this select the total row, navigate to the View menu and click on split. This will split your worksheet in two windows. You can then arrange the window to your preference.</p>
+</li>
+<li><p>You can also create a new window by navigating to the view menu and clicking on New window. Then arrange All and select e.g. horizontal. This will open a new Excel window with the same content and arrange the windows. This is in my opinion the least favorable option but it can be handy if you have a second monitor to display it on.</p>
+</li>
+</ol>
+",673733,1607279
+1607298,1,"<p>A disk usage of 100% does not necessarily mean that your hard drive is faulty. To check your drive for errors you can use software such as <a href=""https://hddscan.com/"" rel=""nofollow noreferrer"">hddscan.com</a> or use the built-in windows disk checker (instructions below). Since your hard drive disk is reasonably old, it might be a good idea to install your windows operating system on a ssd and use your current hard drive as a storage drive. This will speed up your operating system and probably solve this issue.</p>
+<p>To check a drive:</p>
+<ol>
+<li>Open Windows Explorer</li>
+<li>Click on 'This PC'</li>
+<li>Right click on the drive you want to scan (in most cases C:)</li>
+<li>Click on 'Properties'</li>
+<li>Go to the 'Tools' tab</li>
+<li>Under error-checking click 'Check now'.</li>
+</ol>
+",673733,1607263
+1607300,0,"<p>You still need to expand the logical volume and the filesystem.</p>
+<p>Try somthing like</p>
+<pre><code>lvresize -l +100%FREE /dev/mapper/fedora_localhost--live-root
+resize2fs /dev/mapper/fedora_localhost--live-root
+</code></pre>
+",650977,1607049
+1607302,1,"<p>I don't have alot of OVS experience. Like a total of 10 min.</p>
+<p>But as I see it, a &quot;bridge&quot; is kinda the same as a VLAN. The VLAN itself can't do anything. For different machines to communicate over that bridge/VLAN  they need to connect to it via ports. So imagine a bridge as physical Layer 2 switch/hub and ports as, well, ports on that switch. A switch without ports is useless, and the only way to connect to this switch is through ports.</p>
+<p>Regarding your first question:</p>
+<p>This interface seems to be some sort of internel router. So I guess you could see the ovs-system interface as THE vswitch itself.</p>
+",650977,1606999
+1607317,1,"<p>Opening a command prompt window and typing <code>ipconfig /renew</code> may work if your router provides DHCP service as is common with home routers and if your configuration changes didn't make the DHCP pool range inconsistent with the new IP address.</p>
+",52492,1607306
+1607344,0,"<p>One work-around is to change the other formulae instead, e.g. for Z20, instead of using</p>
+<blockquote>
+<p>=M20+W20</p>
+</blockquote>
+<p>use</p>
+<blockquote>
+<p>=IF((M20+W20)=0,&quot;-&quot;,(M20+W20))</p>
+</blockquote>
+<p>which will set the cell equal to &quot;-&quot; whenever the formula returns a zero.</p>
+",1241409,1607333
+1607350,3,"<p>This here</p>
+<pre><code>Media and Data Integrity Errors:    17,200,105
+</code></pre>
+<p>means it's really really broken. Which is why it put itself into read-only mode.</p>
+<p>Get it replaced.</p>
+",327880,1607192
+1607357,0,"<p>There is no problem/error in the source file.</p>
+<p>If you set properly the encoding and the <strong>field separator</strong> (it's comma) you should not have any problem.
+Here my example libreoffice open window (I do not have excel).</p>
+<p><a href=""https://i.stack.imgur.com/l6qQA.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/l6qQA.png"" alt=""enter image description here"" /></a></p>
+",138308,1607057
+1607365,-1,"<p>If you really want to do it try this:
+<code>sudo mount -o remount,rw &lt;device_goes_here&gt;</code></p>
+",350723,1607192
+1607368,0,"<p>No. Such apps as Thunderbird do not communicate with your VPN server, nor do they know about it. The only app which talks to the VPN server is the VPN client.</p>
+<p>Instead, VPNs (unlike proxies) work at IP packet level. Thunderbird still contacts 40.101.121.18 as before, but the VPN client intercepts those IP packets before they leave your system and encapsulates them within a second IP packet with its own destination address.</p>
+",1686,1607362
+1607372,8,"<p>No, for two main reasons.</p>
+<ul>
+<li><p>Intel and AMD CPUs in desktop and laptop computers, if properly installed, cooled, not overclocked, and not subject to electrical problems like a bad power supply, will last a very long time even if all cores are constantly 100% utilized--such that you don't usually have to worry about &quot;wearing out&quot; your CPU.</p>
+</li>
+<li><p>Furthermore, even from the first PC's of the early 80's, disk drives used something called Direct Memory Access (DMA).  Floppy drives have used DMA since the first PC, and hard drives started to have DMA modes probably sometime in the late 80's.</p>
+<p>DMA basically allows drives to transfer data to and from RAM without the CPU in the middle.  So hard drive transfers have even less of a CPU impact than you might think.</p>
+<p>Where the CPU might still be in the middle is if you have disk encryption running on your system, such as Bitlocker, TrueCrypt/VeraCrypt, or other.  But it's still not going to be anything to worry about.</p>
+</li>
+</ul>
+<p>You are causing an HDD hard drive (not an SSD) to work harder by copying from it constantly.  You are adding wear to an SDD by copying <em>to</em> it.  Spinning-rust HDDs and even SSDs do have a finite lifetime that is likely less than your CPU.</p>
+<p>TL;DR - you should be much more worried about the lifetime of your drives (and have backups/multiple copies) than the CPU.</p>
+",51705,1607367
+1607375,4,"<p><strong>Damage to CPU - Minimal, if any</strong></p>
+<p>1a. CPUs are not heavily involved in file copies - The CPU's job is to tell the other hardware to do the transfer, and the actual transfer of 1's and 0's is left to other chipsets/IO's to do.</p>
+<p>1b. Even if a file transfer did use a lot of CPU, CPUs have incredibly good longevity and usually processors don't fail or go bad - they <em>do</em> get replaced regularly due to being outdated - which speaks to the fact of its longevity - a CPU will outlive its efficiency lifespan.</p>
+<p><strong>Damage to HDD - Still minimal, but worth considering</strong></p>
+<ol>
+<li><p>Using an HDD wears an HDD. It has moving parts, so the more they're used, the more potential for damage from wear - but if you can't use it it's useless anyway. The best practice for HDDs is to know that at some point, it <strong>will</strong> fail and to have backups - this is the only real protection you have against HDD failure - backups.</p>
+</li>
+<li><p>You <em>can</em> reduce the wear and tear on the HDD by ensuring that you run a single copy command at any given time (which is what I suspect is the typical method), so whether you do a drag &amp; drop or a command line like <code>robocopy</code>, make sure you only do one of this actions and let it complete before starting another one.</p>
+</li>
+</ol>
+<p><strong>Your specific questions</strong></p>
+<ol>
+<li><p>No, you will not affect your CPU in a negative way, in fact you can open task manager during this and probably witness your CPU not go over 20% usage, depending on what else your computer is doing in the background.</p>
+</li>
+<li><p>No, all CPUs are built to be robust - a 3rd gen i7 vs an 8th gen i9, or a Ryzen7, what have you, is engineered to last and endure utilization far above what a file transfer will do to it.</p>
+</li>
+<li><p>No, this would not be a helpful method to reduce the damage that we've already stated is negligible. Even if your CPU isn't properly cooled, this low utilization should not make it overheat - and if it does, its performance will only be affected while it's too hot - its lifetime performance/longevity will not be affected by overheating.</p>
+</li>
+</ol>
+",1025486,1607367
+1607394,4,"<p>You must upgrade your operating system whether you wish to or not. I am posting this from XP Pro using Chrome.</p>
+<p>But the highest version of Chrome (using it here) is V49.</p>
+<p>Whatsapp requires V60 and that will not run in XP.</p>
+<p>So if you wish to run XP, you are limited to what it can do.</p>
+<p>If you wish to run modern Apps, you must upgrade.  There is no other alternative.</p>
+",1079976,1607393
+1607407,0,"<p>If you wish to stay with XP, a solution that will work for you is to install
+an Android emulator. The emulator will act as an Android phone running on Windows.</p>
+<p>The steps to follow are:</p>
+<ul>
+<li>Visit the <a href=""https://www.bluestacks.com/"" rel=""nofollow noreferrer"">Bluestacks website</a>
+and download the emulator</li>
+<li>Install the Bluestacks emulator</li>
+<li>Run the emulator and Add your google account</li>
+<li>Find and install the WhatsApp application</li>
+<li>Verify your WhatsApp account</li>
+<li>Enjoy WhatsApp on PC.</li>
+</ul>
+<p>For detailed instructions and screenshots see the article<br />
+<a href=""http://genrontech.com/whatsapp-free-download-for-laptop-pc/"" rel=""nofollow noreferrer"">WhatsApp Free Download for Laptop (Windows 10/8/7/XP)</a>.</p>
+",8672,1607393
+1607412,1,"<p>A very good question to which there is no answer
+(if you use Windows extended desktop mode of course).</p>
+<p>In some cases, forced saving Windows Desktop elements/settings might be the solution.
+Try <strong><a href=""https://www.softwareok.com/?seite=Freeware/DesktopOK"" rel=""nofollow noreferrer"">DesktopOK</a></strong> tools. Many settings will help you to find the right option</p>
+",768306,1607219
+1607417,6,"<p>Most hard disks are rated for a few terabytes read/write <em>per day</em> for several years.
+Copying 20 TB once will use up a few days of the disk's lifetime, which is counted in
+years, usually 5-10 years.</p>
+<p>You may assure yourself that this is true for your disks by consulting the
+manufacturer's specifications.</p>
+<p>As regarding the CPU, such an operation will not use it at all.
+The CPU will most of the time be waiting upon the disks, so will not even warm up
+noticeably.</p>
+<p>So don't worry and go ahead. If something fails during the operation,
+this only means that the component was already in bad shape and would have failed
+anyway in a few days time.</p>
+",8672,1607367
+1607420,-1,"<p>It uses symbols, lowercase, uppercase, numbers, words, special characters, etc. and that is all unique for each user and it has at least 12 letters.
+google stores all your personal data in your account on it servers and That's google man! it is safe. you should set recover email and phone number for you account for not losing it.</p>
+",1226477,1607395
+1607427,1,"<p>The &quot;Client Server Runtime Process&quot; (or <code>csrss.exe</code>) is an essential
+Windows component and does not use heavily the GPU.
+However, many bitcoin mining viruses love to disguise themselves as
+this process, and they do use the GPU.</p>
+<p>I suggest using
+<a href=""https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer"" rel=""nofollow noreferrer"">Process Explorer</a>
+to verify that the running process is indeed <code>C:\Windows\System32\csrss.exe</code>.</p>
+<p>If that truly the case and this is the legitimate process, then something is wrong
+with Windows.
+Start with running the commands
+<a href=""https://www.tenforums.com/tutorials/2895-run-sfc-command-windows-10-a.html"" rel=""nofollow noreferrer"">sfc /scannow</a>
+and the DISM command in the article.
+If this doesn't help, do a
+<a href=""https://www.tenforums.com/tutorials/16397-repair-install-windows-10-place-upgrade.html"" rel=""nofollow noreferrer"">Repair Install of Windows 10 with an In-place Upgrade</a>.</p>
+<p>If the process is not legitimate, run deep antivirus scans using at least
+Windows Defender and
+<a href=""https://www.malwarebytes.com/"" rel=""nofollow noreferrer"">Malwarebytes</a>.
+For more advice see the post
+<a href=""https://superuser.com/questions/100360/how-can-i-remove-malicious-spyware-malware-adware-viruses-trojans-or-rootkit"">How can I remove malicious spyware, malware, adware, viruses, trojans or rootkits from my PC?</a></p>
+",8672,1607338
+1607429,0,"<p>Ok so if I understand your question correctly, you want to look across row 14 for e.g &quot;china&quot; and return e.g. &quot;H14&quot; (if H14 = &quot;china&quot;), then look down column A for &quot;Revenue from Operations&quot; and return say &quot;A100&quot; (if A100 = &quot;Revenue from Operations&quot;, then combine col(H14) and row(A100) to look up the value at H100.</p>
+<p>Lets assume all your numeric data is located at B15:Z1000, your cost centres are B14:Z14 and your line items A15:A1000 then</p>
+<pre><code>=INDEX(B15:Z1000, MATCH(&quot;Revenue from Operations&quot;, A15:A1000,0), MATCH(&quot;China&quot;,B14:Z14,0))
+</code></pre>
+",1241807,1607388
+1607434,0,"<p>It's the power supply. It works for a second (I see 5 VDC on the USB port), then it stops working.</p>
+",1247722,1607340
+1607435,1,"<p>Okay so in column E you'll calculate the row offset to the next occurance of the current row's ID. In column F you'll calculate the difference in hours (starting in E2 and F2)</p>
+<pre><code>E2 =MATCH(A2, A3:A$1001,0)
+F2 =IF(D2=&quot;Done&quot;, 10000, IF(ISNUMBER(E2), INDEX(B3:B$1001,E2)+INDEX(C3:C$1001,E2)-(B2+C2),10000))
+</code></pre>
+<p>We will return a disproportionately large number e.g. 10000 for the first ID of its kind, or if an ID hasn't logged a &quot;done&quot; yet.</p>
+<p>Now for counting total updates:</p>
+<pre><code>=COUNTIFS(LEFT(A2:A1000,2),&quot;AB&quot;,D2:D1000,&quot;Ongoing&quot;)
+</code></pre>
+<p>and for counting updates within 3 hours</p>
+<pre><code>=COUNTIFS(LEFT(A2:A1000,2),&quot;AB&quot;,F2:F1000,&quot;&lt;=3&quot;)
+</code></pre>
+<p>NB: because we use LEFT on an array larger than one cell, we need to tell Excel to calculate using array formulas by finishing the formula by pressing CTRL+SHIFT+ENTER.</p>
+",1241807,1607294
+1607436,1,"<p>The VMware Process is the total amount of VMware memory plus the machine memory.</p>
+<p>What you see looks fine to me.</p>
+<p>I have a Kali machine in VMware Workstation plus a couple of other machines. Each machine is assigned 3 GB (so 9 GB total).</p>
+<p>But the total amount of VMware memory is more in Task Manager because of VMware usage. About 10 GB total (varies a bit up and down).</p>
+<p><strong>Follow up:</strong>  Updates in Virtual Machines consume memory that may or may not be released. So yesterday, 10 GB used, machines all updated, and then today (fresh start up, same machines running), 8 to 9 GB used.  So as I noted earlier, it will vary up and down.</p>
+",1079976,1607433
+1607457,0,"<p>I have done this before.</p>
+<p>Get the model of your machine, go to the manufacturer's support site, download all the drivers for your machine.</p>
+<p>Now have the drivers on hand as you begin to install (have them on a USB Key ready for access when needed).</p>
+<p>Remember that Windows 7 is over a year out of support, so your success may be limited.</p>
+<p>One thing to consider is that it may be better to put the Windows installer on a DVD / CD  and install from that.   Why? Better chance that it will find the device driver.  It may not be able to find your USB device.</p>
+<p>All Windows versions from XP forward to Windows 10 have built in Ethernet drivers. Make sure the computer is plugged into working Ethernet when you install.</p>
+",1079976,1607452
+1607462,0,"<p>If you run Office 2013 or newer, try 3D references. Keep the order of your projects sheets like this:</p>
+<pre><code>Summary / Proj1 / Proj2 / ProjNew / ProjLast / Template
+</code></pre>
+<p>Now</p>
+<pre><code>=SUM(Proj1:ProjLast!A1)
+</code></pre>
+<p>will sum across all project sheets. Just make sure your new project sheet stays sandwiched between Proj1 and ProjLast. If all the values in Template are zero (and you only SUM and not AVERAGE), you could of course =SUM(Proj1:Template!A1) and reduce the risk of skipping a new sheet.</p>
+",1241807,1607276
+1607468,0,"<p>It looks like you may now only be able to do it from the youtube app -&gt; share -&gt; whatsapp</p>
+<p>Here is what I found on it <a href=""https://www.indiatoday.in/information/story/how-to-share-youtube-links-on-whatsapp-status-step-by-step-guide-1669701-2020-04-22#:%7E:text=Step%201%3A%20Open%20YouTube%20on,and%20then%20Share%20on%20Status"" rel=""nofollow noreferrer"">https://www.indiatoday.in/information/story/how-to-share-youtube-links-on-whatsapp-status-step-by-step-guide-1669701-2020-04-22#:~:text=Step%201%3A%20Open%20YouTube%20on,and%20then%20Share%20on%20Status</a>.</p>
+<p>Thanks,</p>
+<p>Mike</p>
+",1247933,1607432
+1607472,-2,"<p>Back when I installed Windows 7 all the time I would use a PartedMagic disk to boot up the machine and download the drivers to a USB flash drive (PartedMagic is amazing at not needing any drivers).</p>
+<p><strong>But if you have a Windows 7 computer with the key on a sticker... you can use it to license the same flavor of Windows 10.</strong></p>
+<p>Get yourself a Windows 10 installer setup on a USB flash drive.</p>
+<p>Just Google &quot;windows 10 iso&quot; from a buddy's computer with Windows 10, download the installer, and create the USB flash drive installer.</p>
+<p>The installer will not have a problem with USB 3.0, unlike the Windows 7 installer.</p>
+<ul>
+<li>Pick the same version of Windows 10 as your Windows 7 key (Home or Pro)</li>
+<li>Do a custom install.</li>
+<li>Wipe all pre-existing partitions (assuming you don'’t need to recover anything, if you do grab it off first and then start over).</li>
+<li>Create a new partition (it will create a few) keep the primary selected and start the install</li>
+<li>Don't bother entering a key yet if it asks you during the install.</li>
+</ul>
+<p>Once you are done and logged in go to:</p>
+<blockquote>
+<p>File explorer -&gt; right-click &quot;this pc&quot; -&gt; Properties -&gt; change product key -&gt; enter the windows 7 key</p>
+</blockquote>
+<p>You will now have a fully activated Windows 10.</p>
+",1247933,1607452
+1607485,0,"<p>Regular Windows programs use the Win32 subsystem and as a result don't handle Unix paths, only Windows paths.  When you use a path to a Windows file system, it gets translated into a Windows path.</p>
+<p>There are ways to specify file paths under WSL, <a href=""https://devblogs.microsoft.com/commandline/whats-new-for-wsl-in-windows-10-version-1903/"" rel=""nofollow noreferrer"">using the <code>\\wsl$</code> prefix</a>.  You will likely need to use such a path for a Windows program using this Windows syntax.  However, not all Windows programs gracefully handle this path syntax, and some very much want a standard path with a drive letter, so it may not be possible to use this syntax with all programs.</p>
+",977046,1607478
+1607497,0,"<p>Google <a href=""http://%20https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg"" rel=""nofollow noreferrer"">picture-in-picture-extension</a> should do the job with Chrome. Note that only after the video is started the extension will create an always on top PIP.
+It does so because it seems to PIP only the media streams components like Meet videos and YouTube videos.</p>
+<p>This answer is originally addressed to this <a href=""https://superuser.com/questions/774854/google-hangouts-video-call-always-on-top"">question</a>.</p>
+",310492,1607496
+1607519,0,"<p>You can find downloads of nanozip <a href=""https://archive.org/download/nanozip.net"" rel=""nofollow noreferrer"">here</a>. It contains links for Linux and Windows.</p>
+<p>Source:</p>
+<p><a href=""https://myembeddeddiary.wordpress.com/2017/02/08/how-to-download-nanozip-for-windows/"" rel=""nofollow noreferrer"">How to download Nanozip for windows?</a></p>
+",855367,1607511
+1607525,0,"<p>By examining the <code>PROMPT</code> string, you'll notice that it consists of five blocks:</p>
+<ol>
+<li>in blue the current directory</li>
+<li>SPACE</li>
+<li>in red the git branch</li>
+<li>SPACE</li>
+<li>the prompt indicator (<code>&gt; </code>)</li>
+</ol>
+<p>So, if you're not inside a git repo, the third block will be empty and you end up with two adjacent blanks (block 2 and 4).</p>
+<p>What you want is the blank of block 4 only if you're inside a git repo. You can achieve this for example by putting the blank into the <code>vcs_info</code> style and ommiting it from the <code>PROMPT</code>, like so:</p>
+<pre><code>zstyle ':vcs_info:git:*' formats '(%b) '
+PROMPT='%F{blue}%B%1/%b%f %F{red}%B${vcs_info_msg_0_}%b%f&gt; '
+</code></pre>
+",195224,1607489
+1607557,0,"<p>Ok I got it working!</p>
+<p>My method was booting from a Live Ubuntu USB, installing <a href=""https://help.ubuntu.com/community/Boot-Repair"" rel=""nofollow noreferrer"">Boot-Repair</a> &amp; letting it do its magic. The automatic repair function worked for me.</p>
+",1248050,1607544
+1607563,2,"<p>It looks like you're trying to access a SMB network share. The problem is that because the SSH server did not receive your password during login, it doesn't know what password to use when authenticating against that SMB fileserver. (SMB <em>does not</em> just trust the client saying &quot;this is uid 1000&quot; like NFS does.)</p>
+<p>When you connect using password authentication, the sshd  preserves the username and password in memory as part of the Windows &quot;logon session&quot;. The logon password can then be used for accessing SMB fileservers directly, or for acquiring Kerberos tickets, or for decrypting other stored credentials.</p>
+<p>But when you connect using SSH publickey authentication, the sshd does not know your password, and Windows does not have any way to log in to SMB fileservers without it.   You need to manually connect to those using <code>net use '\\DNVM'</code> and provide the password for each connection.</p>
+",1686,1607551
+1607571,0,"<p>I don't think that the problem is with the graphics card, but rather with the monitor.
+When the card is enabled, Windows apparently uses it, but nothing comes up on the
+monitor.</p>
+<p>You need to find the source of the problem by testing:</p>
+<ul>
+<li>Download and install the latest graphics driver from the website of the manufacturer
+of the graphics card.
+If this doesn't help, delete in Device Manager the graphics card device and reboot
+so Windows will discover it again and install its own driver.</li>
+<li>Try another monitor cable,</li>
+<li>Try another monitor,</li>
+<li>Try another graphics card.</li>
+</ul>
+<p>These tests will tell you whether it's a cable problem, driver problem,
+a monitor problem or truly a graphics card problem.</p>
+<p>If you don't have all the required parts for testing, a repair-shop might be
+able to help.</p>
+",8672,1607537
+1607587,1,"<p>Because UEFI and BIOS operate <em>before</em> the operating system does any work. It is the core program that runs from ROM to initialise the most basic hardware elements and then run the OS bootloader.</p>
+<p>While the OS must install itself in the correct way for the firmware, it is <em>not</em> a UEFI or BIOS OS.</p>
+<p>UEFI and BIOS provide core system services and is completely separate from the operating system.</p>
+<p>UEFI and BIOS are completely distinct and separate system firmwares.</p>
+<p>As such the operating system must understand what booted it, BIOS or UEFI, and installing a UEFI OS on a BIOS system is essentially impossible because the methods of handover from firmware to operating system are completely different.</p>
+<p>At best if you have a UEFI system firmware with Compatibility Support Module (CSM/BIOS) interface you would be able to go into your firmware, switch the CSM on or off and boot the other OS, but a UEFI firmware cannot launch a BIOS bootloader and neither can a BIOS firmware launch a UEFI bootloader.</p>
+",19943,1607585
+1607590,-1,"<blockquote>
+<p>I have this problem before and already reinstalled fresh clean
+windows...</p>
+</blockquote>
+<p>I might normally suggest updating the USB drivers, but that would have happened with the fresh install.</p>
+<p>Try updating the machine BIOS to see if that helps.</p>
+<p>Otherwise, yes, it is a hardware problem.</p>
+",1079976,1607588
+1607591,0,"<p>All inputs must have the same attributes. Yours have different H.264 profiles (Baseline vs High) and frame rates.</p>
+<p>Make one video match the other:</p>
+<pre><code>ffmpeg -i 2.mp4 -c:v libx264 -r 30 -c:a copy 2b.mp4
+</code></pre>
+<p>High profile will be picked by default, so you don't need to manually add it, but if you wanted Baseline instead use <code>-profile:v baseline</code>.</p>
+<p>Or convert all videos to a comment set of attributes regardless of input attributes. See <a href=""https://stackoverflow.com/a/57367243/"">How to concatenate videos in ffmpeg with different attributes?</a></p>
+",110524,1607566
+1607601,0,"<p>Well, I decided to just take a leap of faith and try, and it worked! The answers:</p>
+<ol>
+<li>I just used <code>localhost</code> as the domain name, which works fine.</li>
+<li>Element-desktop works just fine if you point it to the server, in my case 192.168.xxx.1:8008.</li>
+<li>The reverse proxy is not needed. Using plain http works fine out of the box. Still about uncertain whether it's the most sensible thing to do, but it's the simplest.</li>
+<li>No external ports are needed. I've force-closed TCP 8443 as an extra precaution, but that should not actually be necessary. Synapse needs to listen on 0.0.0.0, but mautrix-whatsapp can be told to listen only on 127.0.0.1.</li>
+</ol>
+",563010,1606408
+1607616,0,"<p><kbd>Shift</kbd> + <kbd>Search</kbd> + <kbd>Down</kbd> selects the next item on a Chrome Book, on everything else it is</p>
+<p><kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>Down</kbd></p>
+<p>To just start reading from the current cursor position it is</p>
+<p><kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>r</kbd></p>
+<p><a href=""https://support.google.com/chromebook/answer/7031755?hl=en-GB"" rel=""nofollow noreferrer"">You may find this page more useful for shortcuts on ChromeVOX</a>, wherever it says <kbd>Launcher</kbd> or <kbd>Shift</kbd> + <kbd>Search</kbd> you just use <kbd>Control</kbd> + <kbd>Alt</kbd> on anything other than a ChromeBook.</p>
+",1248173,1607614
+1607644,1,"<p>When you install windows, The C:\ location has TrustedInstaller as owner, so you need administrative permissions to write in the folder. You will have rights to create folders, but to write a file, you need admin permissions. You can manually fix this, but its not recommended to do this. Instead, it is recommended to create a folder in the root of C and use that instead.</p>
+",311586,1607641
+1607654,0,"<blockquote>
+<p>I'm wondering if this will affect my cpu long term in ANY way.</p>
+</blockquote>
+<p><strong>Everything</strong> will affect your CPU life in <strong>SOME</strong> way.</p>
+<p>It is just that many things (like your copying data from one HDD to another) do so in such a minuscule way, it is not worth mentioning.</p>
+<p>So yes, your use of CPU for few hours will shorten it's life by few hours.
+You would also shorten it's life for few hours if it was showing screensaver for few hours, instead of copying your data. And even if computer was turned off, the CPU (and other components) would age (albeit at a usually much slower rate).</p>
+<p>So to answer your question: <strong>It doesn't matter</strong> as the effect is incredibly small. Just copy the things you need to copy.</p>
+<p>Anyway, the rest of your computer system (like motherboard and aforementioned HDDs) will very likely die much sooner than your CPU, leaving your computer useless.
+And probably, even before that motherboard and disks die, your computer will be so obsolete that you will not be using it even if it was still functional (like, find a few decades years old computer in museum and try to make it do such a simple task as browsing this web site)</p>
+",239311,1607367
+1607656,0,"<p>When you try to run <code>rm *.bar</code> and there is no file that matches <code>*.bar</code>, basically two things can happen:</p>
+<ul>
+<li><p>The POSIX behavior is the shell runs <code>rm</code> with literal <code>*.bar</code> as an argument. The tool tries to remove a file literally named <code>*.bar</code> (as if you run <code>rm '*.bar'</code>), it fails and prints something like <code>rm: *.bar: No such file or directory</code>. This is how the POSIX shell (<code>sh</code>) and compatible shells behave.</p>
+</li>
+<li><p>Non-POSIX behavior is the shell detects there is no match, prints something like <code>no matches found: *.bar</code> and doesn't run <code>rm</code> <em>at all</em>. This is how Zsh behaves by default. (For comparison: in Bash you can switch to this behavior by <code>shopt -s failglob</code>.)</p>
+</li>
+</ul>
+<p>An error from <code>rm</code> (the former case) is printed to the stderr of <code>rm</code>. An error from the shell (the latter case) is printed to the stderr of the shell.</p>
+<p>The redirection in <code>rm *.bar 2&gt;/dev/null</code> affects the stderr of <code>rm</code> only<sup>+</sup>. In your example <code>rm</code> doesn't even run.</p>
+<p>To redirect the stderr of the shell you need <code>exec</code>. Example:</p>
+<pre><code>exec 2&gt;/dev/null
+</code></pre>
+<p>In Zsh you can even close it:</p>
+<pre><code>exec 2&gt;&amp;-
+</code></pre>
+<p>A reasonable approach is to duplicate the original stderr beforehand, just in case you need to use (or restore) it later. Example (note if you want to paste this code into an interactive Zsh then you should invoke <a href=""https://unix.stackexchange.com/a/557490/108618""><code>setopt interactive_comments</code></a> first):</p>
+<pre class=""lang-bsh prettyprint-override""><code>exec 7&gt;&amp;2           # &quot;save&quot; stderr
+exec 2&gt;/dev/null    # redirect
+rm *.bar
+whatever
+exec 2&gt;&amp;7           # restore
+exec 7&gt;&amp;-           # close descriptor which is no longer needed
+</code></pre>
+<p>Here <code>7</code> is an arbitrary single-digit number, otherwise unused as a file descriptor. The first two lines can be written as one: <code>exec 7&gt;&amp;2 2&gt;/dev/null</code>; similarly the last two lines can.</p>
+<p>Note <code>rm</code> or any command (like <code>whatever</code>) invoked without stderr redirection inherits stderr from the shell. This means in the above example <code>rm</code> (if it ever runs) and <code>whatever</code> will print their error messages (if any) to <code>/dev/null</code>. After <code>exec 2&gt;/dev/null</code> you can invoke any number or commands and they all will have <code>/dev/null</code> as their stderr. If you really want to suppress all kinds of error messages then this is the way.</p>
+<p>The solution works in many shells, not only in Zsh. If you want to redirect stderr of an interactive shell then keep in mind some less sophisticated shells use stderr to print their prompt.</p>
+<p>Note a process may redirect its own stderr (like our shell does with <code>exec 2&gt;…</code>); or it can print error messages to stdout or to <code>/dev/tty</code> (it shouldn't, but it technically can). Therefore <code>exec 2&gt;/dev/null</code> does <em>not</em> guarantee you will see no messages that look like error messages.</p>
+<p>After <code>exec 2&gt;/dev/null</code> you still can redirect stderr of any command on demand. E.g. if instead <code>whatever</code> we had:</p>
+<pre><code>whatever 2&gt;&amp;7
+</code></pre>
+<p>then its error messages would go to the original stderr we deliberately saved as file descriptor <code>7</code>.</p>
+<hr />
+<p><sup>+</sup> Strictly: it affects &quot;<code>rm</code>&quot; before and after it becomes (or tries to become) <code>rm</code>. Bear with me. The redirection in <code>rm … 2&gt;/dev/null</code> starts as a redirection performed by a <a href=""https://unix.stackexchange.com/q/31118/108618"">forked shell that is about to replace itself with <code>rm</code> executable</a>. This shell redirects its own stderr before it tries to replace itself with <code>rm</code>. Any error it reports after performing the redirection will go to <code>/dev/null</code>. E.g. if <code>rm</code> is not to be found then the already performed redirection will suppress the <code>command not found</code> error.</p>
+",432690,1607629
+1607659,0,"<p>Your <code>awk</code> command properly keeps <code>valueA:valueB</code> and <code>valueD:valueE</code> example lines, and it removes the <code>valueC:</code> line (therefore I'm not sure what you mean by &quot;seems to match <em>everything</em>&quot;).</p>
+<p>The command keeps <code>:valueG</code> because you don't test the first field at all.</p>
+<p>&quot;Don't print lines where any of two columns is empty&quot; can be coded in <code>awk</code> as:</p>
+<pre><code>awk -F : '! ( $1==&quot;&quot; || $2==&quot;&quot; )'
+</code></pre>
+<p>The task is equivalent to &quot;print only lines where each column is non-empty&quot;:</p>
+<pre><code>awk -F : '$1!=&quot;&quot; &amp;&amp; $2!=&quot;&quot;'
+</code></pre>
+<p>Note <code>awk</code> is a tool very well suited to deal with the problem. Our two lines reflect the desired logic in terms of &quot;delimiter&quot; (<code>-F :</code>), &quot;columns&quot;/&quot;fields&quot; (<code>$1</code>, <code>$2</code>) &quot;being empty&quot; (<code>…==&quot;&quot;</code>) etc. There may be solutions with other tools, but their operation won't necessarily express the logic so clearly. E.g. with <code>grep</code>:</p>
+<pre><code>grep '.:.'
+</code></pre>
+<p>The above command works fine and it's simpler than the <code>awk</code> ones. Its form doesn't directly reflect the gist of the problem though. While its minimalism pleases me aesthetically, I still think <code>awk</code> is the Right Thing.</p>
+",432690,1607637
+1607670,0,"<p>As <a href=""https://superuser.com/users/432690/kamil-maciorowski"">Kamil Maciorowski</a> pointed out in the comments, a shell configuration <code>set -e</code> option somehow creeped into my shell session configuration and basically caused any shell command that exits with anything other than zero to kill the shell process and by extension the underlying tmux pane. Removing that option fixes the problem.</p>
+",278403,1607663

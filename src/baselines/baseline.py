@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np
 import xml.etree.ElementTree as ET
-from ValidTestData import get_df
-from ValidTestData import create_datasets
 
 
 
@@ -19,10 +17,15 @@ def baseline(q, a):
     return np.mean(accr)
 
 
-def main(): 
-    FILE = '/Posts.xml'
-    SPLIT_DATE = pd.datetime(2019, 9, 1)
-    train_q, train_a, valid_q, valid_a, test_q, test_a = create_datasets('', 'Posts.xml', SPLIT_DATE)
+def main(configs):
+    OUTPUT = configs['output']
+    train_q = pd.read_csv(OUTPUT + '/TrainQuestions.csv')
+    train_a = pd.read_csv(OUTPUT + '/TrainAnswers.csv')
+    valid_a = pd.read_csv(OUTPUT + '/ValidQuestions.csv')
+    valid_q = pd.read_csv(OUTPUT + '/ValidAnswers.csv')
+    test_a = pd.read_csv(OUTPUT + '/TestQuestions.csv')
+    test_q = pd.read_csv(OUTPUT + '/TestAnswers.csv')
+    
     popular = set(list(train_a.OwnerUserId.value_counts().index)[:100])
     baseline_scores = dict()
     valid_accr = baseline(valid_q, valid_a)
@@ -34,8 +37,6 @@ def main():
     train_accr = baseline(train_q, train_a)
     print('train accuracy: ', train_accr)
     baseline_scores['train accuracy'] = train_accr
-    scores = pd.Series(data = d)
-    scores.to_csv('BaselineScores.csv')
     
 if __name__ == "__main__":
     main()

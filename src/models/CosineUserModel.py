@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np
 import xml.etree.ElementTree as ET
-from ValidTestData import get_df
-from ValidTestData import create_datasets
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.feature_extraction.text import TfidfVectorizer
 import time
@@ -33,12 +31,15 @@ def user_recommendations(title, filtered_a, filtered_q, tfidf_matrix):
 
 
 
-
-
-def main(): 
-    FILE = '/Posts.xml'
-    SPLIT_DATE = pd.datetime(2019, 9, 1)
-    train_q, train_a, valid_q, valid_a, test_q, test_a = create_datasets('', 'Posts.xml', SPLIT_DATE)
+def main(configs):
+    OUTPUT = configs['output']
+    train_q = pd.read_csv(OUTPUT + '/TrainQuestions.csv')
+    train_a = pd.read_csv(OUTPUT + '/TrainAnswers.csv')
+    valid_a = pd.read_csv(OUTPUT + '/ValidQuestions.csv')
+    valid_q = pd.read_csv(OUTPUT + '/ValidAnswers.csv')
+    test_a = pd.read_csv(OUTPUT + '/TestQuestions.csv')
+    test_q = pd.read_csv(OUTPUT + '/TestAnswers.csv')
+    
     train_a = train_a.sort_values('Score', ascending=False)
     train_q['Id'] = train_q.index
     train_a['Id'] = train_a.index
@@ -83,5 +84,5 @@ def main():
     print('Accuracy: ', np.mean(acc))
     
 if __name__ == "__main__":
-    main()
+    main(sys.argv)
 

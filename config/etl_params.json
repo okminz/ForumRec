@@ -1,0 +1,5 @@
+{
+    "file": "data/Posts.xml",
+    "split_date": "pd.datetime(2019, 9, 1)",
+    "output": "data"
+}

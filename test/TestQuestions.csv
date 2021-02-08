@@ -1,0 +1,1319 @@
+Id,Score,Body,OwnerUserId,ParentId
+1606340,0,"<blockquote>
+<p>The Samsung 970 EVO SSD is currently on sale for Cyber Monday and I'm looking to purchase it. I just want to confirm that it will be compatible with my motherboard. I have a Gigabyte GA-250M-DS3H.</p>
+</blockquote>
+<p>Your motherboard supports M.2 PCIe devices.  M.2 PCIe devices are NVMe devices.  The motherboard <a href=""https://download.gigabyte.com/FileList/Manual/mb_manual_ga-b250m-ds3h_e.pdf"" rel=""nofollow noreferrer"">manual</a> specifically indicates supports for NVMe devices.</p>
+",83283,1606326
+1606349,1,"<p>There are probably multiple ways to do this depending on your exact goal, however they likely will not actually help you unless the CPU is the bottleneck.   (The easiest way would be to cap the CPU clock speed.  I don't believe you want to do this, but <a href=""https://www.tenforums.com/tutorials/95574-change-maximum-processor-frequency-windows-10-a.html"" rel=""nofollow noreferrer"">https://www.tenforums.com/tutorials/95574-change-maximum-processor-frequency-windows-10-a.html</a> talks about how you can do it in Windows 10 - ie by changing maximum processor frequency in Power Options)</p>
+<p>Generally, games don't run faster as a computer speeds up, they may, however become less laggy or use excess CPU to provide more detailed imagery.   There is, however something of an edge case - if you are using an emulator to play a classic game, the emulator may be able slow the game down - but we would need to know what emulator you are using!</p>
+<p>You should edit the question and include the game in question, and also the OS you are using.</p>
+",137786,1606344
+1606388,2,"<p>Apologies, but I am a bit confused by the wording of your question. However, in general, low-end consumer routers' &quot;DMZs&quot; typically place a given device &quot;outside&quot; your router's firewall settings (your router firewall settings no longer have any affect on the device). This has the advantage that you no longer need to set up ex. port forwarding. That said, it generally has the disadvantage that <em>all</em> incoming requests are sent to that device. So if there is a flaw in ex. the CCTV camera software, attackers may be able to gain access to the device or even potentially your network.</p>
+",302907,1606337
+1606401,0,"<p>I'm afraid that both options in provided screenshot cannot achieve your goal.</p>
+<p>If you need run the task every 10 minutes, just try to set <strong>Repeat task every: 10 minutes</strong> as below attached screen. Then the task will be triggered every 10 minutes regardless of the task duration.</p>
+<p><a href=""https://i.stack.imgur.com/pBmlx.jpg"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/pBmlx.jpg"" alt=""enter image description here"" /></a></p>
+",1221641,1606361
+1606428,0,"<p>What you're looking for is referred to as a <strong>Document Control SOP</strong>.  Excel is not going to offer you a solution whether directly or indirectly, but it can still be used given that proper training is implemented and practices are monitored and enforced.  This may vary widely depending upon your industry, but here's an example guidance for the Food Safety industry:</p>
+<p>SQF Mod 2 Guidance (See pages <a href=""https://www.sqfi.com/wp-content/uploads/2019/09/Mod-2-packaging-Guidance-wth-cover.pdf#page=19"" rel=""nofollow noreferrer"">19 ~ 22</a>)</p>
+<p>ISO also offers their own standards, as do many other benchmarks and auditing schemes.  From there, you build your own SOP as well as document form templates to assist in your document control practices.  Here's an example for tracking via Excel files:</p>
+<p><a href=""https://i.stack.imgur.com/Mar26.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/Mar26.png"" alt=""Table of Contents"" /></a>
+<a href=""https://i.stack.imgur.com/Xli1q.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/Xli1q.png"" alt=""Revisions Register"" /></a></p>
+<p>And here's an example of what form headers / footers you may want to include to assist in document control:</p>
+<p><a href=""https://i.stack.imgur.com/3seVG.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/3seVG.png"" alt=""Form Example"" /></a></p>
+",608405,1606380
+1606439,0,"<p>to shear a folder in your local network, go to properties of the folder and click on shear and add Everyone use and give all the permission to add or remove fille from that fille access <a href=""https://i.stack.imgur.com/H7KJ7.png"" rel=""nofollow noreferrer"">Pic</a></p>
+",1246415,1606433
+1606469,1,"<p>The error code is Hard Drive failed during diagnostic.</p>
+<p>I have added the needed text. In the link you can also jump to solution.  But all is below here.</p>
+<p><a href=""https://www.dell.com/community/Laptops-General-Read-Only/Hard-Drive-Failed-during-diagnostic-Error-Code-2000-0142/td-p/4010351"" rel=""nofollow noreferrer"">https://www.dell.com/community/Laptops-General-Read-Only/Hard-Drive-Failed-during-diagnostic-Error-Code-2000-0142/td-p/4010351</a></p>
+<blockquote>
+<p>A PSA/ePSA diagnostic code of 2000-0142 indicates the the HDD (hard
+disk drive) Self Test was unsuccessful. It could be the HDD, HDD
+cable, or connector on the motherboard. Open the system, reseat the
+HDD and HDD cable. Run the PSA/ePSA test again. If you get the same
+error, if the system is under warranty, we will replace the HDD. If
+the system is out of warranty, post the model and someone can
+recommend a possible replacement for your faulty HDD.</p>
+</blockquote>
+<p>If you need to try to access the drive, you can try to start with a bootable USB key to see if you can see the drive.  You can also remove the drive and put in a USB carrier and plug that into a working computer.</p>
+",1079976,1606462
+1606475,2,"<blockquote>
+<p>But does the Disk Management tool (diskmgmt.msc) do that too?</p>
+</blockquote>
+<p>Yes;</p>
+<p>The linked article applies to all versions of Windows 10. The change to formatting a disk applies to all methods of formatting a disk with the built-in tools contained within Windows.  <strong>This is the case since all four methods are running the same underline mechanic to format a disk.</strong></p>
+<blockquote>
+<ul>
+<li><p>Command line: Use the format /q command.</p>
+</li>
+<li><p>Diskpart: Use the format command together with the quick parameter.</p>
+</li>
+<li><p>Windows Explorer: Click to select the Perform a quick format check box.</p>
+</li>
+<li><p>Disk Management (Diskmgmt.msc): Click to select the Perform a quick format check box.</p>
+</li>
+</ul>
+</blockquote>
+<p>Source: <a href=""https://docs.microsoft.com/en-us/troubleshoot/windows-server/backup-and-storage/format-command-not-write-zeros-to-disk"" rel=""nofollow noreferrer"">Quick format option</a></p>
+",83283,1606470
+1606478,4,"<p>Give this small User Defined Function a try:</p>
+<pre><code>Option Explicit
+
+Public Function NoPath(sIn As String) As String
+    Dim arr, i As Long, v As String, L As Long
+    Dim j As Long
+    
+    arr = Split(sIn, &quot;,&quot;)
+    For i = LBound(arr) To UBound(arr)
+        v = arr(i)
+        L = Len(v)
+        For j = L To 1 Step -1
+            If Mid(v, j, 1) = &quot;/&quot; Then
+                arr(i) = Mid(v, j + 1)
+                Exit For
+            End If
+            Next j
+        Next i
+        NoPath = Join(arr, &quot;,&quot;)
+        
+End Function
+</code></pre>
+<p><a href=""https://i.stack.imgur.com/8c62N.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/8c62N.png"" alt=""enter image description here"" /></a></p>
+<p>User Defined Functions (UDFs) are very easy to <strong>install</strong> and use:</p>
+<ol>
+<li>ALT-F11  brings up the VBE window</li>
+<li>ALT-I
+ALT-M opens a fresh module</li>
+<li>paste the stuff in and close the VBE window</li>
+</ol>
+<p>If you save the workbook, the UDF will be saved with it.
+If you are using a version of Excel later then 2003, you must save
+the file as .xlsm rather than .xlsx</p>
+<p>To <strong>remove</strong> the UDF:</p>
+<ol>
+<li>bring up the VBE window as above</li>
+<li>clear the code out</li>
+<li>close the VBE window</li>
+</ol>
+<p>To <strong>use</strong> the UDF from Excel:</p>
+<pre><code>=NoPath(A1)
+</code></pre>
+<p>To learn more about macros in general, see:</p>
+<p><a href=""http://www.mvps.org/dmcritchie/excel/getstarted.htm"" rel=""nofollow noreferrer"">http://www.mvps.org/dmcritchie/excel/getstarted.htm</a></p>
+<p>and</p>
+<p><a href=""http://msdn.microsoft.com/en-us/library/ee814735(v=office.14).aspx"" rel=""nofollow noreferrer"">http://msdn.microsoft.com/en-us/library/ee814735(v=office.14).aspx</a></p>
+<p>and for specifics on UDFs, see:</p>
+<p><a href=""http://www.cpearson.com/excel/WritingFunctionsInVBA.aspx"" rel=""nofollow noreferrer"">http://www.cpearson.com/excel/WritingFunctionsInVBA.aspx</a></p>
+<p><strong>Macros must be enabled for this to work!</strong></p>
+",263458,1606447
+1606480,6,"<p>With data in <code>A1</code>, try:</p>
+<pre><code>=CONCAT(FILTERXML(&quot;&lt;t&gt;&lt;s&gt;&quot;&amp;SUBSTITUTE(A1,&quot;/&quot;,&quot;&lt;/s&gt;&lt;s&gt;&quot;)&amp;&quot;&lt;/s&gt;&lt;/t&gt;&quot;,&quot;//s[substring(., string-length(.) - 3) = '.jpg' or substring(., string-length(.) - 4) = '.jpg,']&quot;))
+</code></pre>
+<p>If you run Excel 2019, you'd need to CSE this formula. If one has Excel O365, you don't need to CSE, but there is also a shorter version using <code>LET()</code>:</p>
+<pre><code>=LET(X,FILTERXML(&quot;&lt;t&gt;&lt;s&gt;&quot;&amp;SUBSTITUTE(A1,&quot;/&quot;,&quot;&lt;/s&gt;&lt;s&gt;&quot;)&amp;&quot;&lt;/s&gt;&lt;/t&gt;&quot;,&quot;//s&quot;),CONCAT(IF(ISNUMBER(FIND(&quot;.jpg&quot;,X)),X,&quot;&quot;)))
+</code></pre>
+<p><a href=""https://i.stack.imgur.com/yeHU2.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/yeHU2.png"" alt=""enter image description here"" /></a></p>
+<hr />
+<p>For those interested, a <a href=""https://stackoverflow.com/q/61837696/9758194"">link</a> to the Q&amp;A mentioned in my comment below.</p>
+",1059206,1606447
+1606481,1,"<p>Well, 'tee' does not take command names – it takes <em>file</em> names. You're writing copies of the output to files named <code>nc</code>, <code>localhost</code>, and <code>5100</code> in the current directory.</p>
+<p>If you want to run two commands, check if your shell allows &quot;process substitution&quot; using <code>&gt;( ... )</code>, automatically passing a pipe as the file name:</p>
+<pre><code>raspivid &lt;etc&gt; | tee &gt;(nc localhost 5100) | nc localhost 5000
+</code></pre>
+<p>Alternatively, install <code>pee</code> from <em>moreutils</em>:</p>
+<pre><code>raspivid &lt;etc&gt; | pee &quot;nc localhost 5100&quot; | nc localhost 5000
+</code></pre>
+<p>If neither of those options are available, use <code>mkfifo</code> to create a <em>named</em> pipe for one of the 'nc' instances, then run the output and the input separately:</p>
+<pre><code>mkfifo /tmp/ncpipe
+nc localhost 5100 &lt; /tmp/ncpipe &amp;
+raspivid &lt;etc&gt; | tee /tmp/ncpipe | nc localhost 5000
+</code></pre>
+",1686,1606477
+1606494,1,"<p>There are a couple ways.</p>
+<p>One way is to set all your Page Margins to 0 (if your printer cannot print all the way to the edge you will get a warning that it is outside the printable area), set the Table width to 100% or however many inches wide the page is, then set the row height to the height of the page (I like to set &quot;Row height is&quot; to &quot;Exactly&quot; instead of &quot;At least&quot; and also un-check &quot;Allow row to break across pages&quot; they're not necessary but may help). Now you should have a single cell table that fully covers the page. If you need multiple columns or rows you'll need to either split the table and figure out the measurements for each column and row to maintain full coverage or create a nested table.</p>
+<p>Another way is to change the Table's Text Wrapping option to &quot;Around&quot; which (if you know HTML) is very similar to floating the table so you can &quot;break out&quot; of containers. Then click the &quot;Positioning...&quot; button and set them as shown in my attached image. The important settings on the Table Positioning are the &quot;Realitive to&quot; options, you want those set to &quot;Page&quot; and the distance all set to 0. Then same as the first method, set the Table width to the width of the page and the row height to the height of the page.</p>
+<p>Note: It can be a little cumbersome getting the heights and widths just right especially when you start adding content and breaking up cells, but you can get it there adjusting the heights of the rows and widths of the table/columns. If you are planning to have this table as the only thing in your document, Word, for whatever reason, forces a new line at the end of the document. You may get stuck with a blank page at the end. I can sometimes get around that by setting the new line's paragraph settings to have no spacing and the smallest font possible and make my table height just a little less to allow the newline room on the first page.</p>
+<p><a href=""https://i.stack.imgur.com/0MrIZ.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/0MrIZ.png"" alt=""Full size table in Word"" /></a></p>
+",1242237,1606446
+1606497,0,"<ol>
+<li>Right click on the chart, select Format Chart Area</li>
+<li>On your chart, select the x-axis elements.</li>
+<li>On the Format Axis, select Axis options -&gt; Labels (Etiquettes in your case). Change the Interval between labels from Automatic to Specify Interval unit.</li>
+</ol>
+<p>You will be able to see all your elements. You will need to increase the chart size to view them properly as they are too close to each other.</p>
+<p><a href=""https://i.stack.imgur.com/3qnyE.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/3qnyE.png"" alt=""enter image description here"" /></a></p>
+",855367,1606463
+1606499,0,"<p>If you network the printer (either with its own Ethernet connection, with an Ethernet Print Server or with a USB Print Server), it should not do this.</p>
+<p>Print Sharing is most likely the culprit here.</p>
+",1079976,1606492
+1606502,1,"<p>Save the current author value to a string variable. Then add what you want to the end of the string variable. Finally, save the new author property. Here is a VBA example:</p>
+<pre><code>Sub AppendAuthor()
+    Dim cAuthor As String
+    cAuthor = ActiveDocument.BuiltInDocumentProperties(Word.wdPropertyAuthor) &amp; chr(32) &amp; &quot;New Author&quot;
+    ActiveDocument.BuiltInDocumentProperties(Word.wdPropertyAuthor) = cAuthor
+    Debug.Print ActiveDocument.BuiltInDocumentProperties(Word.wdPropertyAuthor)
+End Sub
+</code></pre>
+",919624,1606430
+1606505,0,"<p><em>Following up on comment from @DavidPostill.</em></p>
+<p>I am assuming without evidence that you are using Word for Windows, not on a Mac. The structural changes are the same on a Mac but the controls are a bit different. You are dealing with <a href=""http://word.mvps.org/faqs/formatting/workwithsections.htm"" rel=""nofollow noreferrer"">Section Properties</a> and with <a href=""http://www.addbalance.com/usersguide/sections2007.htm#Recap_of_Header/Footer_settings"" rel=""nofollow noreferrer"">Headers and Footers</a> which are a part of Section Properties.</p>
+<ul>
+<li><a href=""http://word.mvps.org/faqs/formatting/workwithsections.htm"" rel=""nofollow noreferrer"">Working With Sections</a> by Dave Rado, MVP</li>
+<li><a href=""http://word.mvps.org/faqs/formatting/workwithsections.htm"" rel=""nofollow noreferrer"">Header and Footer Settings Recap</a> on my web site.</li>
+</ul>
+<h2>In the Middle of a Document With Other Text</h2>
+<p>If your table is in other text and you want to have normal margins for that other text, you will need to set your document up to have page SECTION breaks around it. This is done under the Layout Tab. Before your table: Breaks &gt; Next Page and after Breaks &gt; Next Page.</p>
+<p>Then in the Headers and Footers Tab make sure your headers and footers are not &quot;Linked to Previous.&quot; Do this for both the header and footer. This should be done in the section that contains your table and the following section. Then make the changes to the headers and footers in the section that contains your table without changing others.</p>
+<h2>Header and Footer Size - Do this after adding section breaks!</h2>
+<p>While you cannot remove headers and footers in Word <em>(they are a part of the document structure)</em>, you can shrink them. This can be done in the Header/Footer Tab or in the Page Layout dialog. You can change the distance reserved to .1.</p>
+<p><a href=""https://i.stack.imgur.com/CLoET.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/CLoET.png"" alt=""Controls on Header/Footer Tab"" /></a></p>
+<p>Note that each header and footer has an <em>empty paragraph</em> in it. You can see these by displaying non-printing formatting marks. While you cannot delete those empty paragraphs, you can also shrink them. Go into each header and footer. Use Ctrl+A to select all text and then change the font size to 1 point. (You have to type the 1.)</p>
+<p>Your header and footer may also have paragraph spacing set for space before or space after. This is paragraph formatting and can be changed in the Format Paragraph dialog that you can reach by clicking on the Dialog Launcher (little arrow in the bottom right of the Paragraph Group).</p>
+<h2>Final Caveats</h2>
+<ul>
+<li>Any change in the Printer Driver being used changes the printable area. This may be different on different computers even if they are using the same printer.</li>
+<li>Page numbering gets trickier with multiple sections. See my writing on <a href=""http://www.addbalance.com/usersguide/sections2007.htm#PageNumbers"" rel=""nofollow noreferrer"">Page Numbering in Word</a>.</li>
+</ul>
+",1219214,1606446
+1606506,0,"<p>You don't need to have a page file on C at all, you can have it on just D with no problems. Since you have it set to only 1GB on C, I recommend just removing it from C and have D handle the page file. I have my system setup that way. I have 2 SSDs, OS is installed on 1 and the paging file on 2. However, it should be able to do fine using both, you may be getting that out-of-memory crash because it does use up all the available memory on both C &amp; D, you should have it set to a System Managed size on one of the drives to ensure you never hit a cap, short of running out of drive space.</p>
+",1242237,1606434
+1606519,0,"<p>It's not possible.</p>
+<p>This was evoked in
+<a href=""https://bugzilla.mindrot.org/show_bug.cgi?id=2050"" rel=""nofollow noreferrer"">Bug 2050: Support XDG basedir specification</a>,
+whose status is &quot;CLOSED WONTFIX&quot;.
+Following demands by users were no longer answered after the following
+final answer from 2012:</p>
+<blockquote>
+<p>OpenSSH (and it's ancestor ssh-1.x) have a 17 year history of using
+~/.ssh. This location is baked into innumerable users' brains,
+millions of happily working configurations and countless tools.</p>
+<p>Changing the location of our configuration would require a very strong
+justification and following a trend of desktop applications (of which
+OpenSSH is not) is not sufficient.</p>
+</blockquote>
+<p>Arch Linux adds one more reason for this in its status report
+<a href=""https://wiki.archlinux.org/index.php/XDG_Base_Directory"" rel=""nofollow noreferrer"">XDG Base Directory</a>:</p>
+<blockquote>
+<p>Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH.</p>
+</blockquote>
+",8672,1606509
+1606536,0,"<p>This is the most common mistake when setting up a local network that has Windows 10 and Windows XP computers. On a Windows 10 computer, the Network applet does not show Windows XP computers.</p>
+<p>The reason is that in Windows 10, by default, support for the SMB v 1 protocol is disabled. And Windows XP uses this version of the protocol for network exchange.</p>
+<p>The problem can be solved simply. You need to install the SMB v 1 component. To do this, you need to open the Windows 10 settings (via the Start menu), and there open the &quot;Applications and features&quot; settings group. In this group you need to find and open &quot;Programs and Features&quot;
+In the list of programs, you need to open &quot;Turn on or off by Windows component&quot;.
+In the list of components, you need to find and mark the components &quot;SMB Client and Server 1&quot;.
+After installing the components, you need to check that the same Workgroup is specified in the computer names settings. And on a Windows 10 computer, disable password-protected sharing, unless of course you need to restrict access on your local network.</p>
+",856613,1606532
+1606556,1,"<p>Presumably the built-in colorimeter seals tight to the laptop screen with the lid closed by some means.</p>
+<p>If the laptop will fold out totally flat so you could apply it with the same quality of light seal to another display, then you have at least a start-point - you'd then need to track down the profile it made on the laptop &amp; persuade the OS on the display's usual computer to use it as default.<br />
+In theory, changing the GPU etc as you swap machines should not affect this calibration. You will have to switch off any 'user-friendly' automatic colour temperature variation on the recipient machine (but this is usually a requirement for any machine with any kind of 'helpful' colour modification built-in.)</p>
+<p>Such as <a href=""https://displaycal.net"" rel=""nofollow noreferrer"">DisplayCAL</a> might go some way towards this separation of newly-made profile from underlying 'wrong computer', but this is not something I've ever tried to tackle with anything other than a regular portable colorimeter &amp; appropriate software installed to the correct computer.</p>
+",347380,1606550
+1606563,0,"<p>You're not supposed to have quotes on the title, unless you're concatenating it.</p>
+<pre><code>WinActivate, CloseMe
+WinClose, CloseMe
+</code></pre>
+",232563,1606554
+1606569,1,"<p>First, the command you're running is showing information about the <em>link</em> - the physical interface (and that's why you see MAC addresses here) - the command <code>show ip addr</code> might be better.</p>
+<p>There's probably only 2 IP stacks running in your example - 1 IPv4 stack and 1 IPv6 stack.</p>
+<p>A convenient way to tell is to go by what <code>iptables</code> and <code>ip6tables</code> can see.</p>
+<p>It's probably a good abstraction to say that everything running on a single IPv4 stack would be accessible through <code>iptables</code>, and everything running on a single IPv6 stack would be accessible through <code>ip6tables</code>.  This is likely true with the information you've provided.  All those interfaces--including <code>lo</code>--are being serviced by the same stack.</p>
+<p>Probably the only way you can get anything like multiple independent stacks running for the same protocol is to use <a href=""https://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/"" rel=""nofollow noreferrer"">network namespaces</a> or virtualization.</p>
+",51705,1606567
+1606571,0,"<p>The <code>eno1</code> interface doesn't have an IPv4 address, but the interface <code>wlp2s0</code> does.</p>
+<p>The <code>lo</code> interface also has an IPv4 address.</p>
+<p>All in all, there are two ipv4 stacks running.</p>
+",8672,1606567
+1606580,0,"<p>Unless the location is protected with Admin only access, or If you created the files or have the correct permissions to do what you are doing, then the administrator account is not needed.</p>
+<p><em><strong>Never, ever do destructive code (Create/Modify/Update/Delete/Move/Rename) without
+checking results first. You'll find yourself in a serious negative place.</strong></em>   So, using -WhatIf or Confirm should be used in all cases.</p>
+<p><a href=""http://powershell-guru.com/powershell-best-practice-8-use-whatif-and-confirm-parameters"" rel=""nofollow noreferrer"">Powershell Best Practice #8: Use WhatIf and Confirm</a></p>
+<pre><code>Rename-Item -NewName ($_.Name -replace &quot; ?\(\d\d\d\d_\d\d_\d\d \d\d_\d\d_\d\d UTC\)&quot;, &quot;&quot;) -WhatIf
+</code></pre>
+<p>As for the errors, you are over complicating this. It can be simplified to this:</p>
+<pre><code># Test create some test files
+0..2 | 
+ForEach-Object {New-Item -Path &quot;D:\Temp\SomeFileName$PSItem(2020_11_23 09_41_34 UTC).txt&quot; -WhatIf}
+# Results
+&lt;#
+What if: Performing the operation &quot;Create File&quot; on target &quot;Destination: D:\Temp\SomeFileName0(2020_11_23 09_41_34 UTC).txt&quot;.
+What if: Performing the operation &quot;Create File&quot; on target &quot;Destination: D:\Temp\SomeFileName1(2020_11_23 09_41_34 UTC).txt&quot;.
+What if: Performing the operation &quot;Create File&quot; on target &quot;Destination: D:\Temp\SomeFileName2(2020_11_23 09_41_34 UTC).txt&quot;.
+#&gt;
+
+# Create the test files
+0..2 | 
+ForEach-Object {New-Item -Path &quot;D:\Temp\SomeFileName$PSItem(2020_11_23 09_41_34 UTC).txt&quot;}
+# Results
+&lt;#
+    Directory: D:\Temp
+
+
+Mode                 LastWriteTime         Length Name                                                                                                       
+----                 -------------         ------ ----                                                                                                       
+-a----         01-Dec-20     13:11              0 SomeFileName0(2020_11_23 09_41_34 UTC).txt                                                                 
+-a----         01-Dec-20     13:11              0 SomeFileName1(2020_11_23 09_41_34 UTC).txt                                                                 
+-a----         01-Dec-20     13:11              0 SomeFileName2(2020_11_23 09_41_34 UTC).txt  
+#&gt;
+
+# Get files in path
+(Get-ChildItem -Path 'D:\Temp' -Filter '*(2020_11_23 09_41_34 UTC)*').FullName
+# Results
+&lt;#
+D:\Temp\SomeFileName0(2020_11_23 09_41_34 UTC).txt
+D:\Temp\SomeFileName1(2020_11_23 09_41_34 UTC).txt
+D:\Temp\SomeFileName2(2020_11_23 09_41_34 UTC).txt
+#&gt;
+
+# Delete the parens and all text between them
+(Get-ChildItem -Path 'D:\Temp' -Filter '*(*').FullName | 
+ForEach-Object {Rename-Item -Path $PSItem -NewName $($PSItem -replace '\(.*\)','') -WhatIf}
+# Results
+&lt;#
+What if: Performing the operation &quot;Rename File&quot; on target &quot;Item: D:\Temp\SomeFileName0(2020_11_23 09_41_34 UTC).txt Destination: D:\Temp\SomeFileName0.txt&quot;.
+What if: Performing the operation &quot;Rename File&quot; on target &quot;Item: D:\Temp\SomeFileName1(2020_11_23 09_41_34 UTC).txt Destination: D:\Temp\SomeFileName1.txt&quot;.
+What if: Performing the operation &quot;Rename File&quot; on target &quot;Item: D:\Temp\SomeFileName2(2020_11_23 09_41_34 UTC).txt Destination: D:\Temp\SomeFileName2.txt&quot;.
+#&gt;
+</code></pre>
+<p>If you really need a regex for the date string, then you could do this:</p>
+<pre><code>(Get-ChildItem -Path 'D:\Temp' -Filter '*(*').FullName | 
+ForEach-Object {Rename-Item -Path $PSItem -NewName $($PSItem -replace '\(\d{4}|\d{2}.|_|UTC\)','') -WhatIf}
+</code></pre>
+<p>Remove the -WhatIf to have this complete the task and serialize the change.</p>
+",863513,1606498
+1606586,0,"<p>Tmux command <code>set status off</code> (or from a shell: <code>tmux set status off</code>) turns the status line off for a single session.</p>
+<p>I suspect you may have mistaken the terminology. In your workflow you probably use two or more <em>clients</em> attached to <em>the same</em> session. I'm not aware of any method to turn the status line off for a particular client. I think you need more than one session.</p>
+<p><sup>(Note: whenever this answer states a command starting with <code>tmux</code>, it's a command to be run in a shell. A command not starting with <code>tmux</code> is a command to run in tmux (after <kbd>prefix</kbd><kbd>:</kbd> or from a key binding). Usually you can convert one form to the other (or vice versa) by removing (or prepending) the <code>tmux</code> word.)</sup></p>
+<p>There are at least two ways to get the same window in another session:</p>
+<ol>
+<li><p>You can share one or more windows between multiple sessions. Let's suppose there already is session <code>0</code> with a window <code>0:0</code>. Instead of attaching to the session <code>0</code> with another client (<code>tmux attach</code>), create a new session (<code>tmux new-session</code> or <code>tmux new</code> in short). Let's say the new session is <code>1</code>. Then you can <code>link-window</code> the old window to the new session:</p>
+<pre><code>tmux link-window -s 0:0 -t 1:
+</code></pre>
+<p>A complementary command is <code>unlink-window</code>. Other windows can be created, linked or unlinked in each session independently.</p>
+</li>
+<li><p>You can create a new session in the same session group. Instead of attaching to the session <code>0</code> with another client (<code>tmux attach</code>), create a new session like this:</p>
+<pre><code>tmux new -t 0:
+</code></pre>
+<p>The new session will be denoted <code>0-1</code> or similar. Sessions in the same group share the same set of windows. New windows are linked to all sessions in the group and any windows closed removed from all sessions.</p>
+</li>
+</ol>
+<p>Please compare <a href=""https://superuser.com/a/1489266/432690"">this another answer of mine</a> posted under a question from a person who inadvertently did something like this.</p>
+<p>One way or another now you have <em>two</em> sessions that share at least one window. You can <code>set status off</code> or <code>set status on</code> for each session independently. Doing it from a shell from within a shared window may target the wrong session, so either explicitly specify the session you want to affect:</p>
+<pre><code>tmux set -t 0-1: status off
+</code></pre>
+<p>or don't do this via a shell, do this directly in tmux:</p>
+<pre><kbd>prefix</kbd><kbd>:</kbd>set status off<kbd>Enter</kbd></pre>
+<p>Possibly you will need just two sessions: one with a status line and one without. Remember you can name them (from the start with <code>new-session -s …</code> or later with <code>rename-session</code>). This way instead of <code>0:</code>, <code>1:</code> or <code>0-1:</code> you can use more descriptive custom names, e.g. <code>w</code> (like warriors: task- and timewarrior) and <code>w-noline</code>.</p>
+",432690,1606555
+1606596,0,"<p>Since you removed the footer and created a new document without results, try resetting the Word Normal Template to Default.</p>
+<p>To have Word re-create the Normal template, follow these steps to rename the original file:</p>
+<p>Quit Word.</p>
+<p>Open Windows Explorer
+Navigate to %USERPROFILE%AppDataRoamingMicrosoftTemplates and see the Normal.dotm file.</p>
+<p>Rename this file as Normal-old.dotm</p>
+<p>Restart Word and then see if your documents look normal.</p>
+<p>It is usually a Normal template issue that causes what you see.</p>
+",1079976,1606574
+1606607,1,"<p>The screen clips you've provided clearly show that you do not have the document's paragraph marks displayed. Go to the Home tab on Word's Ribbon and click on the Pilcrow icon, it looks like a backwards P and it's in the Paragraph group. Alternately use the Ctrl + * keyboard shortcut to toggle showing of these very important document elements. The show where each paragraph ends.</p>
+<p>Your footer in this document has either extra blank paragraphs that need to get deleted or one of the paragraphs has a setting on it to include extra space (blank) after.</p>
+<p>If this problem is only happening in one document, then it is not a problem with your Normal template.</p>
+<p>Turn the Show/Hide Paragraph Marks on and update your post with it if you are unsure how to delete or fix the errant paragraphs.</p>
+",919624,1606574
+1606623,0,"<p>There's a checkbox to disable advertisements, near the bottom of the preferences section. Unchecking it removes that box, and the problem along with it.</p>
+",1246662,1606584
+1606660,0,"<p>AFAIK, CMD has no way, without using WScript scripting, to fetch metadata attributes such as <em>Duration</em>, <em>Composers</em>, or <em>Bit Rate</em>. However, <a href=""https://stackoverflow.com/questions/58830853/powershell-get-video-duration-and-list-all-files-recursively-export-to-csv""><em>PowerShell</em> does provide the facility</a> to gather that information.</p>
+<p>The following script, adapted <a href=""https://stackoverflow.com/questions/58830853/powershell-get-video-duration-and-list-all-files-recursively-export-to-csv"">from StackOverflow</a>, run in <em>PowerShell</em>, scans the folder recursively and pipes <em>Folder</em>, <em>Filename</em> and <em>Duration</em> to a CSV.</p>
+<pre><code>$Directory = &quot;E:\Audio Files\_.mp3\Albeniz, Isaac&quot;
+$Shell = New-Object -ComObject Shell.Application
+Get-ChildItem -Path $Directory -Recurse -Force | ForEach 
+{
+    $Folder = $Shell.Namespace($_.DirectoryName)
+    $File = $Folder.ParseName($_.Name)
+    $Duration = $Folder.GetDetailsOf($File, 27)
+    [PSCustomObject]@{
+        Folder = $_.DirectoryName
+        Name = $_.Name
+        Duration = $Duration}} | Export-Csv -Path &quot;C:/temp/out.csv&quot; -NoTypeInformation
+</code></pre>
+<p>It creates the CSV displayed below.</p>
+<p><a href=""https://i.stack.imgur.com/URxW4.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/URxW4.png"" alt=""CSV displayed in LibreOffice Calc"" /></a></p>
+<p>Modify the script as needed for location of files and to show or hide the metadata.</p>
+",401553,1606640
+1606662,1,"<p>I you use windows you could set up a task using task scheduler, or autoruns, which is a program from the system internals suite of software from Microsoft. It will allow you to schedule the computer to do basically anything, even posting to social media automatically. You could set up a task that would run a script to sync the usb drive files with another directory.</p>
+",1246751,1606608
+1606665,0,"<p>You are actually using the NATed option (default), meaning that all clients will be seen as the OpenVPN server itself.</p>
+<p>You could use the other option which is Routed. In this case, your clients will be assigned IP addresses from a range you define (10.0.11.0/24 from your example). Please make sure this subnet (10.0.11.0/24) doesn't exist on your VPC or OMLY your OpenVPN server is sitting in this subnet.</p>
+<p>The only thing you need to keep in mind is that your instances in the private subnet, that your users are accessing, need to know how to reach the IP addresses of your users (10.0.11.0/24 in this case) because AWS doesn't know where to route the traffic that is destined to this &quot;new&quot; subnet, hence will be discarded.</p>
+<p>The fix for this is:</p>
+<ul>
+<li>Add a route to your AWS routing table (on your private subnet) to send all traffic that is destined to 10.0.11.0/24 to your OpenVPN server.</li>
+<li>Disable Source/Destination check on your OpenVPN server instance</li>
+<li>Make sure the Security Group of your OpenVPN server instance allows traffic from 10.0.11.0/24</li>
+<li>If you are using NACL, make sure you are not blocking this traffic as well.</li>
+</ul>
+",578887,1606417
+1606668,0,"<p>In both you have to specify if you want to do something other than a quick format. What I do when I need to overwrite all the data in a drive is a quick format, then run the command prompt command <em>cipher w/ d:</em> this will overwrite all of the empty space on a drive with zeros. If the drive is newly formatted, then it is all empty space. Must be run as admin though.</p>
+",1246751,1606470
+1606675,0,"<p>I find windows Disk manager to be problematic. Unless there really is an issue you haven't noticed, you should use <em>Gparted</em>. It can be used in any Linux system or in a live version.</p>
+<p>link to live version: <a href=""https://gparted.org/download.php"" rel=""nofollow noreferrer"">https://gparted.org/download.php</a></p>
+<p>Command for installing on Linux: <code>sudo apt install gparted</code></p>
+",473580,1606671
+1606681,1,"<p>Use this <a href=""https://docs.microsoft.com/en-us/windows/win32/lwef/-search-2x-wds-aqsreference"" rel=""nofollow noreferrer"">AQS</a> query:</p>
+<pre><code>filename:&lt;filename&gt;
+</code></pre>
+<p>Example:</p>
+<pre><code>filename:foo
+</code></pre>
+<p>Note that on non-indexed locations, the file content search is disabled by default.</p>
+<p><strong>Reference:</strong> <a href=""https://www.winhelponline.com/blog/search-contents-of-any-file-windows-search-indexing/"" rel=""nofollow noreferrer"">&quot;Search file names only, not the contents&quot;</a></p>
+",542839,1606676
+1606684,1,"<p>UPnP wouldn't change the NAT type, but it <em>would</em> allow the game itself to create port-forwarding rules.</p>
+<blockquote>
+<p>I'm stuck in for what to fill for 'Local Port from', 'Local Port to', 'Remote Port from' and 'Remote port to'.</p>
+</blockquote>
+<p>I would guess that the fields are somewhat misnamed:</p>
+<ul>
+<li>&quot;Local port&quot; is the <em>internal</em> destination port on your computer (after forwarding),</li>
+<li>&quot;Remote port&quot;, then, must mean the <em>external</em> destination port on WAN side (before forwarding).</li>
+<li>When the router receives a connection <em>to</em> the specified &quot;remote port&quot; it forwards that connection to your computer's &quot;local port&quot;.</li>
+</ul>
+<p>Each setting has two fields (&quot;from&quot; and &quot;to&quot;) because the router allows you to define a <em>range</em>, i.e. you could create a single rule with &quot;From: 61455&quot; and &quot;To: 61458&quot; instead of needing four separate rules. (You will still need a separate rule for 6672 however.)</p>
+<p>In general, games expect the internal port to be the same as the external one. So you should just enter the same number (or the same range) in both the &quot;Local&quot; and &quot;Remote&quot; columns.</p>
+<blockquote>
+<p>The TCP ports and UDP ports for GTA Online are:</p>
+<pre><code>TCP:
+UDP: 6672,61455-61458
+</code></pre>
+</blockquote>
+<p>This means you'll need two rules:</p>
+<ol>
+<li>Protocol: UDP, Remote port: from 6672 to 6672, Local port: same</li>
+<li>Protocol: UDP, Remote port: from 61455 to 61458, Local port: same</li>
+</ol>
+",1686,1606666
+1606690,0,"<p>Please try to put the continuous break on a paragraph break and then make that paragraph hidden.</p>
+<p>You will get a new section without a new page.</p>
+<p>This way you can put different page headers while using continuous breaks without always needing a new page.</p>
+",1146556,1606672
+1606732,2,"<h2>Issue analysis</h2>
+<p>Your problem is that Windows goes through each entry in the PATH variable and checks if a binary of the name you're calling exists in there and aborts the search on the first match. Since your PATH variable contains the Python <code>Scripts</code> entries before the common Windows paths they'll override default commands since they contain a script called ping.</p>
+<p>It's uncommon to add custom paths to the beginning of the PATH variable. You usually append to its end.</p>
+<h2>How to fix:</h2>
+<p>Take the list above and combine all entries with <code>;</code> as delimiter. But make sure to move the following entries to the end of the list:</p>
+<pre><code>C:\Program Files\Python36\Scripts\
+C:\Program Files\Python36\
+C:\Program Files\Python37\Scripts\
+C:\Program Files\Python37\
+C:\Program Files\AdoptOpenJDK\jre-8.0.212.03-hotspot\bin
+C:\Program Files (x86)\AdoptOpenJDK\jre-8.0.212.03-hotspot\bin
+C:\Program Files\AdoptOpenJDK\jre-11.0.3.7-hotspot\bin
+</code></pre>
+<p>Then follow these steps to update the PATH variable:</p>
+<ol>
+<li>On the Windows desktop, right-click <strong>My Computer</strong>.</li>
+<li>In the pop-up menu, click <strong>Properties</strong>.</li>
+<li>In the <strong>System Properties</strong> window, click the <strong>Advanced</strong> tab, and then click <strong>Environment Variables</strong>.</li>
+<li>In the <strong>System Variables</strong> window, highlight <strong>Path</strong>, and click Edit.</li>
+<li>In the Edit System Variables window, replace the list with your prepared list of entries (the full list from your post, reordered, with semicolons as delimiters).
+If the last character is not a semi-colon (;), add one.</li>
+</ol>
+<p>Finally reboot the computer to ensure that all programs use the updated PATH variable.</p>
+<h2>Edit</h2>
+<p>It seems in Windows 10 they updated the PATH editor so that when you edit the variable you get a little editor window that allows you to edit each entry separately and also allows you to move them up and down. Simply move the Python entries to the bottom of the list.</p>
+",243093,1606727
+1606739,0,"<p>Make sure your backups are up to date. Limit use of the drive to the minimum. This implies not running filesystem checks yet. Disable spin-down for power saving until you have a replacement.</p>
+<p>Get a replacement drive that's at least the size of the old one. Clone the disk (see next paragraph). Then run a filesystem check. Once it's done, you can resize partitions to fill entire new drive. Re-enable disk power saving if you want to use it.</p>
+<p>You may be tempted to use faster cloning methods that skip unused sectors, but doing that before filesystem check could be unsafe. On the other hand this approach will put less stress on the (potentially) failing drive and could skip problematic drive areas. If your backups are in good condition, you could go for the fast clone and then restore missing files (if any).</p>
+<p>Don't use the old drive for anything you aren't ready to lose. Disk platters make cool earrings and there are nice magnets inside too.</p>
+",194694,1606736
+1606754,0,"<p>You need to choose to install one of those options. Just because you're installing X11 libraries (and possibly related applications), it does not mean you'll end up with a graphical system.</p>
+<p>(I run LibreOffice as a docx processor on a similarly headless system without any issues.)</p>
+",332907,1606723
+1606773,0,"<p>Select your data and press Ctrl+T to convert it into a Table.</p>
+<p>Create your chart based on the table columns.</p>
+<p>As you add new rows to the table, the chart will pick them up automatically.</p>
+<p><a href=""https://i.stack.imgur.com/66exQ.gif"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/66exQ.gif"" alt=""enter image description here"" /></a></p>
+",1125935,1606636
+1606795,2,"<p>Please read <a href=""https://unix.stackexchange.com/q/30925/108618""><em>In Bash, when to alias, when to script, and when to write a function?</em></a></p>
+<p>Alias is a purely textual replacement. Your alias injects so much code it would be more elegant if <code>myproject</code> was a function. This is a side &quot;issue&quot;. You can stick to the alias if you want.</p>
+<p>The main issue is you're expecting <code>cd ~/code/myproject-ember</code> to work in the newly opened tab. When your alias replaces <code>myproject</code> with</p>
+<pre><code>… gnome-terminal --tab --active &amp;&amp; cd ~/code/myproject-ember
+</code></pre>
+<p>and this code is executed, the fact that <code>gnome-terminal</code> is executed will not inject the next command (<code>cd ~/code/myproject-ember</code>) into a command line <em>there</em>. <code>cd</code> will be executed in the current shell after this particular <code>gnome-terminal</code> process exits successfully. The whole snippet is similar to:</p>
+<pre><code>… true &amp;&amp; cd …
+</code></pre>
+<p>and there's no reason why this <code>cd</code> should be performed anywhere else than in the shell that executes the whole command.</p>
+<p>Your attempt with <code>gnome-terminal --tab -e &quot;cd ~/code/myproject-ember&quot;</code> fails because:</p>
+<ul>
+<li><code>~</code> is never expanded. I understand the tilde is single-quoted when you define the alias. Then after the alias expansion it's <a href=""https://unix.stackexchange.com/q/151850/108618"">double-quoted</a>. Then <code>gnome-terminal</code> receives the string <code>cd ~/code/myproject-ember</code>, splits it to words (without expanding the tilde) and tries to run the resulting command, but not in a shell (that could otherwise finally expand the tilde).</li>
+<li>Running <code>cd</code> this way makes no sense. <code>cd …</code> is executed not in a shell; this requires a <a href=""https://unix.stackexchange.com/q/38808/108618"">separate <code>cd</code> executable</a>, you may or may not have it in your OS. Even if you had it and even if the tilde was expanded, <code>gnome-terminal</code> would execute <code>cd</code> that would do its pointless job (change its own directory) and exit; and there would be nothing more to do in this tab.</li>
+</ul>
+<p>The right way to make <code>gnome-terminal</code> start an interactive shell in some directory is <a href=""https://askubuntu.com/a/75223/693277"">here</a>:</p>
+<blockquote>
+<pre><code>gnome-terminal --working-directory=/path/to/dir
+</code></pre>
+</blockquote>
+<p>Similarly as before, <code>gnome-terminal</code> won't expand <code>~</code> if it gets it after <code>--working-directory=</code>. Better use <code>$HOME</code> and and make sure it's expanded by your current shell. If you choose to use an alias, it may be:</p>
+<pre><code>alias myproject='cd ~/code/myproject-rails &amp;&amp; rails s &amp; cd ~/code/myproject-ember &amp;&amp; ember s &amp; gnome-terminal --tab --active &quot;--working-directory=$HOME/code/myproject-ember&quot;'
+</code></pre>
+<p>In this case <code>$HOME</code> will be expanded after each alias expansion.</p>
+<p>As I said, IMO a function would be more elegant:</p>
+<pre class=""lang-sh prettyprint-override""><code>unalias myproject
+myproject () {
+   cd ~/code/myproject-rails &amp;&amp; rails s &amp;
+   cd ~/code/myproject-ember &amp;&amp; ember s &amp;
+   gnome-terminal --tab --active &quot;--working-directory=$HOME/code/myproject-ember&quot;
+}
+</code></pre>
+<p>Note <code>rails</code> and <code>ember</code> will become jobs in the <em>old</em> shell. I don't know what they are but <em>maybe</em> you'd like to have them as jobs in the new shell. It can be done but I won't elaborate here. (If you need it and don't find a solution, ask a separate question.)</p>
+",432690,1606777
+1606806,1,"<p><em>From the text dispersed here and there, I'd guess the culprit is on the motherboard, seems to work as the MoBo warms up a bit... so a broken PCB-trace, possibly. One might need quite advanced tools to find (=locate) the actual problem.</em></p>
+<p>One  step further, and a possible problem removal step:</p>
+<ul>
+<li>It isn't just the RAM modules: The RAM needs to have working communication via the databus and memory access/control lines (RW, CS, and all that), from RAM to CPU and vice versa.</li>
+<li>Use a pencil eraser - lightly - to erase the oxide (air oxygen induced &quot;contamination&quot;) on the RAM module contacts.</li>
+<li>Get some &quot;contact spray&quot; from an electronics supplier (note: nothing else than that!) and spray it on the CPU-socket and RAM module connectors (on MoBo and modules)</li>
+</ul>
+<p>... you might solve the problem by those two steps.</p>
+<p><em>I have removed strange effects on old computers by very similar methods. Old oxidized connectors will not allow current to flow as freely as required for correct function.</em></p>
+",346288,1606749
+1606809,0,"<p>Rules are checked one by one. <br>
+Each rule after the reject will be ignored.</p>
+<p>You should invert</p>
+<pre><code>-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -d 172.16.0.202/32 -p tcp -m tcp --dport 443 -j ACCEPT
+</code></pre>
+<p>to</p>
+<pre><code>-A FORWARD -d 172.16.0.202/32 -p tcp -m tcp --dport 443 -j ACCEPT
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+</code></pre>
+",1246968,1606770
+1606814,0,"<p>If using dig is an option you can create a list of domains (one per line) you want to query and use the following script.</p>
+<pre><code>#!/bin/bash
+
+domainlist=$1
+
+while read domain; do
+  ipaddress=`dig $domain +short`
+  echo &quot;Domain:  $domain&quot;
+  echo &quot;IP Address:  $ipaddress&quot;
+done &lt; &quot;$domainlist&quot;
+</code></pre>
+<p>syntax for use should be <code>./name_of_script.sh file_containing_the_domain_list</code></p>
+",1072972,1606807
+1606828,1,"<p>There is a LOT of things, that influence how the video from different sources start, interact and stay in sync (or not):</p>
+<ul>
+<li>Three cameras are very likely to not have <strong>exactly</strong> the same frame rate. Even a 1/1000 inequality in the time bases at 25fps will give you a difference of a complete frame every 40 seconds</li>
+<li>For the stream to &quot;start&quot; (i.e. the first output image to appear) the decoder needs to wait for the first full image (I-frame), on which the following B-frames and P-frames can be built. This is upper-bounded by the GOP length, which is typically in the 1-2 second range for streaming cameras. Since I-frames are most often not only scheduled at each GOP border, but also on significantly changed image content (&quot;oportunistic&quot; I-frames on scene change), it is very unlikely, that they come at the same time. This implies, that for a multi-input case, the minimum delay is the maximum time delta between I-frames in the different streams. <strong>Remember: A h.264 stream can by design not be interpreted from any given point in time on, but only from the first keyframe (I-frame) following that point in time</strong></li>
+<li>Are you sure, you are asking the right question? Maybe it would be better to start the input stage much earlier, decode to a keyframe-only format (which gives you immediate startup), then reencode? This is, how minimum latency ist done in the broadcast industry.</li>
+</ul>
+<p>The first two bullets answer, why different processes seem to start up faster than a single process: Each one has to wait for a single keyframe, not for all three.</p>
+",300968,1606808
+1606831,-2,"<blockquote>
+<p>I can go to a &quot;whatsmyip&quot; site and it correctly reports the external IP of my router</p>
+</blockquote>
+<p>Sorry, that's not correct.  What you see is the translated address of your local devices.  That address is different than the IP address of the router interface.</p>
+<p>When you browse the Internet, your router translates your internal, private IP of your PC (usually 192.168.0.x) to a public IP.  Your router remembers that translation for the duration of the browsing session -- when you leave the website, the translation is &quot;forgotten&quot; until you browse to a new site.</p>
+<p>So if your girlfriend tries to ping your translated address, your router doesn't have the translation for your PC anymore.  So the ping is dropped.</p>
+<p>What you need is a static translation for your Minecraft server.  Your ISP will give you one, if you ask -- and they will charge you for it.  then you would configure port forwarding on your router to translate the static IP to the address of the server.</p>
+",283281,1606748
+1606840,1,"<p>Well, it's hard to see the point of what you're doing with just this formula to look at.</p>
+<p><strong>IF</strong> it is taken as essentially your plan, with the exception of the error Excel reports, then you have the following concept in your formula:</p>
+<p><em>IF some condition (N16=1 in this case) is TRUE, then report THIS (whatever &quot;THIS&quot; is) and if it is not TRUE, report THIS (whatever &quot;THIS&quot; is) ANYWAY.</em></p>
+<p>That boils down to being the same as the following:</p>
+<pre><code>=IF(A1=1,50,50)
+</code></pre>
+<p>The point being that if you get the same results for TRUE and for FALSE, then there's no point in the <code>IF()</code>. Note that there can be reasons external to the logic in the situation and, who knows, one of them may apply. Since you give no information meaningful to resolving THAT, one cannot say. But if none do, and that seems very likely, why use the <code>IF()</code> at all?</p>
+<p>So only the result of either TRUE or FALSE matters here (since they are the same). You can simplify your formula by just using one of those portions of the formula.</p>
+<p>That's if you want to &quot;simplify&quot; it. If you'd rather <strong>GREATLY simplify</strong> it, then consider what each test does. Your basic result in each test is to subtract 2 from some cell, then multiply it by the test cell. Cool. If that test cell is blank, Excel will consider it to be 0 and that multiplication will give you 0. So why bother testing whether it is blank if the reason to do so is to make the result 0? <em>Just the actual multiplication will do that for you without anything else needed.</em> If you drop the extra work, and the whole <code>IF()</code> idea, you get the following:</p>
+<pre><code>=(2  *  C8*(D8-2)  -  C9*(D9-2)  -  C11*(D11-2)  +  C12*(D12-2)  )  /2
+</code></pre>
+<p>and since there seems to be no reason to multiply that by 2, then divide it by 2, take that out as well:</p>
+<pre><code>=C8*(D8-2)  -  C9*(D9-2)  -  C11*(D11-2)  +  C12*(D12-2)
+</code></pre>
+<p>I'll take it that the expected &quot;C10*(D10-2)&quot; is not there for good reasons and go onward.</p>
+<p>Stopping the simplifying at this point (since anyway, technically speaking, anything more happens to be &quot;streamlining&quot; more than &quot;simplifying&quot; in this case), I'd point out one huge advantage to using the above and not your formula:</p>
+<p>It's so simple, and easy to type or generate, that silly entry errors should be hard to have happen, and should be extraordinarily easy to figure out if they do. Contrast that will your formula and the advantage should be easy to see.</p>
+<p>That, and not the particular tricks of the trade above is the important part of this answer.</p>
+",1247006,1606830
+1606842,1,"<h2>Why do you have many section breaks? This is very unusual.</h2>
+<p>Look into using the <a href=""http://www.addbalance.com/usersguide/fields.htm#STYLEREF"" rel=""nofollow noreferrer"">StyleRef Field</a> if you are trying to change text in your headers and footers using section breaks. <em>Disclosure: Link is to page on my website.</em></p>
+<h2>Continuous Section Breaks are for changing columns within a document. That is about it.</h2>
+<p>Other uses would call for a section break that adds a page like Next Page, Odd Page or Even Page. You should <em>almost never</em> be changing <strong>Margins</strong> within a document and <em><strong>never</strong></em> with a continuous section break. While Word allows changing margins within a page, this is very poor practice and greatly complicates document files without any reason. Change paragraph indents instead. See <a href=""http://www.addbalance.com/usersguide/basic_formatting.htm#Margins_and_Indents"" rel=""nofollow noreferrer"">Margins and Indents in Word</a>. <em>(also on my web site)</em></p>
+<h2>For unexpected spacing on pages, see <a href=""http://wordfaqs.ssbarnhill.com/BottomLine.htm"" rel=""nofollow noreferrer"">Improving the Bottom Line</a> by Suzanne Barnhill, MVP.</h2>
+<h2>To make page numbering continuous, you can use my <a href=""http://addbalance.com/word/download.htm#ContinuousPageNumbering"" rel=""nofollow noreferrer"">Continuous Page Numbering Add-In</a> or this macro.</h2>
+<pre><code>Sub ContinuousPageNumbers1()' Jay Freedman
+' http://answers.microsoft.com/en-us/office/forum/office_2007-word/page-numbers-are-all-fouled-up-in-my-large/d188687e-9663-43e0-a450-1dbadc47f09f
+' modified to preserve track changes status - idea from Graham Mayor 25 Oct 2017
+'   if track changes is locked with password, you can comment out the three lines that have 'Graham Mayor as a tag'
+    Dim secNum As Long
+    Dim btnCancel ' give user chance to cancel
+    Dim bTrackChanges As Boolean
+    btnCancel = MsgBox(prompt:=&quot;Do you want to reset all of the page numbers in this document to number continuously?&quot;, _
+        Title:=&quot;Are you sure?&quot;, _
+        Buttons:=vbYesNo)
+    If btnCancel = vbNo Then
+        MsgBox prompt:=&quot;Reset of continuous page numbering cancelled by user!&quot;, Buttons:=vbExclamation, Title:=&quot;Page Number Reset Cancelled!&quot;
+        Exit Sub
+    End If
+'   Proceed with reset
+    bTrackChanges = ActiveDocument.TrackRevisions 'Graham Mayor
+    ActiveDocument.TrackRevisions = False ' Graham Mayor
+    With ActiveDocument
+        For secNum = 2 To .Sections.Count
+            .Sections(secNum).Headers(wdHeaderFooterPrimary) _
+                 .PageNumbers.RestartNumberingAtSection = False
+        Next
+    End With
+    ActiveDocument.TrackRevisions = bTrackChanges 'Graham Mayor
+End Sub
+</code></pre>
+",1219214,1606672
+1606843,1,"<p>What fixed this for me was this command :</p>
+<pre><code>ulimit -n 20000 24000
+</code></pre>
+<p>Just before running my script.</p>
+",1009410,1606753
+1606855,1,"<p>Most Intel CPUs have integrated graphics, except the models that end in F do not. If your monitor is plugged in to the video ports on the motherboard they will be inactive and you will get no video.</p>
+<p>Make sure that your monitor is plugged in to the RTX 2070.</p>
+",899186,1606850
+1606874,1,"<p>If you want the full desktop with GUI, then <strong>TeamViewer</strong> is a good alternative. There is software for Windows, macOS, Linux and host software for Raspberry Pi. It's free for personal/non-commercial usage. It works really well. You don't have open up ports in firewalls etc.</p>
+<p>If you only need shell access to run commands and transfer files, then <strong>ssh</strong> is all you need. That is already built into Raspberry OS. You will need to forward a port in the firewall to connect from outside. Default is port 22, but you could also &quot;hide&quot; the ssh-service a little bit by using a different port in the higher range.</p>
+<p>ssh is generally considered quite secure and you can use keys instead of password for logging in, which is good both for security and convenience when you connect. I almost only use my RPis without screen and over ssh anyway.</p>
+<p>Think about security. Is it secure enough for the type of information you store on the RPi?
+Regardless of what you store on the RPi itself, you may want to isolate the RPi from the rest of your home network. In case somebody does get access to it, they can't use it to get to other devices on the same network.</p>
+<p>There are plenty of other software alternatives, but if you are a beginner I think these two options are a good place to start.</p>
+",1246659,1606859
+1606876,0,"<p>You don't need to use a formula for this conditional formatting.<br />
+Instead, use the rule type <code>Format only cells that contain</code> and set it to:<br />
+<code>Cell Value</code> <code>greater than or equal to</code> <code>=A2+0.00005</code></p>
+<p>Key Point: <code>A2</code> needs to be the right cell reference for the top left cell in your selection. In the example below, that's <code>B2</code>. Since this is a relative reference (as opposed to <code>$A$2</code>), it will update as needed for every other cell in the selected range.</p>
+<p><a href=""https://i.stack.imgur.com/Pm5sV.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/Pm5sV.png"" alt=""Screenshot"" /></a></p>
+",348859,1606870
+1606879,1,"<h3>I am not able to determine how much more is supported if I want to upgrade this?</h3>
+<blockquote>
+<pre><code>Memory
+RAM                           4GB
+RAM Slots                     2
+Expandable RAM up to (GB)     8GB
+</code></pre>
+</blockquote>
+<p>Source <a href=""https://gadgets.ndtv.com/dell-inspiron-15-3521-4769#specs"" rel=""nofollow noreferrer"">Dell Inspiron 15 3521 Price (03 Dec 2020) Specification &amp; Reviews । Dell Laptops</a></p>
+",337631,1606877
+1606883,1,"<p>You need to set the character encoding of the file being imported. You can keep trying different encodings until you find one that works. Try UTF-8 first.</p>
+<p>The easiest is to use import &quot;from text&quot; on the data ribbon.</p>
+<p>Also see this post:
+<a href=""https://superuser.com/questions/280603/how-to-set-character-encoding-when-opening-excel"">How to set character encoding when opening Excel</a></p>
+",1241807,1606856
+1606886,0,"<p><a href=""https://downloads.dell.com/manuals/all-products/esuprt_laptop/esuprt_inspiron_laptop/inspiron-15-3521_reference%20guide_en-us.pdf"" rel=""nofollow noreferrer"">According to Dell</a> it supports up to 8gb ram</p>
+<p><a href=""https://www.dell.com/support/home/en-us/product-support/product/inspiron-15-3521/overview"" rel=""nofollow noreferrer"">Your Support Page</a> should you need it</p>
+<p><a href=""https://i.stack.imgur.com/Lkly9.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/Lkly9.png"" alt=""enter image description here"" /></a></p>
+",40928,1606877
+1606895,2,"<p>Those screws in the picture are Philips screws. They are either number 1 or number 0.</p>
+<p>You can get good, high quality, Philips drivers at Home Depot, Lowes in the US, North America, or at a good hardware store where you live.</p>
+<p>Buy top quality screwdrivers so as not to damage the screw head. This is easily done with a poor quality driver, or a driver that does not fit properly, so you will want to take care.</p>
+<p>I have these tools and have removed / replaced screws like this.</p>
+",1079976,1606893
+1606902,1,"<p><strong>For Command Line:</strong></p>
+<p>As HelpingHand posted, you can use <code>set PROMPT=%COMPUTERNAME%-$P$G</code> in the command prompt terminal to set it temporarily.</p>
+<p>To make it permanent, you need to create a new <code>string value</code> registry key in <code>HKEY_CURRENT_USER\Software\Microsoft\Command Processor</code> named <code>autorun</code> and set the value of that key as <code>PROMPT=%COMPUTERNAME%-$P$G</code>.</p>
+<p>The quickest way to create the key is from a Powershell prompt:</p>
+<pre class=""lang-powershell prettyprint-override""><code>New-ItemProperty -name Autorun -Path 'HKCU:\SOFTWARE\Microsoft\Command Processor\' -PropertyType String -Value 'PROMPT=%COMPUTERNAME%-$P$G' -Force
+</code></pre>
+<p><strong>For Powershell:</strong></p>
+<p>Powershell is similar to Linux shells, in which you create a <code>profile.ps1</code> file that contains the commands you want to run. Where you create this file depends on who you want the profile to be viewed by, and the Powershell host you want to view that prompt in. (The Powershell terminal or the ISE). For the profile to apply to you in all hosts, it needs to be in <code>$Home\Documents\PowerShell\Profile.ps1</code>.</p>
+<p>The <code>profile.ps1</code> file should contain:</p>
+<pre class=""lang-powershell prettyprint-override""><code>function Prompt
+{
+ $env:COMPUTERNAME + &quot;\&quot; + (Get-Location) + &quot;&gt; &quot;
+}
+
+</code></pre>
+",205535,1606899
+1606905,1,"<p>It was actually firewall issue.  What needed to happen:</p>
+<p>Client: set VPN network profile to private</p>
+<p>Server: create firewall inbound rule for ICMP (if you want ping), TCP 139 and TCP 445 on public networks (VPN on server can't be set to private, apparently)</p>
+",209143,1606875
+1606919,-1,"<p>One thing that I can think of is virus protection. If no user has root level access to the machine, then any virus or malicious programs that user may get will be limited in the damage they can do. A user can install as many viruses as they want, but the virus will be limited to files and programs not critical to running the system. If a user has root level access then that virus can just run amok. Granted I daily drive Windows, and before that MacOS, so I do not have as much experience with Linux. That being said, if the user can't mess with any critical files, then the malicious program cant either. I did find an article that is looking at it from a security perspective. That is the really persuasive argument in my opinion.</p>
+<p><a href=""https://www.beyondtrust.com/blog/entry/5-reasons-to-keep-admin-rights-off-your-pc"" rel=""nofollow noreferrer"">https://www.beyondtrust.com/blog/entry/5-reasons-to-keep-admin-rights-off-your-pc</a></p>
+",1246751,1606915
+1606920,1,"<p>So the actual Hard Drive will almost certainly be just fine. What you probably damaged is the plastic enclosure and the connections. You can simply remove the HDD from its enclosure. This is not meant to be done, but it is usually pretty easy, given the right tools. The top and bottom of the enclosure will just click together with plastic clips, so you can just break it apart. Very gently, so as not to damage the actual HDD. You can then get a HDD reader, enclosure, etc. from Amazon for $10-20. Like this one I've linked too.</p>
+<p><a href=""https://www.amazon.com/s?k=hdd+reader&amp;ref=nb_sb_noss_1"" rel=""nofollow noreferrer"">https://www.amazon.com/s?k=hdd+reader&amp;ref=nb_sb_noss_1</a></p>
+<p>Or just throw it into a PC and use it as an external drive.</p>
+",1246751,1606914
+1606923,0,"<p>I found these on Amazon. They should all work. Not with the greatest resolution or anything, but you should get an output.</p>
+<p><a href=""https://www.amazon.com/s?k=hdmi+to+rca&amp;ref=nb_sb_noss_2"" rel=""nofollow noreferrer"">https://www.amazon.com/s?k=hdmi+to+rca&amp;ref=nb_sb_noss_2</a></p>
+",1246751,1606897
+1606935,0,"<p>There can multiple factors for not providing the root access to the overall department as it may just allow the users to make changes to the critical system files such as files under /etc directory.</p>
+<p>But, a possible solution can be make groups in system and give them the specific permissions to execute only specific commands as per their role in the department.</p>
+<p>The <code>sudoers</code> file can be efficiently used in this case.</p>
+<p>you may have to do more research in this case as it may or may not fit well with the department's workflow as you have mentioned above the user accounts have been provided and adding groups can be a hefty task to take upon in realtime.</p>
+<p>The possible references for further research:</p>
+<ul>
+<li><a href=""https://www.sudo.ws/man/1.8.17/sudoers.man.html"" rel=""nofollow noreferrer"">Sudoers Manual</a></li>
+<li><a href=""https://www.sudo.ws/sudo.html"" rel=""nofollow noreferrer"">reference website of sudo</a></li>
+</ul>
+",1199087,1606915
+1606940,0,"<p>Assuming you have installed <code>xz</code>:</p>
+<pre><code>xzcat sintel-4k.y4m.xz | ffmpeg -i pipe: ...
+</code></pre>
+<p>However, depending on where the moov metadata is located in your stream, you may encounter a pipe error. See the accepted answer to
+<a href=""https://superuser.com/questions/479063/ffmpeg-pipe-input-error"">this question</a> for an explanation.</p>
+<p>Note: <code>xzcat</code> is an alias for <code>xz --decompress --stdout</code></p>
+",20444,1606901
+1606945,2,"<p>There is one instance of the OS network data structures per network namespace. You could count this is one &quot;stack&quot;. You could also count different network protocol stacks (like IPv4 and IPv6, or even older ones that are still supported by Linux) separately, then you'd have one each per network namespace.</p>
+<p>All network interfaces in a network namespace belong to the same network stack (or several, if you count different protocols). There are various tables that either reference a particular interface (routing, firewall) or are per-interface (address assignment), but they still belong to the same kernel data structure instance.</p>
+<p>The loopback interface is no different in this respect, though it plays a special role in the network stack (it's used whenever a transmission from a local address to a local address is involved, and it also offers a way to assign dedicated local IP addresses). So there is one loopback interface per network namespace (and hence network stack).</p>
+",327880,1606567
+1606946,0,"<p>I figured it out. I recently changed the DNS settings of the domain and my local DNS provider didn't update their server as quickly as they usually do (took a couple days). So it wasn't OSX after all.</p>
+<p>Anyone else running into this - check if you can access the domain from your phone (not on same wifi, use 3g), which might signal a similar issue.</p>
+",1246865,1606721
+1606955,0,"<p>Guessing you are not using Exchange email account right? As I know, calendar items for Exchange account should be able to synced.</p>
+<p>For IMAP/POP account, you may try to log in to your web mail and see if you can find those those meeting invitation messages in your Sent folders. I tested with Gmail account in my environment, if you can indeed find them, you could just download the .ics file and import it to your Outlook desktop client.</p>
+<p><a href=""https://i.stack.imgur.com/Dzp5l.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/Dzp5l.png"" alt=""enter image description here"" /></a></p>
+<p><a href=""https://i.stack.imgur.com/qTMW0.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/qTMW0.png"" alt=""enter image description here"" /></a></p>
+",1174833,1606698
+1606960,0,"<p>You can reboot into <a href=""https://www.tenforums.com/tutorials/2304-boot-into-safe-mode-windows-10-a.html"" rel=""nofollow noreferrer"">Safe Mode with Command Prompt</a>.  While in this mode, your machine will write to disk much less, if at all.</p>
+<p>CrashOnCtrlScroll still works fine in this mode.</p>
+",113306,1606959
+1606966,1,"<p>Do you have Office 2010 32-bit and the Windows 7 32-bit?</p>
+<ol>
+<li>If yes, please refer to Echo S's reply in this thread &quot;<a href=""https://answers.microsoft.com/en-us/office/forum/office_2010-powerpoint/can-i-insertlink-transparent-avi-file-in-ppt-2010/eb4a2301-cd84-4203-96c3-46fc38519efe?msgId=daa16842-5885-4e84-8a92-1d6c45917ea6&amp;tab=AllReplies&amp;page=2"" rel=""nofollow noreferrer"">Can I
+insert/link transparent avi file in PPT 2010?</a>&quot;.</li>
+</ol>
+<p>Sometimes, you even need K-Lite Codec instead of QuickTime.</p>
+<ol>
+<li>If not, I am afraid your needs could not be achieved. Or you may
+create a gif as a workaround.</li>
+</ol>
+<p>As for later versions of Office, PowerPoint does not support alpha channel.
+I find 2 related threads in PowerPoint UserVocice forum, and you may vote up them.</p>
+<ul>
+<li><a href=""https://powerpoint.uservoice.com/forums/288949-powerpoint-for-windows-desktop-application/suggestions/16399309-32bit-video-with-alpha-channel"" rel=""nofollow noreferrer"">32bit video (with alpha channel)</a></li>
+<li><a href=""https://powerpoint.uservoice.com/forums/288925-powerpoint-for-mac/suggestions/39808828-import-videos-into-a-slideshow-page-while-keeping"" rel=""nofollow noreferrer"">import videos into a slideshow page while keeping the background
+transparent of the video</a></li>
+</ul>
+",1094459,1606936
+1606985,0,"<p>Very rough answer:</p>
+<p>Your BIOS has tables which are evaluated by Linux during boot. Very often, those tables don't follow the ACPI standard, which nobody notices on Windows because the Vendor who wrote the tables also supply their own Windows driver which work with those tables.</p>
+<p>However, there's no driver for Linux, so Linux has to somehow interpret even buggy tables.</p>
+<p>The ACPI BIOS you are seeing may or may not be harmful, and may have been already present before the update. It also may be the cause of the hang.</p>
+<p>The other error is more serios, the nvme device (SSD) failed during boot, which is probably the reason why the boot stops.</p>
+<p>Ways to access the system:</p>
+<ul>
+<li><p>Try to boot a Linux distribution from an external device (e.g. USB stick), e.g. the <a href=""https://www.system-rescue.org/Installing-SystemRescue-on-a-USB-memory-stick/"" rel=""nofollow noreferrer"">system-rescue</a> distro.</p>
+</li>
+<li><p>Take out the SSD (if you can), put it in some device (if you have) to read and write it from another PC.</p>
+</li>
+</ul>
+<p>If you get this to work, the first thing I'd do is to re-install your old kernel, and see if the problem persists.</p>
+<p>I don't use Zorin OS, so I don't know how they handle things, but it's good practice to always keep the old kernel around when upgrading to a new kernel.</p>
+",327880,1606979
+1606990,1,"<p>Select the files that you want to copy (e.g. numpad <kbd>*</kbd>), press <kbd>Alt</kbd>-<kbd>Shift</kbd>-<kbd>Insert</kbd> to copy the filenames including paths.</p>
+<p>If you don't select files, only the filename of the &quot;active&quot; file is copied.</p>
+<hr />
+<p>Other useful shortcuts:</p>
+<pre><code>Ctrl+Ins
+Copy names of the selected files to clipboard (if the command line is empty).
+
+Ctrl+Shift+Ins
+Copy names of the selected files to clipboard.
+
+Alt+Shift+Ins
+Copy full names of selected files to clipboard.
+
+Ctrl+Alt+Ins
+Copy real names of selected files to clipboard.
+
+
+Ctrl+Shift+C
+Copy the selected files to clipboard.
+
+Ctrl+Shift+X
+Cut the selected files to clipboard.
+</code></pre>
+",274351,1606787
+1607000,2,"<blockquote>
+<p>Is unencrypted swap partition safe after shutdown?</p>
+</blockquote>
+<h1>No!</h1>
+<p>Swap is not erased on shutdown - it would be very slow and rather harmful for SSDs. Even then, a clean shutdown isn't guaranteed - someone can simply pull the plug.</p>
+",194694,1606998
+1607003,-1,"<p>I am afraid we could not find the Office key for some security reasons.</p>
+<p>Here is an article &quot;<a href=""https://support.microsoft.com/en-us/office/using-product-keys-with-office-12a5763a-d45c-4685-8c95-a44500213759"" rel=""nofollow noreferrer"">Using product keys with Office</a>&quot;, it lists some questions about &quot;View your product key&quot;.</p>
+<p>It's best to <a href=""https://support.microsoft.com/en-us/contactus/"" rel=""nofollow noreferrer"">contact Microsoft for help</a>.</p>
+",1094459,1606974
+1607018,1,"<p>What I done to make this work:</p>
+<p><a href=""https://i.stack.imgur.com/C3BcP.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/C3BcP.png"" alt=""enter image description here"" /></a></p>
+<ul>
+<li><p>Select <code>C2:C4</code>:</p>
+</li>
+<li><p>Use conditional formatting formula:</p>
+<pre><code>=DATEDIF($A2,$B2,&quot;d&quot;)&gt;365
+</code></pre>
+</li>
+</ul>
+<p>If you need this to be equal or higher then 365, then just change to <code>&gt;=</code>.</p>
+<hr />
+<p>A much better alternative (IMHO) is to keep your original formula in <code>C2:C4</code> without the &quot;days&quot; part (<code>=DATEDIF($A2,$B2,&quot;d&quot;</code>), but change the formatting of these cells to a custom format:</p>
+<pre><code>0 &quot;days&quot;
+</code></pre>
+<p>Now you can simply add a conditional formatting of values higher then 365, <strong>AND</strong> you can do calculations with your cells since they simply still numbers looking like text instead of actual text.</p>
+<p><a href=""https://i.stack.imgur.com/XRqV6.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/XRqV6.png"" alt=""enter image description here"" /></a></p>
+<p>See how the allignment is different too!</p>
+",1059206,1607016
+1607028,2,"<p>Assume U21 is Current time, and W21 is Criterion time e.g.
+U21 = 10210  W21 =1000 10%
+then you can put Your Xses on the table by simple modulo operator and If statement. <br>
+=IF(MOD(U21;W21)=0;&quot;X&quot;;0)<br>
+Or If You want to have say some tolerance based on rest from division <br>
+=IF(MOD(U21;W21)&lt;=5;&quot;X&quot;;0)<BR>
+Or if You want have tolerance bounds based on 10% Criterion <br>
+=IF(U21-INTEEGER(U21/W21)<em>W21&lt;W21</em>0.1;&quot;X&quot;;&quot;0&quot;)<br></p>
+<p>Then color Your Xses by conditional formatting</p>
+",997727,1606993
+1607039,0,"<pre><code>debug1: Connecting to 123.456.78.90 [123.456.78.90] port 7020.
+debug1: connect to address 123.456.78.90 port 7020: Connection timed out
+ssh: connect to host 123.456.78.90 port 7020: Connection timed out
+</code></pre>
+<p>Your second SSH instance can't make a TCP connection to the tunnel listening port. Specifically, <code>ssh</code> sent a TCP connection request to host 123.456.78.90 port 7020, and it never received a response.</p>
+<p>The simplest explanation is that there is a firewall blocking these connection requests. The firewall may be on the host that you are running <code>ssh</code> on, or it may be on host 123.456.78.90, or it could be on some network device, like a router, in between these two hosts.</p>
+<p>This probably has nothing to do with the fact that host 123.456.78.90 port 7020 is the listening port for an SSH tunnel. I don't see anywhing obviously wrong with the <code>ssh</code> instance which creates the tunnel. It might work fine if you were able to connect to it.</p>
+",54530,1606973
+1607055,0,"<p>This is wild but covering pins 5 and 6 of the PCI-E connector with some kapton tape fixed the issue. System now boots and drives are picked up by Unraid.</p>
+<p>Leaving this link here for a visual guide on how to do this: <a href=""http://www.russellreeve.com/knowledgebase/H200/contents.html"" rel=""nofollow noreferrer"">http://www.russellreeve.com/knowledgebase/H200/contents.html</a> for future Google searches.</p>
+",154975,1606872
+1607095,1,"<p>You might be able to just simply concatenate the files after downloading individually.  Try it with the first two segments and if it works, it'll probably work with every segment.</p>
+<p>Under Windows, you can do this:</p>
+<p><code>copy seg_1.mp4 /b + seg_2.mp4 /b combined.mp4</code></p>
+<p>or Linux/Mac/other Unix:</p>
+<p><code>cat seg_1.mp4 seg_2.mp4 &gt; combined.mp4</code></p>
+",51705,1607089
+1607117,0,"<p>If the application has a manifest file to adjust user permissions, you can do that. Not many apps have this facility.</p>
+<p>Otherwise, if you can have it run at Windows Log in, you can set it up in Task Scheduler to run at log in, and set elevated permission and your admin credentials for the app. This is found in the General Tab of the Task Schedule setup.</p>
+",1079976,1607113
+1607123,0,"<p>Are you trying to log into your own (user) account, or into the root account? If you can log in as root, you can turn off the password prompt on your regular user account by clearing out the 2nd (password) field in /etc/passwd, like this:</p>
+<p>jpublic::5471:1650:John Q Public:/users/jpublic:/bin/bash</p>
+<p>Notice the colons are next to each other.
+Often times you'll be removing a single x.
+Save and exit.
+Run pwconv with no arguments, then try logging in.</p>
+<p>If the root password is not available, you're in a worse situation. I had that happen recently when my vim started damaging the first 2 characters of files as soon as they opened. Recovery required creating a boot CD using a Knoppix ISO file I downloaded, then booting off it. Once in Knoppix, I located my original root filesystem and cd'd to the (now damaged) /etc/passwd file, fixed the damage, then rebooted the normal way and it was fine.</p>
+",855923,1607115
+1607125,0,"<p>Can you log in as root?  If so, simply <code>passwd *username*</code> should work, replacing <em>username</em> with the user account name whereof the login password doesn't work.</p>
+<p>If your root password doesn't work either, you'll have to get a root shell through replacing the init process during boot.  Start by rebooting into GRUB.  Select the Fedora installation (usually the top entry), then press E to edit the entry options.</p>
+<p>You'll see a lot of text, but the important line is the one that begins with <code>linux /boot/vmlinuz-...</code>.  Add <code>init=/bin/bash</code> to the end of the line, separated by a space.  Make sure there are no trailing spaces.</p>
+<p>Now, press <code>Ctrl-X</code> to 'boot' with the new options.  Hopefully, you'll see a command line wherein you are logged in as root, and there is no hostname.
+<a href=""https://i.stack.imgur.com/3NSHI.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/3NSHI.png"" alt=""enter image description here"" /></a>
+Therefrom you can simply mount the root filesystem <code>mount -o rw /</code> and set the passwords <code>passwd root</code> and <code>passwd *username*</code>.</p>
+",603048,1607115
+1607137,0,"<p>(Which version of Windows?)</p>
+<p>In the general case, you will need to run the application under a specific user account
+and limit its access to the root folder of the disk(s).</p>
+<p>For more information see this Microsoft article :
+<a href=""https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control"" rel=""nofollow noreferrer"">Access Control Overview</a>.</p>
+<p>On Windows Server you may use Group Policies.<br />
+See the article
+<a href=""https://www.lepide.com/how-to/assign-permissions-to-files-folders-through-group-policy.html"" rel=""nofollow noreferrer"">How to Assign Permissions to Files and Folders through Group Policy</a>.</p>
+",8672,1607130
+1607143,0,"<p>Basically, <code>df</code> reads the superblock only and trusts it completely.
+<code>du</code> reads each object and sums them up.</p>
+<p>If a running process keeps a deleted file open, the space will still be reserved
+and seen by <code>df</code>, but <code>du</code> will no longer see that file in the directory tree
+and will ignore those reserved blocks.</p>
+<p>For in-depth information see
+<a href=""http://linuxshellaccount.blogspot.com/2008/12/why-du-and-df-display-different-values.html"" rel=""nofollow noreferrer"">Why DU And DF Display Different Values On Linux And Unix</a>.</p>
+",8672,1607069
+1607157,0,"<p>Active Directory doesn't provide this functionality.</p>
+<p>You could enforce this limitation using the Technet script
+<a href=""https://gallery.technet.microsoft.com/Limit-concurrent-logins-in-dc13d8cb?stoAI=10&amp;wa=wsignin1.0&amp;stoAI=10"" rel=""nofollow noreferrer"">Limit concurrent logins in Active Directory</a>,
+further detailed in the article
+<a href=""https://social.technet.microsoft.com/wiki/contents/articles/37839.active-directory-limit-concurrent-user-logins.aspx"" rel=""nofollow noreferrer"">Active Directory: Limit concurrent user logins</a>,
+using logon and logoff scripts with a file used as lock.</p>
+<p>Another similar method is detailed in the article
+<a href=""https://abhishek.nagar.me/blogs/restrict-multiple-logins-domain-ad"" rel=""nofollow noreferrer"">Restrict Multiple Logins in Domain (AD)</a>,
+using logon and logoff batch scripts.</p>
+<p>You could also try the very old utility
+<a href=""https://docs.microsoft.com/en-us/previous-versions/technet-magazine/cc160794(v=msdn.10)?redirectedfrom=MSDN"" rel=""nofollow noreferrer"">LimitLogin</a>,
+although I do not know if it will work on newer versions of Windows.</p>
+",8672,1607042
+1607180,1,"<p>Firefox does not support mkv (matroska) files apparently.</p>
+<p>Your second file has the <em>extension</em> mp4, but according to your screenshot it is a matroska mkv file.</p>
+<p><a href=""https://bugzilla.mozilla.org/show_bug.cgi?id=1422891"" rel=""nofollow noreferrer"">https://bugzilla.mozilla.org/show_bug.cgi?id=1422891</a></p>
+<p>You can remulitplex mkv into mp4 without transcoding using <code>ffmpeg</code> and the <code>-c:v copy -c:a copy</code> options. There are a <a href=""https://www.google.com/search?q=remux%20mkv%20to%20mp4&amp;ie=utf-8&amp;oe=utf-8"" rel=""nofollow noreferrer"">lot of other programs that can remux as well.</a></p>
+<p>Remulitplexing will simply change the container without reencoding the file.</p>
+<p>If it still doesn't play then there is something about the video or audio format. If it <em>does</em> play when remuxed then it is mkv support that is missing.</p>
+",19943,1607174
+1607200,0,"<p>I have decided to go in a completely different direction.</p>
+<p>But how to delete this posted question? I can't find any option.</p>
+",1246330,1606900
+1607206,0,"<p>Possibly separate it into 2/3 columns instead so you can justify the right-hand column without shifting the others?</p>
+",1247477,1607202
+1607215,0,"<p>Nevermind, i found the workaround (stupidly). I just use table to align it, the table itself use no border so it will be invisibe, and because i use table the Justify alignment is working as i expected now. Now i'm able to reproduce the second pic. Marking this as answered. <a href=""https://i.stack.imgur.com/50lqJ.png"" rel=""nofollow noreferrer"">here is how</a></p>
+",1247480,1607202
+1607216,0,"<p>All you need to do is rename it <em>dhwd7486.unknown</em>.</p>
+<p>Now, to get that new extension to open in your PDF viewer (e.g. Firefox, Sumatra or other application),</p>
+<ul>
+<li><em>Right-click</em> on the file.</li>
+<li>Select <strong>Open with</strong>.</li>
+<li>Select <strong>Try an app on this PC</strong>.</li>
+<li>Browse to the application you want to use to open that type of file.</li>
+<li>Check the box for <strong>Always use this app to open .unknown files</strong>.</li>
+<li>Click <strong>OK</strong>.</li>
+</ul>
+",401553,1607210
+1607260,0,"<p>du was reporting files from different file systems. We used du -x to see the difference.</p>
+",1247286,1607069
+1607268,0,"<blockquote>
+<p>The VPN Server receives the packet and modifies the source / destination ip address to point to the actual web server hosted on the same network.</p>
+</blockquote>
+<p>This shouldn't ever be needed, because the client has already specified the destination IP address they want. (VPNs <em>encapsulate</em> the original packet inside another IP packet, without altering the original IP header, so the server only needs to decapsulate it again and forward the original packet exactly as it was.)</p>
+<p>NAT can be done (and is occassionally done), but it's more often the OS firewall's job and the sysadmin's decision – it shouldn't be done by the VPN software all on its own. And in general, communications within an internal network should not <em>need</em> NAT; using it is often an indication that your network's elementary routing is not set up right.</p>
+<blockquote>
+<p>How do I send these packets to the webserver and receive responses from the webserver? I want the client to communicate with the webserver through the VPN server / established web socket connection. What are some options I have?</p>
+</blockquote>
+<p>Typically, the VPN server will have a virtual interface exactly like the VPN client and will use exactly the same mechanisms to produce and receive packets. (Some will create dedicated virtual interfaces per client, others will have a single interface for all clients.) If your client is using a <code>tun</code> interface, your server can do the same.</p>
+",1686,1607262
+1607269,0,"<p>It should be possible, as long as the host and the VM are, in fact, connected using virtual Ethernet.</p>
+<p>This means &quot;NAT mode&quot; or &quot;user networking&quot; mode is <em>not</em> suitable – you need e.g. &quot;Host-only network (vboxnet)&quot; in VirtualBox or &quot;tap&quot; in Qemu/KVM. These act like regular Ethernet links and can carry any kind of frame including PPPoE.</p>
+<p>(VirtualBox's &quot;bridged&quot; networking may also work, but it's a bit complex under the hood – a virtual tap/vboxnet interface is simpler.)</p>
+",1686,1607249
+1607288,0,"<p>It seems that you have an (now) invalid URL as a repository.</p>
+<p>Open a terminal and switch to root. (<code>sudo -i</code>)</p>
+<p>Then do</p>
+<pre><code>cd /etc/apt/
+grep -lris anonscm.debian.org
+</code></pre>
+<p>Then open the file that is printed with your favorite textedior
+e.g. <code>nano /your/file/here.list</code></p>
+<p>Search for the line that goes something like</p>
+<pre><code>deb https://anonscm.debian.org/git/collab-maint/pcsc-lite.git focal Release
+</code></pre>
+<p>Delete that line. Then save and exit</p>
+<blockquote>
+<p>in nano that would be <code>ctrl + X</code> &gt; <code>y</code> &gt; <code>&lt;ENTER&gt;</code></p>
+</blockquote>
+<p>then try <code>apt update &amp;&amp; apt upgrade</code> again.</p>
+",650977,1607187
+1607303,0,"<p>It seems, that you are not connected to any network.
+You added a network adapter to you machine (imagine adding a network card to your pc) but did no connected a network to it (plugging in a network cable).</p>
+<p>Select a network from that dropdown, and you should be ready to go.</p>
+",650977,1606937
+1607307,0,"<p>This depends on that you want to do. if you want to listen to a port, that is not easily done. I'm not sure if it's possible at all.</p>
+<p>But if you want to connect send data, here you go:</p>
+<pre><code>alias bashnc=&quot;(exec 3&lt;&gt;/dev/tcp/&lt;targethost&gt;/&lt;port&gt;; cat &gt;&amp;3; cat &lt;&amp;3; exec 3&lt;&amp;-)&quot;
+echo &quot;Hello world!&quot; | bashnc
+</code></pre>
+<p>Just replace  and .</p>
+",650977,1606362
+1607311,17,"<p>JPG can be rotated using only EXIF data, so no re-encoding is necessary.</p>
+<p>I found this tutorial on the orientation flag - <a href=""https://www.impulseadventure.com/photo/exif-orientation.html"" rel=""noreferrer"">JPEG Rotation and EXIF Orientation</a></p>
+<p>These days, most image apps can handle this flag, many can also write it.</p>
+<p><a href=""https://exiftool.org"" rel=""noreferrer"">Exiftool</a> is a very comprehensive multi-platform solution that can handle all exif data - see <a href=""https://superuser.com/questions/435443/how-can-i-modify-the-exif-orientation-tag-of-an-image"">How can I modify the EXIF orientation tag of an image?</a></p>
+",347380,1607310
+1607320,0,"<p>What you're doing (using If inside another if) is called &quot;nesting&quot;, excel only allows up to 7 nested conditions aka IFs. this includes conditions inside the AND functions.</p>
+<p>you will need to separate your logic into multiple cells to solve the issue or rethink your logic.</p>
+",549659,1607308
+1607321,0,"<p>you can use the =COUNTIF(range, condition)</p>
+<p>let's assume you data is in a sheet called &quot;projects and partners&quot;</p>
+<p>and your report is in a sheet called &quot;report&quot;</p>
+<p>the formula would look like this:</p>
+<pre><code>=COUNTIF('projects and partners'!B2:I37,A2)
+</code></pre>
+<p><a href=""https://i.stack.imgur.com/kU0Rw.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/kU0Rw.png"" alt=""enter image description here"" /></a></p>
+<ul>
+<li><code>'projects and partners'!B2:I37</code> : is the range you wanna count in</li>
+<li><code>A2</code> : is the value you wanna look for</li>
+</ul>
+<p>and now you drag (copy) the formula from B2 to B7 and it'll adjust accordingly</p>
+",549659,1607316
+1607323,0,"<p>I've managed to achieve what I wanted with</p>
+<blockquote>
+<p>=IFERROR(IFERROR(IFERROR(IFERROR(LOOKUP(2,1/(COUNTIF($H$2:H2,$B$3:$B$11)=0),$B$3:$B$11),LOOKUP(2,1/(COUNTIF($H$2:H2,$D$3:$D$6)=0),$D$3:$D$6)),LOOKUP(2,1/(COUNTIF($H$2:H2,$F$3:$F$8)=0),$F$3:$F$8)),LOOKUP(2,1/(COUNTIF($H$2:H2,$E$3:$E$8)=0),$E$3:$E$8)), LOOKUP(2,1/(COUNTIF($H$2:H2,$C$3:$C$8)=0),$C$3:$C$8))</p>
+</blockquote>
+<p>This creates the self-updating list of new partner names across the 5 columns that I can use COUNTTIF against.</p>
+<p>Which is ridiculously complex but it works. Very much open to suggestions to make it simpler!</p>
+",1247596,1607316
+1607332,0,"<p>Answered =IF(C6=&quot;Monthly&quot;,B6,IF(C6=&quot;Quarterly&quot;,B6/12<em>3,IF(C6=&quot;Weekly&quot;,B6</em>52/12)))</p>
+",1247699,1607322
+1607339,1,"<p>This is not a one-liner, but it does what you want:</p>
+<pre><code>cd /path/to/Code
+tar -tf cse701.tgz | sed 's#/$##' &gt;tgz
+find cse701 &gt;fs
+diff -uw fs tgz
+rm fs
+rm tgz
+</code></pre>
+<p>Explanation:</p>
+<ul>
+<li>First we change to the relevant directory</li>
+<li>Then we list the tar.gz content, removing <code>/</code>es at the end of the line (<code>tar -t</code> puts them there for directories)</li>
+<li>Then we find all files and directories in the corresponding file system subtree (<code>find</code> puts <strong>no</strong> <code>/</code>es at the end)</li>
+<li>We diff those two lists</li>
+<li>and clean up</li>
+</ul>
+",300968,1607336
+1607346,0,"<p>Well its quite hard to work out what you want to do but . . . .</p>
+<p>Nested Ifs are tricky to keep track of. You seem to have some conditions if B21 = Established and some more conditions if B21 = New so structure your Ifs accordingly
+Work out the IF for 'Established' and get it working leaving a value of &quot;XX&quot; if B21 is not Established</p>
+<p>Then copy and paste the entire statement (less the = sign) in place of the &quot;xx&quot; and edit the values for the New condition.
+And I end up with something like</p>
+<pre><code>=IF($B$21=&quot;Established&quot;, IF( AND($B$22&gt;=10,$B$22&lt;=19),&quot;99212&quot;,IF(AND($B$22&gt;=20,$B$22&lt;=29),&quot;99213&quot;,&quot;&quot;)),IF($B$21=&quot;New&quot;, IF( AND($B$22&gt;=15,$B$22&lt;=29),&quot;99202&quot;,IF(AND($B$22&gt;=0,$B$22&lt;=44),&quot;99203&quot;,&quot;&quot;)),&quot;&quot;))
+</code></pre>
+<p>and blank otherwise (which may or may not be helpful)</p>
+",713275,1607308
+1607385,0,"<p>These instructions are for Office 2019 desktop products:</p>
+<p>In my case, the answer was in the Add-Ins section of Office. To get there, launch an Office application, such as Excel, go to the File menu, at the bottom left, click Options. Click the Add-ins item on the left navigation bar:</p>
+<p><a href=""https://i.stack.imgur.com/tqCAJ.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/tqCAJ.png"" alt=""enter image description here"" /></a></p>
+<p>If you see an entry for Microsoft Azure Information Protection, this is likely the popups' root cause. At the bottom of the window is a Manage option--choose Excel Add-ins, then click Go.</p>
+<p>You should see a dialog like this:</p>
+<p><a href=""https://i.stack.imgur.com/T1mn4.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/T1mn4.png"" alt=""enter image description here"" /></a></p>
+<p>Select then uncheck, click OK, or click the Remove button (if you know that you do not need the Azure Information Protection platform--more on that in the next paragraph). Click OK on the previous dialog, then close and re-launch the Office application. It should no longer present the Azure Information Protection dialog(s).</p>
+<p>If you want to uninstall this Azure add-in for all Office applications, you also can do so in one operation by using the Windows Settings -&gt; Apps and Features dialog. Search for Azure and find the applicable Microsoft Azure Information Protection app. Click Uninstall to remove it from the system.</p>
+<p><a href=""https://i.stack.imgur.com/ZNng1.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/ZNng1.png"" alt=""enter image description here"" /></a></p>
+<p>If you have any other Account log-on issues, you should resolve them by going to the File menu and clicking the Account item. Look for any warnings or issues on the Account screen that's presented. Try signing out, then signing back in, and be sure that Office is activated. A healthy, activated Office product's Account dialog will look something like this:</p>
+<p><a href=""https://i.stack.imgur.com/Qbyut.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/Qbyut.png"" alt=""enter image description here"" /></a></p>
+",557132,1607384
+1607398,1,"<p>It seems to me this is a data cleaning task for the <strong>original file</strong> from the download link above. My answer is based on this file! This is not identical with the screenshot shown in your question here.</p>
+<p>In addition to the different format from line 493 on, there are also some special characters like long hyphens and some more problems. Please note that there are also control characters (tabs) in the data set, which should be removed.</p>
+<p>Please note, the CSV file is not a Windows file format:</p>
+<ul>
+<li><strong><code>\n</code></strong> = LF (Line Feed) → Used as a new line character in Unix/Mac OS X</li>
+<li><strong><code>\r\n</code></strong> = CR + LF → Used as a new line character in Windows</li>
+</ul>
+<p>Please make shure to copy your file before starting and try this quick and dirty solution with some manual work using Notepad++.</p>
+<p>(1) set a special character for later use:</p>
+<ul>
+<li><kbd>Ctrl</kbd>+<kbd>H</kbd></li>
+<li>Find what: <code>\&quot;\n</code></li>
+<li>Replace with: <code>\&quot;#\n</code></li>
+<li><strong>CHECK</strong> <em>Wrap around</em></li>
+<li><strong>CHECK</strong> <em>Regular expression</em></li>
+<li><kbd>Replace all</kbd></li>
+</ul>
+<p>(2) replace all LF</p>
+<ul>
+<li>Find what: <code>\n</code></li>
+<li>Replace with: <code>LEAVE EMPTY</code></li>
+<li><strong>CHECK</strong> <em>Wrap around</em></li>
+<li><strong>CHECK</strong> <em>Regular expression</em></li>
+<li><kbd>Replace all</kbd></li>
+</ul>
+<p>(3) Reset clean Line Feeds</p>
+<ul>
+<li>Find what: <code>\&quot;#</code></li>
+<li>Replace with: <code>\&quot;\n</code></li>
+<li><strong>CHECK</strong> <em>Wrap around</em></li>
+<li><strong>CHECK</strong> <em>Regular expression</em></li>
+<li><kbd>Replace all</kbd></li>
+</ul>
+<p>(4) Search for lines Find what <code>^&quot;,&quot;</code> and edit manually less than 20 lines by deleting the line feed.</p>
+<p>BTW - I noticed the records are georeferenced. Excel is probably not very suitable for this (see QGIS screenshot below).</p>
+<p><a href=""https://i.stack.imgur.com/AbvsO.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/AbvsO.png"" alt=""enter image description here"" /></a></p>
+",214658,1607327
+1607403,0,"<h2>You need to restore the hosts file on your machine to it’s default state.</h2>
+<p>Microsoft has instructions on how to restore the default hosts file on various versions of Windows that can be found <a href=""https://support.microsoft.com/en-us/help/972034/how-to-reset-the-hosts-file-back-to-the-default"" rel=""nofollow noreferrer"">here</a>. Since you are using Windows 10, the default hosts file is this:</p>
+<pre><code># Copyright (c) 1993-2006 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+# localhost name resolution is handle within DNS itself.
+#       127.0.0.1       localhost
+#       ::1             localhost 
+</code></pre>
+<p>If you somehow cannot edit and save that hosts file directly into <code>%WinDir%\System32\Drivers\Etc</code> right now, I would recommend saving that default hosts file as <code>hosts</code> somewhere else on the system, boot into safe mode and then move that default <code>hosts</code> file into <code>%WinDir%\System32\Drivers\Etc</code>.</p>
+<p>Once that is done, reboot and all should be cleared up.</p>
+",167207,1607400
+1607408,1,"<p>To save Windows desktop settings and elements, you can use Windows Desktop icon saving tools.
+<a href=""https://www.softwareok.com/?seite=Freeware/DesktopOK"" rel=""nofollow noreferrer""><strong>DesktopOK</strong></a> tool is convenient and has many useful settings.</p>
+",768306,1607177
+1607410,0,"<p>MySQL by default sets the username to <code>root</code> and there’s no password.
+You can now run <code>mysql -u root -p</code> and be logged in without a password.
+Unfortunately, some applications and services that depend on MySQL will fail if
+a root password is needed for authentication.</p>
+<p>The following method will allow you set a password, or reset it if one was defined
+and forgotten.</p>
+<ul>
+<li><p>Run the Services applet (<code>services.msc</code>)</p>
+</li>
+<li><p>Find the MySQL service, right-click that entry, then click Stop</p>
+</li>
+<li><p>Create a text file containing this one line with any name,
+but here I will call it <code>mysql-init.txt</code>
+(replace &quot;NewPassword&quot; but keep everything else):</p>
+<pre><code>  ALTER USER 'root'@'localhost' IDENTIFIED BY 'NewPassword';
+</code></pre>
+</li>
+<li><p>Run the Command Prompt (<code>cmd.exe</code>) as Administrator</p>
+</li>
+<li><p>Navigate to the MySQL folder by a command similar to the following
+(version number may change):</p>
+<pre><code>  cd &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin&quot;
+</code></pre>
+</li>
+<li><p>Enter the following using two slashes for each slash (<code>\\</code>):</p>
+<pre><code>  mysqld --init-file=C:\\path\\mysql-init.txt
+</code></pre>
+</li>
+<li><p>Now you may log into the MySQL server as root using the new password,
+after restarting the MySQL service.
+The file <code>mysql-init.txt</code> is no longer needed.</p>
+</li>
+</ul>
+<p>For more details see the article
+<a href=""https://phoenixnap.com/kb/how-to-reset-mysql-root-password-windows-linux"" rel=""nofollow noreferrer"">How to Reset or Change MySQL Root Password on Linux or Windows</a>.</p>
+",8672,1607391
+1607411,1,"<p>what you describe sounds like <code>mingw32-make</code> is sending to more than one stream. mingling output like that is similar to what happens when you mix <code>Write-Host</code> and <code>Write-Output</code> calls. the 1st goes [more or less] directly to the host, but the 2nd goes to the success stream and <em>then</em> to the host.</p>
+<p>the simplest solution is likely to just redirect all the streams to your file, OR to combine the ones you want &amp; <code>Tee-Object</code> the result to the screen and your file. [<em>grin</em>]</p>
+<p>take a look at <code>Get-Help about_Redirection</code> for details.</p>
+<p>i see that you used <code>mingw32-make 2&gt;&amp;1 &gt; log.txt</code>. i could not specify any particular stream since i have no way to test that particular utility. i suspect i would have gone with <code>mingw32-make *&gt; log.txt</code> to redirect all the streams. your pattern is better in that it avoids overdoing things.</p>
+",962415,1607396
+1607431,0,"<p>You could continue to have UserX open the graphical session, but add another application that does a screengrab over the graphical applications.  HumanA can &quot;log in&quot; through that screengrab application.  The application would record that HumanA is now operating the system.</p>
+<p>At the end of a shift, HumanA &quot;logs out&quot; by restarting the screengrab application (over the long-running graphical applications), so when HumanB arrives, she must &quot;log in&quot; through the screengrab, and the user change can be recorded.</p>
+",758341,1607430
+1607444,0,"<p>It's a bit hackish, but I think you could manage it by using multiple users with the same uid. You could would have on <code>/etc/passwd</code>:</p>
+<pre><code>Appliance:x:1000:1000::/home/machine:/bin/bash
+HumanA:x:1000:1000::/home/machine:/bin/bash
+HumanB:x:1000:1000::/home/machine:/bin/bash
+</code></pre>
+<p>(plus corresponding entries on <code>/etc/shadow</code>, you may <code>passwd HumanA</code>)</p>
+<p>The system actually identifies the users by their uid. So, with a setup like this, you can enter both HumanA (with HumanA's password) or HumanN (with HumanB's password), and you will end up at the same session. It will however log the user provided for login.</p>
+<p>When the system wants to resolve uid 1000 to a name, it will find the first resullt and just return &quot;Appliance&quot;.</p>
+<p>The same trick could be performed with other nss providers, of course.</p>
+",339931,1607430
+1607450,3,"<p>Temporarily change your computer's netmask to a wider one, e.g. 255.255.0.0 will do the job.</p>
+<p>It's <strong>not</strong> addresses which end in 255 that are 'broadcast' – it is the <em>last address of the subnet</em> that is 'broadcast'. That is, subnets larger than /24 will have plenty of normal addresses ending in 255, while subnets smaller than /24 will have broadcast addresses which <em>don't</em> end in 255, it all depends on the netmask being used.</p>
+<p>So if you use 255.255.0.0 (aka /16) as the netmask, then only <code>x.y.255.255</code> will be the broadcast address and x.y.2.255 will not be.</p>
+<p>(Yes, your and your device's netmasks will temporarily be mismatching, but this shouldn't make it any worse. Don't forget to return the configuration to original later, however.)</p>
+",1686,1607439
+1607453,0,"<p>Interesting. If you run the commands from the console, you're presented with a confirmation prompt to overwrite the existing file:</p>
+<pre><code>PS C:\...\regExport&gt;New-Item Configuration.reg
+
+
+    Directory: C:\Users\keith\Sandbox\regExport
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         12/4/2020   5:26 PM              0 Configuration.reg
+
+
+PS C:\...\regExport&gt;REG EXPORT &quot;HKLM\SOFTWARE\IrfanView&quot;, &quot;Configuration.reg&quot;
+File Configuration.reg already exists. Overwrite (Yes/No)?
+</code></pre>
+<p>But the same commands just hang in the ISE.</p>
+<p>You're actually blocking <strong><code>Reg Export</code></strong> from creating the file by the unnecessary <strong><code>New-Item</code></strong> Cmdlet, which creates an empty file of the same name.</p>
+<pre><code>
+Either eliminate the **`New-Item`** Cmdlet or use the `/y` switch with the **`Reg Export`** command.
+
+REG EXPORT KeyName FileName [/y] [/reg:32 | /reg:64]
+
+  Keyname    ROOTKEY[\SubKey] (local machine only).
+    ROOTKEY  [ HKLM | HKCU | HKCR | HKU | HKCC ]
+    SubKey   The full name of a registry key under the selected ROOTKEY.
+
+  FileName   The name of the disk file to export.
+
+  /y       Force overwriting the existing file without prompt.
+
+  /reg:32  Specifies the key should be accessed using the 32-bit registry view.
+
+  /reg:64  Specifies the key should be accessed using the 64-bit registry view.
+</code></pre>
+",881098,1607347
+1607464,0,"<p>Make sure the USB drive is actually enabled in device manager. Right click on the Windows start menu, and select device manager. Go to Disk Drives and find the USB. click on it and select properties. Make sure that it is not turned off. Go to the drivers tab, and if the drive is not enabled, do so.</p>
+<p>It is also possible it just does not have a drive letter, which Windows requires to be able to recognize a drive in File Explorer. To check, right click on the Windows logo in the bottom right, and then select disk management. If you are not an admin, then you may not be able to access this menu. Look for your flash drive in the menu. If it is there, make sure to give it a drive letter. This is done by right clicking on the partition.</p>
+<p>If it is not recognized by disk management, you need to use diskpart. To run this, open a command prompt as an administrator and type <code>diskpart</code> and hit enter. When the new diskpart windows pops up, run the command <code>list disk</code>. Find the USB drive. If it appears, then it is recognized by the PC, just not in a readable format. This can happen with some types of file systems.</p>
+",1246751,1607254
+1607465,1,"<p>Try put this in F2, and copy and pasting across:</p>
+<pre><code>=IF(COUNTIFS($B$2:$B$7,&quot;&lt;=&quot;&amp;$E2,$C$2:$C$7,&quot;&gt;=&quot;&amp;$E2, $A$2:$A$7,F$1)&gt;0,&quot;X&quot;,&quot;&quot;)
+</code></pre>
+<p>It is basically counting all occurrences where the calendar date (E2..) is between the first and last day, whilst also having staff equal to F1 or F2 or F3 etc.</p>
+<p>Interestingly enough, if you use COUNTIF on its own, without the IF statement:</p>
+<pre><code>=COUNTIFS($B$2:$B$7,&quot;&lt;=&quot;&amp;$E2,$C$2:$C$7,&quot;&gt;=&quot;&amp;$E2, $A$2:$A$7,F$1)
+</code></pre>
+<p>It will put a &quot;1&quot; if someone has to work that day, but also put a 2 or 3 etc. if they have been accidentally allocated the same shift more than once.</p>
+",1241807,1607440
+1607466,1,"<p>A macro (at least for less advanced users/programmers) will only help you if you are performing the exact same action on data AND the data is in the exact same layout.</p>
+<p>I suppose it is possible to make a macro for this but it is not necessary.</p>
+<p>I would simply go to the last cell in the first row with data (let's say it's B8)</p>
+<p>type &quot;B8=B1&quot; and it will show the ID from B1.</p>
+<p>Then copy the B8 cell -&gt; select all the remaining cells in the B column with data and paste the formula.</p>
+<p>You will now have your matching id at both ends.</p>
+<p>Thanks,</p>
+<p>Mike</p>
+",1247933,1607441
+1607469,0,"<p>Just open windows and go to the disks manager or whatever its called. Delete the partitions for the linux and re-size the windows partition. It should take less than 10 minutes!</p>
+<p>I didnt read the whole thing before I finished lol. Just download a windows 10 recovery disk just in case and do what you said. Computers are advanced enough to find windows 10. Deleting the bootloader for linux shouldnt be a problem. Windows has a bootloader too, the linux booloader is probably just taking priority over the windows bootloader!</p>
+",1247939,1607445
+1607471,0,"<p>The Chrome OS system doesnt let you view any internal drives or partitions. The only thing you could do is to put the chromebook in developer mode (Just google How to put a chromebook in developer mode) and maybe you could find a way through there. The only thing is that youd have to reset everything on the chrome os partition to be able to boot to developer mode.</p>
+",1247939,1606386
+1607484,0,"<p>Neither the Debian package format nor <code>dpkg</code> provide a way to specify capabilities in the package, so there isn't an easy way to do what you want.</p>
+<p>There are Debian packages, such as <code>iputils-ping</code>, which set the package to use capabilities in the <code>postinst</code> script.  Doing it in a similar way is probably the best way forward.  Do note that using the <code>setcap</code> command requires that the <code>libcap2-bin</code> package is installed and it also requires that the file system support extended attributes, which not all do.  You may need to choose a fallback mechanism as well if your package will run on machines that aren't tightly controlled.</p>
+",977046,1606800
+1607502,0,"<p>Seems you can let the TV reformat the stick: <a href=""https://www.lg.com/uk/support/product-help/CT00008334-1435837452345"" rel=""nofollow noreferrer"">LG support</a></p>
+",138214,1607493
+1607515,0,"<p>The only way is to revoke the permissions on that website and reset them, so that you get the permission prompt again, in which you can choose a different device.</p>
+<p>To reset the permissions for a website, click on the icons to the left of the URL in the address bar, the ones that look like a padlock, a configuration icon and a camera. Then click on the &quot;x&quot; next to the permissions &quot;Use the Camera&quot; and &quot;Use the Microphone&quot; to reset the permissions. Then refresh the page.</p>
+<p><a href=""https://i.stack.imgur.com/ig9lf.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/ig9lf.png"" alt=""Screenshot"" /></a></p>
+<p>Once you've done that, you will be prompted again to choose a camera and a microphone device when you refresh the page.</p>
+",90668,1607514
+1607533,0,"<p>This may be blunt force but this is fixed by disabling UAC:</p>
+<pre><code>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+</code></pre>
+<p>&quot;EnableLUA&quot;=dword:00000000</p>
+<p>Of course this has never been the case - all was well on this PC under Win 10 1909.  Upgraded itself to 20H2 and problems began.  No idea why but finally I can actually use Device Manager, and the rest of the panels etc. to actually, you know, manage my own PC.</p>
+",809656,1606811
+1607535,0,"<p>Use the regular <code>cmd.exe</code> instead of Powershell. The exact same command works in cmd, but does not in PS:</p>
+<pre><code>&gt; ffmpeg -y -i .\foo.mp3 -f wav - | .\opusenc.exe --bitrate 64 - bar.opus
+</code></pre>
+",147916,1607534
+1607538,0,"<p>Installing Gallium OS is well documented and I have added below a couple of useful
+links. You will need to study well these articles, and the articles they link to,
+before coming up with more questions.</p>
+<p><strong>Preparing the boot media</strong></p>
+<p>First, as there are different images for
+<a href=""https://wiki.galliumos.org/Hardware_Compatibility"" rel=""nofollow noreferrer"">different models of Chromebook</a>,
+you need to choose the right one for your device.
+In your case, the Acer c720 is marked in the &quot;Processor&quot; column as &quot;Intel Haswell&quot;.</p>
+<p>Now you can download the
+<a href=""https://galliumos.org/download"" rel=""nofollow noreferrer"">GalliumOS installation ISO image</a>
+by clicking on the &quot;Haswell&quot; button.</p>
+<p>Once you have the installation image, create a bootable USB drive with it.
+The instructions for this are found on the GalliumOS website at
+<a href=""https://wiki.galliumos.org/Installing/Creating_Bootable_USB"" rel=""nofollow noreferrer"">Installing/Creating Bootable USB</a>.</p>
+<p><strong>Backup before installation</strong></p>
+<p>It is best to create a recovery image for your device in case something goes wrong
+or if you decide that you want to go back to the current state.</p>
+<p>You should create an image of your entire disk as backup, if you have enough
+available disk media, for example by using Clonezilla.</p>
+<p><strong>Installing GalliumOS</strong></p>
+<p>Shut down the computer, plug in the USB drive containing the bootable
+installation image, and restart, ensuring that the USB is used as the boot media.
+The boot menu is entered from the BIOS by pressing
+<kbd>F12</kbd> or <kbd>F2</kbd>, per your computer model.</p>
+<p>The rest is a normal Linux installation, where the only difference is that you need
+to re-format the entire disk as one partition.</p>
+<p>References, please study them well before asking questions:</p>
+<ul>
+<li><a href=""https://wiki.galliumos.org/Installing"" rel=""nofollow noreferrer"">Installing - GalliumOS Wiki</a></li>
+<li><a href=""https://zgul.de/blog/installing-galliumos"" rel=""nofollow noreferrer"">Installing Galliumos On An Acer Chromebook</a></li>
+<li><a href=""https://opensource.com/article/17/4/linux-chromebook-gallium-os"" rel=""nofollow noreferrer"">Running Linux on your Chromebook with GalliumOS</a></li>
+</ul>
+",8672,1606572
+1607539,0,"<p>In your example <code>'curl … {}; printf &quot;%s %s\n&quot; &quot;$?&quot; '</code> (why the second <code>%s</code>?) is a single-quoted piece of shell code. In it you can use <code>{}</code> more than once:</p>
+<pre><code>curl … {}; printf &quot;%s %s\n&quot; &quot;$?&quot; {}
+</code></pre>
+<p>Alternatively create a variable and use it as many times as you want. The name of the variable can be descriptive, this is an advantage. There's another advantage: in general what gets substituted for <code>{}</code> can be a long string, substituting it many times may bloat the code <code>parallel</code> will pass to particular shells. IMO it's better to substitute once and let the shell save the string and reuse it:</p>
+<pre><code>source_URL={}; curl … &quot;$source_URL&quot;; printf &quot;%s %s\n&quot; &quot;$?&quot; &quot;$source_URL&quot;
+</code></pre>
+<p><sup>In case of GNU <code>parallel</code> it's safe to embed <code>{}</code> in the shell code. It's an exception explicitly mentioned in this answer: <a href=""https://unix.stackexchange.com/a/156010/108618""><em>Never embed <code>{}</code> in the shell code!</em></a>. You probably already know this, the remark is for a general audience.</sup></p>
+<p>Note you need to adjust your <code>read</code> in the main loop, it now has to read into <em>four</em> variables. This way you will transfer the source URL from the inside of <code>parallel</code> to the main loop where you can compare it to <code>destination_url_var</code> or do whatever you want.</p>
+<p>Still in this approach &quot;whatever you want&quot; is not parallelized.</p>
+<p>If you capture the output from <code>curl</code> to separate variables inside the shell code run by <code>parallel</code> (instead of just printing it to be captured outside of <code>parallel</code>) then you will be able to do comparison (or whatever you want) <em>there</em>, in parallel. And e.g. <code>printf</code> <em>conditionally</em>. It's up to you where you implement the desired logic, as long as the inside of <code>parallel</code> generates output in the form expected by the outside <code>read</code>.</p>
+<p>The shell code passed to <code>parallel</code> still needs to be single-quoted. As it grows, you may need to use (embed) single-quotes in this very code; then quoting will get somewhat complicated and less readable. In such situation consider moving the code to a separate script where you can quote independently. You will invoke it from the main script like this:</p>
+<pre><code>while read … ; done &lt; &lt;( … | parallel -j 20 -k 'path/to/separate_script {}' )
+</code></pre>
+<p>Inside the <code>separate_script</code> the string substituted for <code>{}</code> will be available as <code>$1</code> (don't forget to <a href=""https://unix.stackexchange.com/a/131767/108618"">double-quote it</a>).</p>
+",432690,1607521
+1607569,0,"<p>The article
+<a href=""https://www.unixmen.com/fedora-virtualbox-rc-nserrorfactorynotregistered/"" rel=""nofollow noreferrer"">Fedora virtualbox RC: NS_ERROR_FACTORY_NOT_REGISTERED</a>
+advises the following actions:</p>
+<pre><code>yum  install  dkms
+find /usr/lib/virtualbox -maxdepth 1 -name '*.so' -exec ln -s {} /usr/lib/virtualbox/components/
+chown root.root /tmp
+chmod ug-s /tmp
+chmod 1777 /tmp
+</code></pre>
+<hr />
+<p>A very similar bug-report, although old one, is
+<a href=""https://www.virtualbox.org/ticket/3672#comment:28"" rel=""nofollow noreferrer"">OSE / Hardened: NS_ERROR_FACTORY_NOT_REGISTERED =&gt; Fix symlinks</a>.</p>
+<p>The solution here is to add the following symlinks:</p>
+<pre><code>cd /usr/lib64/virtualbox/component
+ln -s ../VBoxDDU.so .
+ln -s ../VBoxREM.so .
+ln -s ../VBoxRT.so .
+ln -s ../VBoxVMM.so .
+ln -s ../VBoxXPCOM.so .
+</code></pre>
+<p>Then restart VirtualBox.</p>
+<p>If I understood right the comments, the problem arises when the <code>bin/</code> directory
+was moved.</p>
+",8672,1607552
+1607573,0,"<p>The article
+<a href=""https://windsorwebdeveloper.com/making-netgear-orbi-great-again/"" rel=""nofollow noreferrer"">Making Orbi Great Again</a>
+remarks that it's possible that the Orbi isn't the right choice for a medium-sized
+house.</p>
+<p>The solutions listed in the article:</p>
+<ol>
+<li>Force the 2.4Ghz channel to 6 or 1</li>
+<li>Set different SSIDs for 2.4 and 5 ghz</li>
+<li>Decrease the transmit power</li>
+<li>If you have a satellite connection, set a static IP for the satellite.</li>
+</ol>
+",8672,1607501
+1607582,0,"<h2>You are attempting to install the Ubuntu 16.04 version of <code>apt</code> and not the Ubuntu 18.04 version of <code>apt</code>.</h2>
+<p>Look at this page for <a href=""https://packages.ubuntu.com/xenial/apt"" rel=""nofollow noreferrer""><code>apt</code></a> (<a href=""https://packages.ubuntu.com/xenial/apt"" rel=""nofollow noreferrer"">1.2.32ubuntu0.1</a>). Note that the breadcrumbs for the URL in the page is:</p>
+<blockquote>
+<p>» Ubuntu » Packages » xenial (16.04LTS) » admin » apt</p>
+</blockquote>
+<p>That’s clearly the Ubuntu 16.04 version. But you are running Ubuntu 18.04. So you need to get <a href=""https://packages.ubuntu.com/bionic/apt"" rel=""nofollow noreferrer""><code>apt</code></a> (<a href=""https://packages.ubuntu.com/bionic/apt"" rel=""nofollow noreferrer"">1.6.12ubuntu0.1</a>) which can be <a href=""https://packages.ubuntu.com/bionic/apt"" rel=""nofollow noreferrer"">found here</a>. Again, look at the breadcrumbs for the URL in the page:</p>
+<blockquote>
+<p>» Ubuntu » Packages » bionic (18.04LTS) » admin » apt</p>
+</blockquote>
+<p>Download it <a href=""http://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.6.12ubuntu0.1_amd64.deb"" rel=""nofollow noreferrer"">directly from here</a> and just run this command:</p>
+<pre><code>sudo dpkg --install apt_1.6.12ubuntu0.1_amd64.deb
+</code></pre>
+<p>And you should be solid.</p>
+",167207,1607575
+1607586,0,"<p>With this file you have to tell <code>ffmpeg</code> to use the raw H.264 video demuxer:</p>
+<pre><code>ffmpeg -f h264 -i input.dav -c copy output.mp4
+</code></pre>
+<p>Or rename <code>2020_12_04_09_04_03.dav</code> to <code>2020_12_04_09_04_03.h264</code> before giving it to <code>ffmpeg</code>.</p>
+",110524,1607565
+1607594,0,"<p>You have not done anything wrong with respect of your backup method. Unless you very specifically seek out mechanisms to reprogrammed the firmware there is nothing you can do which will make a USB disk become 0 bytes unless it goes faulty.</p>
+<p>Backing up with the commands you are using us fairly common.</p>
+",137786,1607576
+1607609,3,"<p>Like that:</p>
+<pre><code>$ awk -F: '{gsub(/ /, &quot;&quot;, $1); print $1 FS $2}' FILE
+dhsjfdksjdk:dndkdlkfkd
+shfdosoddkjsosjd:dkj dosjeod
+dhswisoaidodisbw: dhsoi wjdos
+fjfdododjfideefkjsosn:fhfdkd dkdjdf
+</code></pre>
+",328038,1607589
+1607633,0,"<p>So I think I believe I found the issues: the RAM.</p>
+<p>I replaced my <code>Corsair vengeance 2x8gb</code> with <code>Crucial Ballistix BL2K8G30C15U4B 3000 MHz, DDR4</code> and now it seems to work.</p>
+<p>No more crash on Valhalla and Horizon</p>
+",621446,1606400
+1607638,2,"<p>From the man page for <code>ssh_config</code>:</p>
+<blockquote>
+<p>KexAlgorithms<br />
+Specifies the available KEX (Key Exchange) algorithms.  Multiple
+algorithms must be comma-separated.  If the specified list begins
+with a '+' character, then the specified methods will be appended
+to the default set instead of replacing them.  If the specified
+list begins with a '-' character, then the specified methods
+(including wildcards) will be removed from the default set
+instead of replacing them.</p>
+</blockquote>
+<p>Use the '-' option with all the ciphers you want to blacklist from the default list on the client.</p>
+<p>Unfortunately, the man page for <code>sshd_config</code> doesn't seem to document the same option at the server end, but it does work.</p>
+",333086,1607598
+1607664,1,"<p>A Wi-Fi extender that surprisingly solved the problem and allowed power to stay on my hotspot, was the  “<a href=""https://www.tp-link.com/us/home-networking/range-extender/tl-wa850re/"" rel=""nofollow noreferrer"">TP-Link N300 Wi-Fi Range Extender (TL-WA850RE)</a>.”</p>
+<p>That also enabled internet to the TP-Link Archer A9 via ethernet at the same time. Thanks to Nancy (my girlfriend) who had the final solution, and <a href=""https://superuser.com/users/167207/giacomo1968"">Giacomo1968</a>.</p>
+",1247372,1607488

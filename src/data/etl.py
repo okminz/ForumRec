@@ -14,9 +14,10 @@ def get_df(file_path):
     dfItem = pd.DataFrame.from_records(data).set_index('Id')
     return dfItem
 
-def create_datasets(file_directory, file split_date):
+def create_datasets(file, split_date):
     # Get data from file
-    posts = get_df(file_directory + file)
+    posts = get_df(file)
+    split_date = eval(split_date)
     
     # Use only needed data and convert to right format
     relevant = posts[['PostTypeId', 'CreationDate', 'Score', 'Body', 'Tags', 'OwnerUserId', 'AnswerCount', 'ParentId']]
@@ -49,8 +50,21 @@ def create_datasets(file_directory, file split_date):
     
     # Return train, validation, and test datasets
     return train_q, train_a, valid_q, valid_a, test_q, test_a
+
+def main(configs):
+    FILE = configs['file']
+    SPLIT_DATE = configs['split_date']
+    OUTPUT = configs['output']
+    train_q, train_a, valid_q, valid_a, test_q, test_a = create_datasets(FILE, SPLIT_DATE)
+    train_q.to_csv(OUTPUT + '/TrainQuestions.csv')
+    train_a.to_csv(OUTPUT + '/TrainAnswers.csv')
+    valid_a.to_csv(OUTPUT + '/ValidQuestions.csv')
+    valid_q.to_csv(OUTPUT + '/ValidAnswers.csv')
+    test_a.to_csv(OUTPUT + '/TestQuestions.csv')
+    test_q.to_csv(OUTPUT + '/TestAnswers.csv')
+    print('########### Data Created ###########')
     
     
-FILE_DIRECTORY = '../../../../../Volumes/easystore/DataScience/superuser.com'
-FILE = '/Posts.xml'
-SPLIT_DATE = pd.datetime(2019, 9, 1)
+if __name__ == "__main__":
+    main(sys.argv)
+    
