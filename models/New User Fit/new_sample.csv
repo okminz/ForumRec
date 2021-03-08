@@ -1,0 +1,1273 @@
+,Score,Body,OwnerUserId,ParentId,Id,user_indicies,post_indicies
+21506,1,"<p>If you've got sensitive information you need to recover on it, I'd suggest a repair business with a clean room environment, because this would be the only way to ""open it up and see what's stuck (mechanically) inside"".</p>
+
+<p>Those services are sort of expensive (usually $100+/workhour in a clean room, plus additional costs of e.g. donor parts or for more difficult problems (disk encryption etc.)). Keep in mind, that they usually WON'T CHARGE anything if they can't recover your data, but since this seems to be a mechanical fault, maybe inside the drive motor or HSA (head stack assembly) motor, I am quite confident that a mechanic could fix it.</p>
+
+<p>The behaviour you observed is not uncommon - due to changing environmental factors (mainly temperature), devices you thought were dead will ""magically"" work again. But as a hard drive contains spinning parts, generating vibrational forces, a possible loose connection could get torn apart again after a few minutes running.</p>
+
+<p>If you want further reading on hard drive recovery, you can read on this company's site:
+<a href=""https://www.harddriverecovery.org/pricing.html"" rel=""nofollow noreferrer"">harddriverecovery.org</a></p>
+",860537,1438373,1438378,770,19148
+23175,1,"<p>I found a little macro that will do the work for you.
+I tested it and it works but you have to do some settings around macros in ppt.
+My translation is not perfect to that but i'll try.</p>
+
+<ol>
+<li>Enable visual basic:</li>
+</ol>
+
+<p>enable the developer-tools in ppt by going to file-options-menubar, make a check to the ""developer tools"". leave by clicking ok. </p>
+
+<ol start=""2"">
+<li>get the needed exelobjects for ppt:</li>
+</ol>
+
+<p>go to the new tab ""developer-tools"" and select ""visual basic""
+then select ""extras"" on the top and after that ""lookup"". Find and make a check on ""microsoft excel 14.0 object library"" or similar. end it by clicking ok</p>
+
+<ol start=""3"">
+<li>build a module for the macrocode:</li>
+</ol>
+
+<p>do a right-click on the first line of the ""project-explorer"", f.e. ""vba-project(myproject)"", choose insert, module</p>
+
+<p>paste the macrocode into the new code-window seen in the middle</p>
+
+<pre><code>Sub CreateSlides()
+    '*** Original Sourcecode taken from http://superuser.com/questions/323408/excel-data-into-powerpoint-slides ***
+    'Open the Excel workbook. Change the filename here.
+    Dim OWB As New Excel.Workbook
+
+    Set OWB = Excel.Application.Workbooks.Open(""C:\Tmp\List1.xlsx"")
+    'Grab the first Worksheet in the Workbook
+    Dim WS As Excel.Worksheet
+    Dim sCurrentText As String
+    Dim sIdentifier As String
+    Dim oSl As Slide
+    Dim oSh As Shape
+    Set WS = OWB.Worksheets(1)
+    Dim i As Long
+    'Loop through each used row in Column A
+
+    For i = 3 To WS.Range(""A65536"").End(xlUp).Row
+        Debug.Print ""Bin hier""
+        'Copy the first slide and paste at the end of the presentation
+        ActivePresentation.Slides(1).Copy
+        ActivePresentation.Slides.Paste
+        Set oSl = ActivePresentation.Slides(ActivePresentation.Slides.Count)
+
+        For c = 1 To 3
+
+            sCurrentText = WS.Cells(i, c).Value
+            sIdentifier = WS.Cells(2, c).Value
+
+            ' find each shape with sIdentifier of the current column (e.g. ""field1~"", ""field2~"", and so on) in text, replace it with value from worksheet
+            For Each oSh In oSl.Shapes
+                ' Make sure the shape can hold text and if is, that it IS holding text
+                If oSh.HasTextFrame Then
+                    If oSh.TextFrame.HasText Then
+                        ' it's got text, do the replace
+                        With oSh.TextFrame.TextRange
+                          .Replace sIdentifier, sCurrentText
+                        End With
+                    End If
+                End If
+            Next
+        Next
+    Next
+
+    ActiveWorkbook.Close
+
+End Sub
+</code></pre>
+
+<p>go back to the default ppt-view by clicking the symbol to the top-left or by hitting alt+f11</p>
+
+<ol start=""4"">
+<li>build exelsheet:</li>
+</ol>
+
+<p>build an excel-sheet with 1-3 columns (for 1-3 textfields) stored at the same name and folder like in the macro. f.e. ""C:\Tmp\List1.xlsx"" </p>
+
+<p>the first row is not used</p>
+
+<p>the second row names the default-text of the depending textfield like ""field1""</p>
+
+<p>the next rows should include the text of every following slide</p>
+
+<p>struct like:</p>
+
+<pre><code>not used               not used
+field1                 field2
+mytextforbox1slide1    mytextforbox2slide1
+mytextforbox1slide2    mytextforbox2slide2
+....
+</code></pre>
+
+<p>5.build a ppt:</p>
+
+<p>insert a texfield to the first slide and just write ""field1"" to it</p>
+
+<p>insert a second textfield and just write ""field2"" to it </p>
+
+<p>maybe you have to rearrange the  following top-slides after the macro has finished
+because only the top one will be used to make copies and fills</p>
+
+<ol start=""6"">
+<li>run the macro at the developer-tab, macros, run macro </li>
+</ol>
+
+<p>if you understand how the macro works and with a little vba experience you can change the code 
+for your special wants</p>
+
+<p>hope i could help a little bit</p>
+
+<p>busybyte</p>
+",1003311,1410928,1410957,771,20615
+24316,1,"<ol>
+<li><p>First prepare a table for binary numbers Up to 8 as under in 2 columns so as to substitute the binary value of octal numbers as given below</p></li>
+<li><p><code>0, 000---;  1, 001---;2,010---; 3, 011---;4, 100---;5,101---;6, 110---;7,111</code>. Suppose the Table is in the Cells <code>V4:W11</code>.</p></li>
+<li><p>For every bit of your 16 digits; use vertical look up formula to get value of the bit place it in a cell. Copy the formula for all 16 digits using absolute reference</p></li>
+<li><p>Complete all 16 bits value search from the Table of Step 2.</p></li>
+<li><p>For eg. for your 16 Digits given number the vertical look up value of first digit <code>6</code> = <code>110</code>, <code>( =Vlookup(digit,$V$4:$W$11,2)..(Value is in Second Column of the Table) )</code> Second digit <code>4 = 100</code> Third Digit <code>0=000</code>, 4th Digit <code>1</code> is <code>001</code> and so on for all 16 Characters.</p></li>
+<li><p>Now you combine all 48 digits found from 16 digits by combining them using concatenate Formula eg. <code>Digit1&amp;Digit2&amp;Digit3&amp;.......&amp;Digit16</code>.</p></li>
+<li><p>This will give you the desired string of length 48 now in binary.</p></li>
+<li><p>Copy formula down the rows to get the desired results.</p></li>
+</ol>
+",321999,1508826,1508963,772,7132
+24625,1,"<p>We cannot write the script for you, but I can help outline the steps and programming logic I would recommend.  </p>
+
+<p>First, you presumably have the /path/to/studentsnumbers/ where you are finding the folder structure you list above.  Store that in a variable here we will call PathToStudNumbs.  </p>
+
+<pre><code>PathToStudNumbs=""/path/to/studentsnumbers/"" 
+</code></pre>
+
+<p>Next there are a couple of useful tools you will want to explore:  basename and dirname.  These will obtain information about the elements of a path to a specific file.  You may not need these for this case because all of the files you are changing are apparently named the same (coursework).  </p>
+
+<p>Since we don't know how you are iterating over your directories, I leave it to you to sort out what use basename and dirname will be to your specific situation.  </p>
+
+<p>Let's reframe how we see the current paths.  We can rework that to something containing the elements we care about using variables.  (I assume below the coursework number also changes over time.)  </p>
+
+<pre><code>""${PathToStudNumbs}/${StudNumbs}/${courseworkNumb}/coursework.thy""  
+</code></pre>
+
+<p>If you work this into a cp statement to a different directory, it would look something like this:  </p>
+
+<pre><code>cp ""${PathToStudNumbs}/${StudNumbs}/${courseworkNumb}/coursework.thy"" ""${PathToDestination}/${StudNumbs}_${courseworkNumb}.thy"" 
+</code></pre>
+
+<p>This would make a copy of the target file in a folder of your choosing where the new file would be named something like 123456_coursework1.thy (which is to say the student number, an underscore, the coursework number, and the file extension).  </p>
+
+<p>Or you could rename the existing file in place with mv, something like this:  </p>
+
+<pre><code>mv ""${PathToStudNumbs}/${StudNumbs}/${courseworkNumb}/coursework.thy"" ""${PathToStudNumbs}/${StudNumbs}/${courseworkNumb}/${StudNumbs}_${courseworkNumb}.thy"" 
+</code></pre>
+
+<p>Ask questions if you'd like.  I'll do what I'm able to assist.  </p>
+",1104836,1503367,1503376,773,21872
+24765,1,"<p>Of course it will just fit in (thanks to ATX-standards), because the 8-Pin EPS-variant on your motherboard is just 2x 4-Pin (but mirrored).<br>
+Using only one 4-Pin connector halves the amount of +12V and GND pins to two (Instead four)
+Despite your PSU featuring only single rail +12V, it really won't make that much difference if you use the 4-Pin connector only. The Core i7 8700k has a TDP of 95W (according to Intel) which the two +12V cables a 4-Pin connector features can handle. If you take a total of ~4 Amps per line (95W / (12V x 2)), that should work.
+Suggest to just test if the PC will boot at all and than do a stress test of > 30 Min while you watch for smoke etc.  </p>
+
+<hr>
+
+<p><a href=""https://forums.anandtech.com/threads/4-pin-cpu-power.2245709/"" rel=""nofollow noreferrer"">4 pin cpu power on AnandTech</a><br>
+<a href=""http://www.playtool.com/pages/psuconnectors/connectors.html#atx12v4"" rel=""nofollow noreferrer"">PSU connectors --> scroll to shortly above 8Pin EPS</a><br>
+<a href=""https://i.stack.imgur.com/Xd87d.png"" rel=""nofollow noreferrer"">Image of 4-Pin and 8-Pin (EPS) connector pin out</a></p>
+",860537,1308688,1308720,770,21990
+24916,1,"<p>The simplest solution is to simply add a set of pronoun sets in the database.  </p>
+
+<p>If the pronoun sets are not filled on completing the form, they should default based on the filling of the gender option by a simple autofill function.</p>
+
+<p>You can then pull these boxes just like any other data attached to the address card from the database.</p>
+
+<p>The use of these fields not only eliminates unneeded runtime macros to select pronouns, but also permits the freefilling of forms for non-standard situations.   </p>
+
+<p>This solution is thus, all around better because of KISS (Keep It Simple ""Silly"") principal.</p>
+",162119,1508043,1508048,774,22126
+25676,1,"<p>I also saw the ""access denied"" error in FileTypesMan on my system, so I analyzed it with Sysinternal's Process Monitor to see where it was failing on. Apparently the default permissions of the <code>HKEY_CLASSES_ROOT\WMP11.AssocFile.MP3\shell\play</code> registry key are so that only the built-in TrustedInstaller account is allowed to make changes (and not, for example, administrator accounts).</p>
+
+<p>This can be fixed by adding write permissions for administrator accounts to that registry key. The easiest way I've found to do that is by using the RegDACL tool. The tool isn't available anymore on the author's official website but you can still download it <a href=""https://www.heise.de/download/product/regdacl-61765/download/danke?id=61765-1"" rel=""nofollow noreferrer"">here</a>.</p>
+
+<p>After putting <code>RegDACL.exe</code> in a directory on your PATH environment variable, open an administrator Command Prompt and run these commands:</p>
+
+<pre><code>regdacl ""HKCR\WMP11.AssocFile.MP3\shell\play"" /GGA:F
+regdacl ""HKCR\WMP11.AssocFile.MP3\shell\play\command"" /GGA:F
+</code></pre>
+
+<p>( <code>/GGA:F</code>: <strong>g</strong>rant to the predefined <strong>g</strong>roup ""<strong>A</strong>dministrators"" <strong>f</strong>ull access )</p>
+
+<p>After the commands have been executed successfully, you should be able to use FileTypesMan to change the assignments.</p>
+",137371,1502897,1510049,775,22798
+27099,1,"<ol>
+<li>Does the problem occur on multiple USB-storage devices or only on one specific?</li>
+<li>Do you know whether this pen drive is USB-HDD or USB-FDD?</li>
+<li><p>Is the stick recognised in <code>diskpart</code> tool from Microsoft (open elevated command prompt by WIN-Key (start menu opens) > ""cmd"" > right click > run as administrator > enter amdinistrator credentials in UAC > type <code>diskpart</code>  </p>
+
+<p>Warning: be extremely careful when using diskpart and never select disk 0!  </p>
+
+<p>Now, after diskpart has started, type <code>list disk</code>to show all physical drives connected to your computer.<br>
+If you know the size of your stick, you could identify it by the size. If your stick shows up, type <code>select disk [no. of the stick in the list, e.g. disk 2]</code><br>
+Double check you've got the right disk, before typing <code>clean</code> to delete everything on the selected disk.<br>
+If this was succesful, type <code>create partion primary</code> and then <code>active</code> There should not be errors, but confirmation messages like ""Partion is now the active partion"".<br>
+Last part: we need to format it using <code>format fs=fat32 [or ntfs] label=Name[give the USB-stick a name or simply leave out label= command) quick</code><br>
+If drive won't show up, try <code>assign</code> to (re)assign volume letters.</p></li>
+<li><p>Your BIOS could somehow be corrupt, but I won't recommend updating/flashing it unless you are 100% sure that this is necessary.</p></li>
+</ol>
+",860537,1309097,1309119,770,24070
+27127,1,"<p>Ryzen mobile processors are soldered to the mainboard, they aren't socketed like their desktop variants, so a replacement isn't possible.</p>
+",1168142,1605638,1605746,776,24093
+27598,0,"<p>In Firefox open <code>about:config</code>, search for <code>network.stricttransportsecurity.preloadlist</code> and set it to false.</p>
+",1168142,1605749,1605751,776,24505
+27977,0,"<p>I was able to solve the problem:
+For whatever reason <code>apt install nvidia-driver</code> had installed a wild mixture of Nvidia 390.132 and 418.152 drivers (possibly related to the fact that nvidia-kernel-dkms required by 418.152 is only available for amd64 and not i386).</p>
+<p>Running <code>apt purge *nvidia* &amp;&amp; apt install nvidia-legacy-390xx-driver</code> brought my X system back.</p>
+",1168142,1604967,1604990,776,24811
+28243,0,"<p>You wrote: long barcode, that is different to long-range scanner.</p>
+
+<p>I don't know how do you want to use the scanner, but maybe as a workaround, you can use a mobile-phone with some app for the transmission to your pc, till you get a new scanner.</p>
+",1003311,1410772,1410912,771,25024
+28397,0,"<p>There should be no need to manually delete those files if you just want to replace these with the correct album art. The correct way to do this is to first copy the new album art (for example, from your browser). Then navigate to the album in WMP's library, right-click the current album art picture and select <code>Paste album art</code>.</p>
+<p>This will replace the album art in the library as well as create new album art image files in the album's directory.</p>
+",137371,1585443,1585949,775,25149
+28430,0,"<p>It is just a guess, but Windows 10 actually does not really shut down; instead it uses a feature called Fast Boot, using hybernation. This is the reason, why Windows 10 is able to start up really quick, but it often causes trouble in multi-boot environments.</p>
+
+<p>To disable it completely (boot time increases just a little bit by doing this):</p>
+
+<ol>
+<li>Open the start menu by clicking the Windows logo and type ""Power and sleep""</li>
+<li>Scroll down and click on ""Additional Power Settings""</li>
+<li>On the left side, click on ""Choose what the power button does""</li>
+<li>Uncheck the box ""Enable Fast Boot"" (To change settings here, you might have to login with admin privileges) </li>
+</ol>
+
+<p>Please let me know if this solved your problem.</p>
+",860537,1401608,1401646,770,25174
+28437,0,"<ol>
+<li><p>Select the data in the table</p></li>
+<li><p>Copy</p></li>
+<li><p>Go to the cell down the given table</p></li>
+</ol>
+
+<p>4 Select Paste-Transpose from the Menu</p>
+",321999,1411387,1411822,772,25179
+28533,0,"<p>could be missing files, hdd, thermal, ram, wrong clocking, bad wiring... </p>
+
+<ol>
+<li>listen for unusual or missing noises like fans or hdd </li>
+</ol>
+
+<p>unlikely but easy:</p>
+
+<p>check if your hdd (partition c) have enough space left (min. 2-4GB)</p>
+
+<p>if you know how the bios works, try to reset to default,that should restore a default clocking, 
+otherwise don't care about that, 
+but before the reset take some pictures of the settings.</p>
+
+<p>if it's not that easy, i would advise you to format your hdd-partition ""C"" and reinstall your os, cause most issues are shown or fixed then. </p>
+
+<p>first check everthing got a backup. think about all the hardware-drivers, favorites, e-mails and the docs, vids and pics.</p>
+
+<p>you could do a lot of tests instead, but mostly you can't fix them without reinstalling your os.</p>
+
+<p>if you are able to, change the hdd or ram (i read about bad ram but i've never
+seen it over 20 years).</p>
+
+<p>the bigger problems are cooling or other internal hardware issues, then you have to open the notebook. </p>
+",1003311,1410953,1410968,771,25252
+29541,0,"<p>Last time my answer was not clear to others.</p>
+<p>With a small data I am sending it again.</p>
+<p>R1 is in A5, then B5 etc. R30 is A34, then B34...</p>
+<p>Therefore Area for Counting is B5 to B34.</p>
+<p>For Absolute Reference,it is $B$5:$B$34 etc.</p>
+<p>The formula is entered in Instances Column.</p>
+<p>As soon as you edit the data, results are changed accordingly.</p>
+<p>I hope it is clear. I found it very very difficult and tiresome to Copy Excel Worksheet Area and Paste it directly as my answer.</p>
+<p>I totally dont know how to use Excel Worksheet directly as an answer because there is no provision, or I am unaware.</p>
+<p>Thanks.</p>
+<p><a href=""https://i.stack.imgur.com/7Wttq.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/7Wttq.png"" alt=""enter image description here"" /></a></p>
+",321999,1582779,1583713,772,26058
+29594,0,"<p>Thanks to Shirley Zhang. <br>
+Original from: (<a href=""https://www.datanumen.com/blogs/2-fast-means-to-split-an-excel-worksheets-contents-into-multiple-workbooks-based-on-a-specific-column/"" rel=""nofollow noreferrer"">datanumen.com/blogs/2-fast-means-to-split-an-excel-worksheets-contents-into-multiple-workbooks-based-on-a-specific-column</a>) edited by me. <br></p>
+
+<p>Due to create, edit and save workbooks, it takes a long time to calculate 20.000+ lines. Maybe more than 15 minutes.<br></p>
+
+<pre><code>Sub SplitSheetDataIntoMultipleWorkbooksBasedOnSpecificColumn()
+    Dim objWorksheet As Excel.Worksheet
+    Dim nLastRow, nRow, nNextRow As Integer
+    Dim strColumnValue As String
+    Dim objDictionary As Object
+    Dim varColumnValues As Variant
+    Dim varColumnValue As Variant
+    Dim objExcelWorkbook As Excel.Workbook
+    Dim objSheet As Excel.Worksheet
+
+    Dim aCol As String
+    aCol = ""G"" '&lt;- Change Source-Column here
+
+    On Error GoTo err1
+     'Speed up a little bit
+     With Application
+    .ScreenUpdating = False
+    .Calculation = xlCalculationManual
+    .EnableEvents = False
+     End With
+
+    Set objWorksheet = ActiveSheet
+    nLastRow = objWorksheet.Range(""A"" &amp; objWorksheet.Rows.Count).End(xlUp).Row
+
+    Set objDictionary = CreateObject(""Scripting.Dictionary"")
+
+     For nRow = 2 To nLastRow
+        'Get the specific Column
+        'Here my instance is ""B"" column
+        'You can change it to your case
+
+        'strColumnValue = objWorksheet.Range(""B"" &amp; nRow).Value
+        strColumnValue = Format(objWorksheet.Range(aCol &amp; nRow).Value, ""mm_dd_yyyy"") '&lt;- Set the filter and filename
+
+        If objDictionary.Exists(strColumnValue) = False Then
+           objDictionary.Add strColumnValue, 1
+        End If
+    Next
+
+    varColumnValues = objDictionary.Keys
+
+    For i = LBound(varColumnValues) To UBound(varColumnValues)
+        varColumnValue = varColumnValues(i)
+
+        'Create a new Excel workbook
+        Set objExcelWorkbook = Excel.Application.Workbooks.Add
+
+        Set objSheet = objExcelWorkbook.Sheets(1)
+        objSheet.Name = objWorksheet.Name
+
+        objWorksheet.Rows(1).EntireRow.Copy
+        objSheet.Activate
+        objSheet.Range(""A1"").Select
+        objSheet.Paste
+
+         For nRow = 2 To nLastRow
+            If CStr(objWorksheet.Range(aCol &amp; nRow).Value) = CStr(varColumnValue) Then
+               'Copy data with the same column ""B"" value to new workbook
+               objWorksheet.Rows(nRow).EntireRow.Copy
+
+               nNextRow = objSheet.Range(""A"" &amp; objWorksheet.Rows.Count).End(xlUp).Row + 1
+               objSheet.Range(""A"" &amp; nNextRow).Select
+               objSheet.Paste
+               objSheet.Columns(""A:I"").AutoFit 
+            End If
+
+        Next
+
+        objExcelWorkbook.SaveAs (CStr(varColumnValue)) 
+
+   Next
+
+err1:
+     'Restore slow but necessary settings
+     With Application
+    .ScreenUpdating = True
+    .Calculation = xlCalculationAutomatic
+    .EnableEvents = True
+     End With
+
+End Sub
+</code></pre>
+",1003311,1412456,1412563,771,26099
+29619,0,"<p>To store objects in variables you have to use the ""Set"" command. 
+<br>I.e.: </p>
+
+<pre><code>Set ITCert = ThisWorkbook.Sheets(""IT Certification"")
+</code></pre>
+
+<p>A simple copy can look like this, but you should better use the ""names"" for the source-sheets instead of numbers:<br>
+Code edited: Due to your comment !<br></p>
+
+<pre><code>Option Explicit  'use only clearly defined variables
+
+Public Sub Test()
+Dim r As Long
+Dim rcnt As Long
+Dim Dst As Worksheet
+Dim chk1 As Boolean
+Dim chk2 As Boolean
+
+With ThisWorkbook
+Set Dst = .Sheets.Add(After:=.Worksheets(.Worksheets.Count))
+
+'r = 2
+rcnt = 1  ' stores amount of inserted rows
+chk1 = True 'simulate checkbox1
+chk2 = True 'simulate checkbox2
+
+If chk1 Then
+With .Sheets(1)                             
+r = .Range(""A"" &amp; .Rows.Count).End(xlUp).Row 'last source-row
+.Range(""A1:E"" &amp; r).Copy _
+Destination:=Dst.Range(""A"" &amp; rcnt)
+rcnt = rcnt + r 'lastrow
+End With                                    
+End If
+
+If chk2 Then
+With .Sheets(2)                             
+r = .Range(""A"" &amp; .Rows.Count).End(xlUp).Row 'last source-row
+.Range(""A1:E"" &amp; r).Copy _
+Destination:=Dst.Range(""A"" &amp; rcnt)
+rcnt = rcnt + r 'lastrow
+End With                                    
+End If
+
+End With
+End Sub
+</code></pre>
+",1003311,1412878,1412923,771,26115
+29827,0,"<p>As given by you :
+Worksheet 1 ; 2 Columns : [ Item No ];  [ Instances ].
+Worksheet 2 ; 3 Columns : [ Record No. ]; [ Item Used ]; [ Date ]</p>
+<p>Now Worksheet 1 ; In Cell B2 Enter the following formula</p>
+<p>B2 = COUNTIF(Sheet2!$B$2:$B$1001,Sheet1!A2)</p>
+<p>Copy this formula down the column, in B3, B4,....    B1001.</p>
+<p>To get the desired result.</p>
+<p>It is for say 1000 records and $B$2...reference is used so that when you copy down the column, reference remains SAME.</p>
+<p>Thanks.</p>
+",321999,1582779,1582944,772,26058
+30389,0,"<p>Having a higher end CPU/GPU does not increase the maximum thermals the cooling solution can have.  In fact it only increases how much cooling is required.  Most laptops only have about 65-85 Watts TDP of cooling compared to a desktop which can often have 300-600 Watts TDP of cooling capability.  Being a 16 inch notebook, not a 24 inch, it would be in the 70-75 Watt TDP range.</p>
+
+<p>In all honesty 60 degrees actually sounds about right.  Even desktop processors run around that temperature.  Intel CPUs are known to run hot, especially in macs. The same goes for nVidia GPUs which Apple uses.  Laptops in particular run very hot as well.  </p>
+
+<p>As of fan noise, sadly that model laptop has a noisy fan.  You can reduce the fan noise by cleaning the fans.  It might also improve airflow.</p>
+
+<p>Additionally, there are some other things you can do.</p>
+
+<p>First, insure power-scaling is properly enabled.  You should have the lowest setting to the lowest it will go while maintaining the maximum top bracket settings.  This will properly enable the power save behavior to reduce wasted power and heat.  </p>
+
+<p>You should never use so-called ""performance"" mode on your laptop, or anything except benchmarks for that matter.  The mode is a holdover from back when processors took a long time to power up after sleep mode.</p>
+
+<p>Second, if you are only cloning a display across several monitors, use a Display Port signal cloning device instead of a multi-port adapter.  This will prevent the GPU from having to make extra copies of the screen data.  </p>
+
+<p>Finally, depending on what browser you use you may have some option to reduce CPU and memory usage.  Chrome and Firefox have such options, Edge, Opera and Safari do not.</p>
+",162119,1522348,1522582,774,26757
+30390,0,"<p>The PS2 keyboard connector is easily removable.</p>
+
+<p>You should be able to remove it and see the extent of the damage.</p>
+
+<p>After that, I would recommend following any of the good guides online for removing corrosion.  iFixit is the best place to start, although plenty of other how-to sites provide such guides as well.  </p>
+
+<p>If you are lucky, the majority of corrosion is on the shielding and only a small amount spread over.</p>
+
+<p>After the corrosion is removed and the damage is assessed you have two options:</p>
+
+<ol>
+<li>Repair the traces and solder back on the PS/2 connector.</li>
+<li>Remove any residual shorts in the traces, and turn off the PS/2 connector in the BIOS.</li>
+</ol>
+
+<p>Either option will make the board operational again, but option 1 will likely make the PS/2 connector work again.</p>
+
+<p>As a note, if you chose Option 2 you don't have to worry about preserving as much of the traces as possible.</p>
+
+<p>In the future, humidity can be kept out of your computer by adding a small pouch or container of silica gel humidity remover (which you can get at hardware stores) somewhere in the case.  Only a few percentage points of humidity should do a good job to improve the life-span of your hardware.  </p>
+
+<p>Additionally, make sure your computer is plugged into a properly grounded outlet.  This will help reduce corrosion as well, by preventing static differentials from building up on the case.</p>
+",162119,1522566,1522584,774,26758
+31172,0,"<p>This can be acomplished in Excel:</p>
+
+<ol>
+<li>Go to Home Tab. </li>
+<li>Select the area you want to format. In your case Area is ""C4:L7"". </li>
+<li>Select ""CONDITIONAL FORMATTING"" from the Menu. </li>
+<li>Select ""NEW RULE"". </li>
+<li>Select "" From Only Cells that contain value. </li>
+<li>From Drop Down Tabs select : "" Cell Value "" , "" Equal to"" , 0 "" </li>
+<li>Format as you want Colour, Fill etc. say RED. The job is done. Now follow the same procedure, same steps  again and for value 1 select say Yellow Colour. Same for 2, 3, 4 etc. For other sheet and many other Reports, you can then apply  "" FORMAT PAINTER "" to get the same results.</li>
+</ol>
+",321999,1511616,1511656,772,27407
+31247,0,"<p>It is always safest to use an FAT32 partition for UEFI.  </p>
+
+<p>You don't know what other computers will be accessing the partition, and FAT32 is the best supported for the purpose.</p>
+
+<p>Windows 10 and several other systems require at least 550MB for the UEFI partition so this eliminates FAT12 from the options and makes FAT16 no longer favorable.</p>
+",162119,1509911,1510672,774,1599
+31315,0,"<p>First I would try setting the permissions you want on the mount point (without the network location mounted).  This is a step I often forget when initially setting up a new network mount.  </p>
+
+<p>Remember to unmount the drive first.  </p>
+
+<p><code>sudo chmod 777 /mnt/nas_usil</code> </p>
+
+<p>Also, I'm noticing the ownership is different between the two systems.  You may want to conform that as well -- using chown useryouwant:groupyouwant /mnt/nas_usil on whichever is appropriate.  </p>
+",1104836,1499875,1499879,773,27537
+31408,0,"<p>You say Windows 10 but of course Windows doesn't natively use ssh.  Though you can install bash or some other shell via the Linux Subsystem for Windows.  This, I trust, is what you mean.  Here are some basic instructions for changing the file containing the port information:  </p>
+
+<p><a href=""https://www.cyberciti.biz/faq/howto-change-ssh-port-on-linux-or-unix-server/"" rel=""nofollow noreferrer"">https://www.cyberciti.biz/faq/howto-change-ssh-port-on-linux-or-unix-server/</a> </p>
+
+<pre><code>1:  find / -name ""sshd_config"" 2&gt;/dev/null 
+2:  sudo nano /path/to/file  ##  probably /etc/ssh/sshd_config 
+3:  ## locate Port 22 (removing any leading #) 
+4:  ctrl-o # save the file 
+5:  ctrl-x # exit nano 
+</code></pre>
+
+<p>Once you have changed it you simply add the port designation to your ssh command when attempting to connect.  </p>
+
+<p>ssh username@host:port </p>
+
+<p>(You may need to make firewall changes if there is one in between.  It depends on the specifics of your arrangement.)  </p>
+",1104836,1501402,1501407,773,27607
+31522,0,"<p>Time sends its output to STDERR and not STDOUT.  </p>
+
+<p>There are a couple of options though I'm not clear on how you plan to use the captured data so I'll lay it out in three lines.</p>
+
+<pre><code>$ narf=""$( ( time sleep 2 ) 2&gt;&amp;1 )"" ; echo ""${narf}"" ; unset narf  
+
+real    0m2.002s
+user    0m0.001s
+sys 0m0.001s
+
+$ narf=""$( ( time sleep 5 ) 2&gt;&amp;1 )"" ; echo ""${narf}"" ; unset narf  
+
+real    0m5.002s
+user    0m0.001s
+sys 0m0.001s
+
+$ narf=""$( ( time -p sleep 5 ) 2&gt;&amp;1 )"" ; echo ""${narf}"" ; unset narf  
+real 5.00
+user 0.00
+sys 0.00
+
+</code></pre>
+
+<p>The first two options do not use the -p formatting option (which is designed for POSIX compliance).  The third option does.  </p>
+
+<p>As you can see the output varies somewhat.  Ask me questions if you'd like.  (You can drop the unset command as I was using that to perform multiple tests.)  </p>
+",1104836,1505447,1505467,773,8776
+31553,0,"<p>Suppose your worksheet name is Company.</p>
+
+<p>You want to copy Column 1, Column 3, Column 8</p>
+
+<p>In Empty Work Sheet :In <strong>A1</strong> enter formula <code>=Company!A1</code>, in <strong>B1</strong> Enter <code>=Company!C1</code>, in cell <strong>C1</strong> Enter <code>=Company!H1</code></p>
+
+<p>Copy the Entered Data from A1:C1 down the Rows to get desired results.</p>
+",321999,1505092,1505213,772,27728
+32074,0,"<p>I had to solve this problem for my music player sync script because it's 2020 and FAT (and NTFS) still can't handle question marks or colons.  </p>
+
+<p><a href=""https://github.com/jamesisin/blech/blob/master/PMPSync.sh"" rel=""nofollow noreferrer"">PMPSync.sh</a></p>
+
+<p>I chose to replace any instance of a ? or a : with __ (double underscores) as this was likely to never produce a problem.  You could use other similar solutions and you could expand your list of replaceable characters to fit your needs.  </p>
+
+<pre><code>function func_PMP_naughtyFilesystem() { 
+    # if the PMP uses FAT or NTFS then sub certain characters with __ 
+    printf '%s\n' ""Some file systems are unable to handle certain characters.  "" 
+    printf '%s\n' ""FAT and NTFS file systems in particular are bad about this.  "" 
+    printf '%s\n' ""If you would like we can change : and ? into __ to avoid sync failures.  "" 
+    read -rep ""Is your PMP formatted to use one of these lesser file systems?  (Y/n)  "" -n1 naughtyFilesystem 
+    printf '\n' 
+} 
+
+function func_CreateSourceAndDestination() { 
+    # 
+    for (( i = 0 ; i &lt; ${#files_syncSource[@]} ; i++ )) ; do 
+        files_syncDestination[${i}]=""${files_syncSource[${i}]#${directory_MusicLibraryRoot_source}}"" 
+        # printf '%s\n' ""${files_syncDestination[${i}]}"" # useful in debugging 
+        if [ ""${naughtyFilesystem}"" != ""n"" ] ; then 
+            files_syncDestination[${i}]=""${files_syncDestination[${i}]//\:/__}"" 
+            files_syncDestination[${i}]=""${files_syncDestination[${i}]//\?/__}"" 
+        fi 
+        file_destinationPath=""$( dirname -- ""${directory_PMPRoot_destination}${files_syncDestination[${i}]}"" )"" 
+        if [ ! -d ""${file_destinationPath}"" ] ; then 
+            mkdir -p ""${file_destinationPath}"" 
+        fi 
+        # try process substitution 
+        # rsync --files-from=&lt;( printf ""%s\n"" ""${files[@]}"" ) source destination 
+        # rsync -rltDvPm --files-from=&lt;( printf ""%s\n"" ""${files_syncSource[${i}]}"" ) ""${files_syncDestination[${i}]}"" 
+        # the above needs to lose the interation and destination should just be PMProot I guess 
+        rsync -rltDvPmz ""${files_syncSource[${i}]}"" ""${directory_PMPRoot_destination}${files_syncDestination[${i}]}"" 
+    done 
+} 
+</code></pre>
+
+<p>First I ask the user if they want to make the substitutions and then unless they answer no I make those substitutions just prior to making each sync.  </p>
+
+<p>Let me know if you have any questions.  </p>
+",1104836,1514211,1515565,773,28121
+32076,0,"<p>Well, this command will give you a list of all files located within subfolders of your specified root folder:  </p>
+
+<p><code>find ./*/ -type f -iname ""*.*""</code> </p>
+
+<p>You could then use basename to extract the file name itself, then iterate over that output using rsync (better than cp because it checks its work).  Something like this perhaps:  </p>
+
+<p><code>rsync -aiSP /source/""${filepath}"" /destination/""${basefilename}""</code> </p>
+
+<p>Structurally something like this:  </p>
+
+<pre><code>for filepath in ""$( find ./*/ -type f -iname ""*.*"" )"" ; do 
+    basefilename=""$( basename ""${filepath}"" )"" 
+    rsync -aiSP /source/""${filepath}"" /destination/""${basefilename}"" 
+done  
+</code></pre>
+
+<p>That code won't work due to the way find is parsed, but something like this should do what you are asking.  </p>
+
+<p>The key take-aways from me would be the <code>find ./*/</code> which avoids loose files in the root folder and only seeks files in any subfolders, and the use of rsync which I say works better than using cp.  </p>
+
+<p>Let me know if you have questions.  </p>
+
+<p>I think I would explore a solution along these lines:  </p>
+
+<pre><code>while IFS= read -r -d '' filepath; do 
+    basefilename=""$( basename ""${filepath}"" )"" 
+    rsync -aiSP /source/""${filepath}"" /destination/""${basefilename}"" 
+done &lt; &lt;( find ./*/ -type f -iname ""*.*"" -print0 ) 
+</code></pre>
+
+<p>That code is more likely to work as-is.  Enjoy!  </p>
+",1104836,1515541,1515562,773,28101
+32226,0,"<p>First of all: there are always to sides of a medal - one is your internet bandwith and the other one is the bandwith of the server you are getting information from. Some mirrors or even CDNs for example are just slow, resulting in a slow download rate, even if you've got a decent internet connection.</p>
+
+<p>But you've also mentioned, that you are getting speeds which are x13 better on another machine in your LAN. This could have multiple reasons which I cannot go into detail since I've got to less information about your hard- and software-configuration:</p>
+
+<ul>
+<li>Multiple antennas in a MIMO-config (<strong>M</strong>ultiple <strong>I</strong>nput <strong>M</strong>ultiple <strong>O</strong>utput) on the other WLAN-Chipset</li>
+<li>Other WLAN-Chipset and/or other drivers (in general you could try updating the WLAN drivers)</li>
+<li>Misconfiguration in QoS (<strong>Q</strong>uality <strong>o</strong>f <strong>S</strong>ervice) settings, but if you haven't tweaked settings manually, this should be alright</li>
+<li>Environmental differences (e.g. steel reinforced walls, poor WLAN converage in that specific area inside your house/flat</li>
+<li>etc.</li>
+</ul>
+",860537,1438648,1438658,770,28243
+32384,0,"<p>Sir,</p>
+
+<ol>
+<li>Open Both Word and Excel Files</li>
+<li>Copy the required Cell in Excel</li>
+<li>In Word Document go to the area where Cell Value is to be placed</li>
+<li>Select Paste Special.</li>
+<li>Select PASTE LINK Button</li>
+<li>Select AS UNFORMATTED TEXT Option</li>
+<li>Press OK Button, to get the desired output.</li>
+</ol>
+
+<p>I learnt from K2, so credit goes to K2.</p>
+
+<p>Thanks. </p>
+",321999,1437635,1438119,772,28379
+32718,0,"<p>To add the ratings to the songs in WMP, there's the <a href=""https://sourceforge.net/projects/metadatabackup/"" rel=""nofollow noreferrer"">Metadata Backup</a> tool that can import/export all of WMP's library info (including ratings) from/to an XML file. However, the XML format used by Metadata Backup is completely different from the format generated by PlayerPro, so you would still need a way to convert one format to the other.</p>
+",137371,1436220,1442018,775,28655
+32831,0,"<p>If you enable WMP's playlist pane (visible on the right-hand side), you should be able to see the currently playing track. The current track is highlighted and the list is always automatically scrolled by WMP to show the current track in the visible area.</p>
+<p>To enable the playlist pane in Library Mode, click the <code>Play</code> button near the top. In Now Playing mode, right-click on an empty area and select <code>Show list</code> from the menu.</p>
+<p>Additionally, the <a href=""https://bmproductions.fixnum.org/wmpplus/"" rel=""nofollow noreferrer"">Windows Media Player Plus!</a> plug-in can show the currently playing track in WMP's title bar.</p>
+",137371,1545310,1566327,775,28744
+33030,0,"<p>To answer my own question: <strong>smbpasswd -a vdr</strong> solved my problem. Seems like Samba 4.5 became more strict compared to Samba 4.2.</p>
+",1168142,1568771,1568789,776,28914
+33049,0,"<p>There are network cable testers available (e.g. from Fluke) which measure the physical properties of ethernet cables if you're unsure about the cabling.</p>
+<p>You also might want to check the power supplies of Ethernet switches in between. It has happened several times to me that dying power supplies (usually seen after 5 years of use) create the strangest connection problems.</p>
+<p>About the fact, that some cables are installed outdoors:
+I had cheap SFTP cables for indoor use routed on the outside of a house for 10 years in direct sunlight without any visible cracks to the outer PVC layer after that period. YMMV if the cables are exhibited to very hot or cold conditions.</p>
+",1168142,1568764,1568772,776,28924
+33810,0,"<p>In Windows Media Player, please go to <code>Tools</code> - <code>Options</code> - <code>Privacy</code> (press Ctrl+M if you don't see the Tools menu). Click the <code>Clear History</code> and <code>Clear Caches</code> buttons, then press <code>OK</code>. Does that help?</p>
+",137371,1460810,1461951,775,29557
+33931,0,"<p>Create a file For Data as under, say,</p>
+
+<p>Sr. No. SID Minutes Business Type<br>
+1   A   25      Y<br>
+2   A   18      N<br>
+3   A   36      N<br>
+4   A   10      Y<br>
+5   A   18      Y<br>
+6   A   14      N<br>
+7   B   32      Y<br>
+8   B   14      N<br>
+9   B   5       Y<br>
+10  B   32      N<br>
+11  C   15      Y<br>
+12  C   32      Y<br>
+13  C   12      Y<br>
+14  C   25      N<br>
+15  C   18      Y<br>
+16  C   36      Y<br>
+17  C   10      Y<br>
+18  C   18      N<br>
+19  C   14      Y<br>
+20  D   32      N<br>
+21  E   14      Y<br>
+22  E   5       N<br>
+23  E   32      Y<br>
+24  E   15      Y<br>
+25  E   32      Y   </p>
+
+<p>Where Headings in First Row are as under :</p>
+
+<p>1   Five Columns with Headings
+    Sr. No., SID, Duration Minutes, Business Type, SID_Business_Call</p>
+
+<p>2   Sr. No. : 1, 2, 3…..
+    SID : A, B, C, D, E.
+3   Duration Minutes : 25, 18, 36….</p>
+
+<p>4   Business Type : Y, N, Y, Y, Y, N, …</p>
+
+<p>Name the Ranges as Under :</p>
+
+<p>Range   ""$B$2:$B$26""   is given a name  ""SID""
+Range   ""$C$2:$BC26""   is given a name  ""Duration""
+Range   ""$E$2:$E$26""   is given a name  ""YesNo""</p>
+
+<p>Now write Formulas as under</p>
+
+<p>5   SID_Business_Call : Formula 
+    IF(D2=""Y"",B2,"""")
+6   Then Below the Data
+    Enter Column Headings in Cell B30, C30, D30…M30 as under
+    Session ID, Total Calls, Business Count, Non Business Count, 
+    % of Business Count, Total Duration, % of Total Time,
+    Business Duration Minutes, % of Total Business Duration
+    % of SID Business Duration, Average Business Minutes
+    and in M30..Non Business Duration Minutes
+7   Under B30 write in B31 ""A"", B32 ""B""….B35 ""E""</p>
+
+<p>8   In C31 enter formula  ""= COUNTIF(SID,B31)""
+    Copy this formula down the Cell up to  C35
+9   In cell D31 Enter the formula ""=COUNTIF(YesNo,B31)""
+    Copy this formula down the Cell upto D35
+10  In cell E31 Enter the formula ""=C31-D31""
+    Copy this formula down the Cell upto E35
+11  In cell F31 Enter the formula ""=D31/C31*100""
+    Copy this formula down the Cell upto F35
+12  In cell G31 Enter the formula ""=SUMIFS(Duration,SID,B31)""
+    Copy this formula down the Cell upto G35
+13  In cell H31 Enter the formula ""=G31/$G$37*100""
+    Copy this formula down the Cell upto H35
+14  In Cell I31 Enter the formula =SUMIF(YesNo,B31,Duration)
+    Copy Down the Cell I35</p>
+
+<p>15  In Cell B37 Enter the text "" TOTAL""
+16  In Cell B39 Enter the Text ""  %  ""
+17  In Cell C37 Enter the formula "" =SUM(C31:C35)""
+    Copy this in Cells : D37, E37, G37 and so on</p>
+
+<p>It is little lengthy. I have both data, results and formulas in Excel Worksheet but I dont know how to share worksheet with you, to avoid all these explanations.</p>
+
+<p>Thanks.</p>
+
+<p>Sorry if found lengthy.</p>
+",321999,1448467,1449138,772,29655
+34247,0,"<p>While this wouldn't cause problems with some other Operating Systems, Windows is not designed to be capable to do this.</p>
+
+<p>Windows in particular sets up it's system specifically for the computer it's on.  Switching out more than a few devices at a time will result in configuration headaches that exceed the effort of a fresh install.</p>
+
+<p>Instead, I recommend backing up just your data portions.  You can also backup certain program directories if the program provides a tool to do so.  Steam provides a way to do this with the games you download through it.  </p>
+
+<p>I recommend you also keep a full back backup of the drive so that if something goes wrong or you forget something you can harvest the data out of that.</p>
+",162119,1547140,1547173,774,18324
+34248,0,"<p>Short answer: probably not.</p>
+
+<p>Long answer: depends.</p>
+
+<p>A very surprising number of things use the local SQL server, not just conventional databases.</p>
+
+<p>I would recommend setting it to run as needed, then reboot, do some test work and make sure it doesn't break the things you normally do.  This should be a fire and forget option so that if you do need it the server will start but it won't always be running.</p>
+
+<p>If all goes well this should slow the start of things that need it, but shouldn't break anything.  Of course, sometimes things don't work the way they should so keep an eye out for any issue resulting from the inability to contact the SQL server.</p>
+
+<p>You definitely should not just terminate it blindly, nor would I recommend uninstalling it. This is far more likely to break stuff, and do so badly. </p>
+",162119,1547163,1547170,774,29919
+34249,0,"<p>93 is pushing it a little.  If you can (say you have some spare case fans around or a better CPU Heat-Sink) you might want to install more cooling in your system.   The AMD CPUs are quite heat tolerant (far more than Intel due to using thermal solder instead of paste) but you are hitting heat throttling at that point, and will be losing performance in other tasks.</p>
+
+<p>If you are using Linux you may want to use thermald to run a script to dynamically sleep your folding@home client when the temperatures get hot, then ramping back up whenever they cool down.  This will address the issue.</p>
+
+<p>I believe there are similar options for Windows and Mac.  </p>
+",162119,1544400,1547167,774,29311
+34340,0,"<p>My Answer is based only on the formula. The Logic is as under :
+1.  First Decide the ""a.m."" or p""p.m."" Suffix by Testing Number Less than 1159 or not 
+2.  Convert the number in to Text Format
+3.  Decide the Left Two Digits for Hours, depending on Lenth of Text = 3 or 4
+4.  Decide the Right Two Digits for Minutes</p>
+
+<p>Start :
+ 1. In First Row Give Titles As Below
+Column 1. ""Number"", Column 2 ""Time"", Column 3. Leave Blank for Clarity
+Column 4. ""Text"", Column 5. ""Left2"", Column 6. "" Right2"", Column 7. ""Hour Digit"", Column. 8 ""ampm""</p>
+
+<p>Enter the Formulae as Under :   </p>
+
+<p>In Cell B2 Enter the Formula : =IF(A2=0, "" 12 Mid Night"", IF( A2=1200, "" 12 Noon"",H2&amp;""=""&amp;G2&amp;I2))    </p>
+
+<p>In Cell D2 Enter the Formula : =TEXT(A2,""####"") </p>
+
+<p>In Cell E2 Enter the Formula :  =IF(LEN(E2)=3,LEFT(E2,1),LEFT(E2,2))    </p>
+
+<p>In Cell F2 Enter the Formula : =RIGHT(E2,2) </p>
+
+<p>In Cell G2 Enter the Formula : =IF(M2="" a.m."",F2,F2-12) </p>
+
+<p>In Cell H2 Enter the Formula :  =IF(A2&lt;1159,"" a.m."","" p.m."")    </p>
+
+<p>Start Entering Time in Number Format down the row in Colun A<br>
+Time is Displayed in Column B in the Desired Format :</p>
+
+<p>Number  Time        Text    L2  R2  Hour Digit  ampm
+1445    2=45 p.m.   1445    14  45  2    p.m.
+810 8=10 a.m.       810 8   10  8    a.m.
+0    12 Mid Night                        a.m.
+2155    9=55 p.m.       2155    21  55  9    p.m.
+123 1=23 a.m.       123 1   23  1    a.m.
+800 8=00 a.m.       800 8   00  8    a.m.
+1200     12 Noon        1200    12  00  0    p.m.
+345 3=45 a.m.       345 3   45  3    a.m.</p>
+
+<p>I tried to paste the Copied Answer Table of Excel but it gives a very small image type icon. The above pasted portion works better but somehow the direct conversion in the  Reply Section, it gets jumbled.</p>
+
+<p>Thanks.</p>
+
+<p>My Request : I am new to Stack Exchange so I dont know how to answer, how to use the exact copied portion of my excel file. Even if I write properly taking care of formats, again in the Reply Part It gets all mixed, spoiling clarity of the solution.
+Anyway, I will learn with the time, it seems.
+Thanks, Again.</p>
+",321999,1451173,1451754,772,29990
+34395,0,"<p>I can easily solve the problem about PIVOT but I have not understood the requirements exactly.
+I also dont know whether I can send you the Excel File through e-mail or not. As I am not aware about this.
+Thanks.</p>
+",321999,1450712,1451010,772,30029
+34601,0,"<p>Are you only asking for audio formats, or for video formats as well? Out of all the audio formats currently supported by WMP (Windows Media Audio, WAV, MP3, FLAC, MPEG-4), only Windows Media Audio (aka WMA) has support for DRM built into the format and player.</p>
+",137371,1452046,1455465,775,18694
+34897,0,"<p>The easiest way to achive it, is to use a mouse-mover-program which moves your mouse every couple of minutes one pixel forward and back. i think you can find some
+on google, but try to get it from secure sources, or if possible, code it by yourself.</p>
+
+<p>The other way is to setup your BIOS and/or OS-settings.</p>
+",1003311,1410885,1410898,771,30445
+35063,0,"<ol>
+<li><p>Assume that Data is in the Range A1:A10.</p>
+
+<ul>
+<li>Criteria : If the Current is More than 10 % Of Earlier Then it is said to be OUT.</li>
+</ul></li>
+<li><p>In Cell B2 enter the Formula :  </p>
+
+<ul>
+<li><code>= IF (  ( Max(A1:A2)/Min(A1:A2 ) &gt;  1.1,   ""OUT"", ""WITHIN"" )</code></li>
+</ul></li>
+<li><p>Copy the Formula of B2 down the Cells B3, B4, B5,....</p></li>
+</ol>
+
+<p>Note : If the Order of Occurrence is not important, It is better to Sort the Data before the test. Because otherwise due to One Outlier, Two becomes "" OUT "".</p>
+",321999,1465957,1466936,772,23733
+35131,0,"<p>There are two formula in Excel that handles ASCII Character Set.</p>
+
+<ol>
+<li><p><code>=CHAR(Number)</code> which returns text eg. =CHAR(65) returns A.</p></li>
+<li><p><code>=CODE(Text)</code> which returns the ASCII Code eg. =CODE(""A"") returns 65.</p></li>
+</ol>
+
+<p>So enter =CODE(A2) in Cell B2. You will get number 65 if letter is ""A""(Capital) and Number 97 if letter is ""a"" (Small).</p>
+
+<p>So Capital Letters have ASCII Code from Number 65 to 90 and small letters have ASCII Code from Number 97 to 122.</p>
+
+<p>Once you get numeric Codes, you get your results by applying the formula</p>
+
+<p>=(if B2 >=92, ""Small"", ""Capital"") etc.
+Once you get Codes you can apply various Conditions to get the desired results.</p>
+
+<p>Using all such Codes one can send Secret Documents by Changing the Codes by some amount say 13. Send the Documents and On Call give the COde is 13.</p>
+
+<p>One can have complete list by writing Numbers 0 to 255 in Column A and entering formula
+=CHAR(A2); Copy down the Column.</p>
+
+<p>ASCII is 8 Bits Code. So it is up to 255.</p>
+",321999,1458878,1459140,772,3321
+35248,0,"<p>I had explained the limitations in my answer.</p>
+
+<p>Now I have understood that you want only scale to be appeared on the X-Axis.</p>
+
+<p>In that case, dont select the Line Option but do asbelow :</p>
+
+<ol>
+<li>Select the Data</li>
+<li>Select the option Insert on the Top</li>
+<li>Select SCATTER</li>
+<li>Select 2nd Option : "" With Smooth Line and Markers""</li>
+</ol>
+",321999,1459309,1459957,772,30744
+35492,0,"<p>This little code should do it for you.<br> See ""Sub Test"" how to call ""delDoubleRow"".</p>
+
+<pre><code>Private Sub delDoubleRow(aSht As Worksheet, aCol As String)
+Dim rx As Long
+Dim lastrow As Long
+
+lastrow = aSht.Range(aCol &amp; aSht.Rows.Count).End(xlUp).Row
+For rx = lastrow To 1 Step -1  'count backwards from last to keep next row(rx) valid!
+  If WorksheetFunction.CountIf(aSht.Range(aCol &amp; ""1"" &amp; "":"" &amp; aCol &amp; rx), aSht.Range(aCol &amp; rx)) &gt; 1 Then
+    aSht.Rows(rx).EntireRow.Delete
+  End If
+Next
+End Sub
+
+Public Sub Test()
+delDoubleRow ThisWorkbook.Sheets(""Landing Pad""), ""D""
+End Sub
+</code></pre>
+",1003311,1413724,1413769,771,30958
+35535,0,"<p>This could happen if you have changed your ip-ranges but the link hasn't been updatet. </p>
+
+<p>-open the ""command prompt"", </p>
+
+<p>-type ""ipconfig"", </p>
+
+<p>-find your ip-range i.e. 192.168.0.23. </p>
+
+<p>-try <a href=""http://192.168.0.1"" rel=""nofollow noreferrer"">http://192.168.0.1</a> on your browser or reinstall the ""router"".</p>
+
+<p>most routers use xxx.xxx.xxx.1 </p>
+
+<p>almost like Worthwelle wrote before</p>
+
+<p>hope it could help</p>
+
+<p>busy</p>
+",1003311,1411558,1411583,771,30996
+35546,0,"<p>Could also be a low-/wrong or not installed powerconnection to the gpu.</p>
+",1003311,1411803,1411891,771,31005
+35564,0,"<p>This is a vba macro, updating the chart-data. Without error-checking and most names for a better understanding<br></p>
+
+<pre><code>Private Sub SetChart(sheetChrt as worksheet, sheetData as worksheet)
+ With sheetChrt.ChartObjects(1).Chart.SeriesCollection(1)
+   .XValues = sheetData.Range(""A1:A10"") '
+   .Values = sheetData.Range(""B1:B10"")
+ End With
+End Sub
+
+Public Sub Test1()
+ with Thisworkbook
+ SetChart .Sheets(""MyChartSheet""), .Sheets(""MyDataSheet"")
+ end with
+End Sub
+</code></pre>
+",1003311,1412556,1412574,771,20915
+35582,0,"<p>i do not understand what do you mean with ""until I reach a set of four cells""
+in opposite to ""Maximum range is C8-C55"".</p>
+
+<p>a simple macro is always possible for this, but i think there is also room for a formula, including the named-range-offset method, but formulas are not my favorite.</p>
+",1003311,1412116,1412217,771,31033
+36038,0,"<p>I suggest the following approach</p>
+
+<p>1 : Column Headings : Student, Schedule, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday</p>
+
+<p>2: Enter Students Names in A2, A3, A4.. as A, B, C, D, etc… in Student Column </p>
+
+<p>3: In Schedule Column For Student A write Schedule as ""Monday, Tuesday,Friday"" For student B write ""Monday, Wednesday"" For student C enter ""Monday,Wednesday, Sat"" etc..</p>
+
+<p>4: For Monday Column Head Monday : In cell C2 : enter the formula as =IF(ISNUMBER(SEARCH($C$1,B2)),A2,"""")</p>
+
+<p>5 : Copy C2 in C3, C4…etc down the line for Monday Column
+6 : In Tuesday : cell D2 enter the formula as =if(ISNUMBER(SEARCH($D$1,B2)),A2,"""") and copy down the line</p>
+
+<p>This way a result will be displayed Daywise, who are the students to be taught</p>
+
+<p>Thanks.</p>
+",321999,1432078,1432974,772,2285
+36150,0,"<p>For my network I use Samba (cifs) shares from Ubuntu machines mounting ext drives.  This allows me to interact with the drives via ssh or directly on the Ubuntu machine and I get all the benefits of ext.  It also allows me to mount those drives via smb using either Windows or Ubuntu and suffer the limitations associated therewith (minor as they may be).  Further, since Win10 now includes the Subsystem for Linux and I can install Ubuntu (and bash) into Win10 where I can use ssh for interacting there as well.  </p>
+
+<p>If you are in a dual-boot situation, you are rather stuck using NTFS and suffering its inherent limitations (I'm looking at you, colon and question mark prohibition) or worse using exFAT and suffering its greater limitations.  </p>
+",1104836,1503533,1503641,773,4911
+36176,0,"<p>You can create Windows-style network shares using Samba which is the open source response to Windows smb or cifs.  You can find instructions for installing and configuring Samba for your specific version of Ubuntu but the short version install it and make a folder shared.  </p>
+
+<pre><code>sudo apt install cifs-utils 
+</code></pre>
+
+<p>That should get you started.  You can add shares directly to your smb config file located (usually) here:  </p>
+
+<pre><code>/etc/samba/smb.conf 
+</code></pre>
+
+<p>If you have specific questions, I'll do my best to answer them.  </p>
+",1104836,1501418,1501422,773,31531
+36309,0,"<p>WMP saves album art as hidden JPG files in your music folder. First, make sure that Windows Explorer is set to show hidden files and folders, and to show protected operating system files. Then, navigate to your music folder. In that folder, look for JPG files containing the particular album cover that is shown on all tracks. Deleting these JPG files should get rid of the incorrect album art.</p>
+
+<p>Especially JPG files named <code>Folder.jpg</code>, or whose filename contains a lot of zeroes, can cause this. It may also be necessary to look for album art JPGs in subfolders of your music folder. </p>
+",137371,1498609,1505693,775,31638
+36408,0,"<p>That appears to be unique to Catalina.  I have not upgraded yet.  </p>
+
+<pre><code>$ echo 
+
+$ # hello 
+$ !:p 
+# hello  
+$
+</code></pre>
+
+<p>I use this ""feature"" as well so it would be useful to find a way to sort that.  </p>
+
+<p>For completeness:  </p>
+
+<pre><code>$ echo \""$HISTIGNORE\"" 
+""""
+$ echo \""$HISTCONTROL\"" 
+""""
+</code></pre>
+",1104836,1494990,1495803,773,31722
+36711,0,"<p>It's really just a question of who wrote your terminal application.  In both cases bash is running in a terminal window.  One was published by Microsoft exclusively in Windows, and the other is an open-source terminal integrated into the Debian software stack.  If you are thinking of a more specific way of them being different, please let me know.  </p>
+",1104836,1516912,1517652,773,31972
+36763,0,"<p>Looks like you want id -u evaluated by the receiving host.  You'll want to ensure it arrives intact.  </p>
+
+<p><code>""\""id -u\""""</code> </p>
+
+<p>This should give your local bash a set of quotes to swallow without letting it gobble the command.  </p>
+",1104836,1507696,1509210,773,32014
+36824,0,"<p>The certificate just was updated a few days ago.</p>
+
+<p>It might be an issue with cache somewhere between you and the website.</p>
+
+<p>They use Google and CloudFlare caching services, either of these could be having a delay updating their copy of the certificate.  If you encounter a problem hit ""reload"" up to three (3) times to force an update through the entire cache chain. </p>
+
+<p>As of insuring your system is staying up to date on time, your CMOS clock is not very reliable, and Operating Systems don't use it for more than booting their software clock.  I recommend that instead, you set your system to  synchronize off of a public NTP time server on boot and on a regular basis while booted.  (Every 4-24 hours depending on how accurate you need your time to be.)</p>
+",162119,1508817,1508822,774,24065
+36861,0,"<p>Instead of formula you can also use Conditional Formatting.</p>
+
+<ol>
+<li>Go to Home Tab.</li>
+<li>Select the area you want to format. In your case Area is</li>
+<li>Select ""CONDITIONAL FORMATTING"" from the Menu.</li>
+<li>Select  ""NEW RULE"".</li>
+<li>Select  option "" Format Only Cells that contain value...”.</li>
+<li>From Drop Down Tabs select : "" Cell Value "" , "" Greater than"" , 15  ""</li>
+<li>Format as you want Colour, Fill etc. </li>
+</ol>
+",321999,1512056,1512284,772,32097
+37658,0,"<p>Try <code>IFERROR</code> Function to avoid display of Error Type of Messages</p>
+
+<pre><code>=IFERROR(Formula,"""")
+</code></pre>
+",321999,1482016,1482603,772,8189
+38968,0,"<p>Would suggest to visit computer management >> storage >> disk management. You need to run computer management with admin permissions, so log-in as admin or type it in the search box after opening start menu and right click >> Run as admin</p>
+
+<p>If there are bad blocks, it shouldn't be listed as a disk without failures.</p>
+
+<p>Without knowing your intentions I would take a guess and say you have your OS on the SSD, which means Disk 0. Seems like the HDD. Only as a guess.</p>
+",860537,1284624,1284630,770,33830
+38979,0,"<p>The far more important question is: why did your BIOS Secure Boot options change after your PC froze? Even messing around in Windows could - asfar as I know - not affect BIOS settings, so maybe you should have gone to WINDOWS BOOT SETTINGS (Settings charm > Change PC settings > Update and Recovery > Recovery > Advanced Startup: Restart now. When the PC reboots, go to Troubleshoot > Advanced Options: UEFI Firmware Settings) and see if Secure Boot is enabled there.</p>
+
+<p>Though I think you will have no luck with that after changing secure boot settings in UEFI (so, direct in BIOS), but it's worth a try.</p>
+",860537,1284999,1285021,770,33838
+38987,0,"<p>Seems like you could find device manager :), but maybe helpful for others:
+Check in device manager (right click on Windows logo or WIN-Key + R >> type in ""devmgmt.msc"") sections ""Audio, video and gamecontroller"" and ""Audio in and outputs"". See if you device is under ""Audio in and outputs"" - probably not. Then find Realtek High Definition Audio >> right click >> properties (click on ""Config Settings with the UAC logo beside and enter admin password). Go under ""driver"" and try ""update driver"". It's probably easier to select the ""look in windows update"" option. If nothing happens, deinstall the device and check <a href=""http://www.realtek.com.tw/downloads/"" rel=""nofollow noreferrer"">http://www.realtek.com.tw/downloads/</a> to get the newest Realtek Driver (take the one for Win 10 of course, maybe that was the problem).</p>
+
+<p>Unfortunately the sudden loss of audio, but the fact that microphones and speakers still seem to work could (could =/= does) mean a broken internal connection on the headset, but this is unlikely. What headset do you use? USB or mic and speaker seperate? </p>
+",860537,1284179,1284306,770,33845
+39199,0,"<p>In WMP, create a new playlist containing the MP3 files that you want to play this way. Then, instead of double-clicking each file in the playlist, right-click each file and select <code>Play</code> (<em>not</em> <code>Play all</code>).</p>
+
+<p><code>Play all</code>, which is the default action, starts playing the selected file, while putting the current list of songs in the <code>Play</code> tab. The <code>Play</code> action, on the other hand, only puts the selected file in the <code>Play</code> tab.</p>
+",137371,1304188,1313157,775,34011
+39260,0,"<p>During the setup wizard on NO-IP's homepage, there is a little tool to check if the port is really open with a port scan for the port you enter. Via this method you can verify if your firewall is not blocking port 5900.<br>
+Next thing: is the NO-IP-DUC really providing information about a service on port 5900 <strong>AND</strong> 5800 according to the official setup guide for VNC with NO-IP?</p>
+
+<p>You will need to forward and configure both ports
+<a href=""https://www.noip.com/support/knowledgebase/remote-control-using-vnc-and-no-ip/"" rel=""nofollow noreferrer"">Remote Control Using VNC And No-IP</a></p>
+",860537,1309409,1309417,770,34062
+39261,0,"<p>If the socket board you are using (socket board = one powercord to a row of multiple power outputs) has no protection for overvoltage, you can have spikes in voltage as you switch your devices on. These spikes are often also impacting devices such as displays (HDMI is very vulnerable and I bricked my graphics card once by first starting the monitor which caused a surge to run directly in the not overvoltage protected inputs of my graphics card).</p>
+
+<p>The overvoltage will harm the ICs inside the devices, but there could be an OV-protection. The fact that it will work after you wait several hours could indicate that the (protection) circuit is able to recover.</p>
+
+<p>So, you could try to keep the monitor shutdown until you powered on your other devices and then power it on.
+As we don't know further details apart from that we're talking about a monitor, this is only an assumption of mine.</p>
+",860537,1309383,1309425,770,34063
+39492,0,"<p>In which of WMP's views are you where it sorts by album name by default? WMP's most commonly used <code>Music</code> view sorts by album <strong>artist</strong>, not album name.</p>
+
+<p>There isn't any view in WMP that sorts by title, but you could create an Auto Playlist that provides such sort order. In WMP's library, click the arrow next to <code>Create playlist</code> and select <code>Create auto playlist</code>. Enter a name for the playlist, and under <code>Music in my library</code>, add the condition <code>Sort By</code>, then further customize the condition so that it reads <code>Sort by Title Ascending order</code>. Click <code>OK</code> to create the auto playlist.</p>
+",137371,1296102,1301404,775,34247
+39561,0,"<p>There is an official API provided by Advanced Card Systems Ltd., the manufacturer of your reader. A documentation about this API (how to use it, commands etc.) can be found here:<br>
+<a href=""https://www.acs.com.hk/download-manual/419/API-ACR122U-2.04.pdf"" rel=""nofollow noreferrer"">Official ACR122U API guide on acs.com.hk</a></p>
+
+<p>According software: what I found on their homepage is that included drivers from Microsoft are used as this device is certified in various ways, however, on the product page you linked above there's a section called downloads with .msi driver packages for standard pc/sc (smartcard) devices.</p>
+
+<p>Just give it a try, the documentation features many commands.</p>
+
+<p>And to the initial mentioned ""I assumed  [the reader] would work as a simple input device, inputting data into a text-field"": Working with digital sensors on a bus (that could be I2C or USB) requires adressing them, they will not output data just by themselves to a specific destination (e.g. a text file). It's your job to let it do this :)</p>
+",860537,1309106,1309110,770,34303
+40256,0,"<ol>
+<li>In the first column enter the text in A1</li>
+<li>In the second column in B1 enter the formula =len(A1)</li>
+<li>In the third column in C1 enter =find(""/"",A1)</li>
+<li>In the fourth column D1=find(""/"",$A$1,(C1+1))</li>
+<li>Copy D1 in E1,E2,E3,....etc.....right across.</li>
+<li>When you get #Value Error Stop</li>
+<li><p>In the column next to Error Cell enter =Right(A1,(B1-The last cell before Error))</p></li>
+<li><p>Thus String is found after removing all unwanted ""/"" characters.</p></li>
+</ol>
+
+<p>Formulas can be copied down the rows.
+We can also use ""ISNUMBER"" function to check the condition and display the result.</p>
+
+<p>I hope the reply may be found satisfactory.</p>
+
+<p>Thanks.</p>
+",321999,1410462,1410753,772,34870
+41273,0,"<p>I am taking Food as A, B, C, D, E.</p>
+
+<p>Each Food has different amounts of Calories, Proteins and Fats, as per the DATA TABLE - I</p>
+
+<p>As you change the number of units of the foods, Calories, Proteins and Fats amount will change. Total will change. Decide the right quantities of foods to arrive at the requirement.</p>
+",321999,1376548,1377992,772,35704
+41580,0,"<p>As the CPU does not support OC RAM, according to you, they will all just run at 1333MHz.
+More important are latencies like RAS-Latency, CAS-Latency, RAS-to-CAS etc, specified in numbers like e.g. 9-9-9-27. It is better if they are the same.</p>
+",860537,1308126,1308197,770,35956
+41913,0,"<p>In WMP's Options, on the <code>Rip Music</code> tab, there's a checkbox called <code>Copy protect music</code>. I assume that this checkbox is/was ticked on your system, causing WMP to add DRM protection to all <code>.wma</code> files that are ripped from CD. As a result, these files can't be played anymore when the required DRM licenses aren't present anymore, for example, after switching to a new PC.</p>
+
+<p>The only solution is to untick <code>Copy protect music</code> and rip the CDs again.</p>
+",137371,1301935,1303525,775,36215
+42545,0,"<p>If you have access to the command line you can check <code>/var/log/syslog</code> with nano, vi or mc. Or run <code>journalctl -b -0</code> to examine the current boot log.</p>
+",1168142,1605740,1605744,776,36720
+42546,0,"<p>You need to get a proper 3.5&quot; adapter or complete hard drive enclosure <a href=""https://www.ugreen.com/products/3-5-usb-3-0-hard-drive-enclosure"" rel=""nofollow noreferrer"">like this one</a> with a separate power supply. A 2.5&quot; solution won't work on a 3.5&quot; drive, it doesn't provide enough power.</p>
+",1168142,1605661,1605750,776,36721
+42556,0,"<p>When the drive worked fine when connected to the PSU of your friend, your PSU is most likely broken and needs to be replaced.</p>
+<p>In case it's a shucked HDD and it's just the HDD that refuses to spin up (and not the whole PC), it's caused by the common 3.3V pin issue with these drives.</p>
+",1168142,1605348,1605382,776,36730
+44266,0,"<p>Even if I don't know a software approach (apart from writing your own driver), I'll just sum up a few options.</p>
+
+<p>So - depending on your question and the comments below, I personally see two major ways (HW/SW) achieving a mouse that only works as a scroll wheel:</p>
+
+<ul>
+<li><p>Hardware approach: a mouse usually uses sensors like hall effect sensors, optical (laser) sensors or mechanically driven once (with a spinning ball inside) for the tracking of their movement. But you only need the scroll wheel, hence it could be an idea to (irreversible) cut the sensor wires so only the scroll wheel will be connected anymore.
+But be aware: no input =/= no movement, as cutting the sensor off could potentially result in a floating state with unpredictable input (but this is not very likely, and if so - then pull it down with a resistor to ground</p></li>
+<li><p>Software approach (preferred option 1): write your own script/driver for it which only takes use of the scroll wheel axis. <a href=""https://docs.microsoft.com/en-us/windows-hardware/drivers/hid/virtual-hid-framework--vhf-"" rel=""nofollow noreferrer"">https://docs.microsoft.com/en-us/windows-hardware/drivers/hid/virtual-hid-framework--vhf-</a></p></li>
+<li><p>Build your own dedicated scroll wheel - without a mouse (preferred option 2): if you take the effort to write a script just for a scroll wheel - why don't you take an hour or so more to just build a dedicated scroll wheel, so nothing else but a scroll wheel. What you will need is a rotary encoder (better as an endless potentiometer IMHO, because they have already steppings) and program it to do the same kind of work. If you will go for the track ball, you could use a ball inside a housing with a rubber roll on the bottom that spins and drives a potentiometer or so. Look on the internet for detailed instructions, search engines are your friend.</p></li>
+</ul>
+
+<p>I personally don't know any other approach, e.g. altering registry keys or device properties.</p>
+",860537,1341871,1341906,770,9177
+45285,0,"<p>In this situation using a parabolic relay backbone will generally work better than having a single shared network.</p>
+
+<p>This will allow a separate network ID for the relay and for each building to keep devices from jumping around or causing issues with the relay's signal. </p>
+",162119,1554084,1554300,774,25
+45751,0,"<p>This information isn't stored in the playlist, but rather in the MP3 files themselves as metadata (also called tags). So instead of modifying the playlist, you need to correct the MP3 tags. After having done that, WMP will automatically show the correct information (taken from each file's tags) in the playlist as well.</p>
+<p>The simplest way to correct the tags is by doing so in WMP's library itself. Find the song in the library, right-click the piece of information that you want to correct (e.g. artist, title...), select <code>Edit</code>, and enter the new info.</p>
+",137371,1537708,1566320,775,39293
+45807,0,"<p>You may try out this:</p>
+<ol>
+<li><p>List one is in Column A, List 2 is in Column B, With headings in 1 st row.</p>
+</li>
+<li><p>In C1 give the heading Match</p>
+</li>
+<li><p>In C2 enter the formula:  <code>=IFERROR ( FIND (B2, $A$2:$A$51),  0  )</code></p>
+<p>I have presumed 50 Rows, say. If B2 is found in List 1 it will return 1, else 0.</p>
+</li>
+<li><p>Copy C2 down the rows.</p>
+</li>
+<li><p>Now, select the area <code>B2:C51</code>. See that B2 is highlighted.</p>
+</li>
+<li><p>Go to Conditional Formatting on Home Tab.</p>
+</li>
+<li><p>Select the Option ---&gt; &quot; Manage the rule &quot;</p>
+</li>
+<li><p>In text box which checks the condition enter the formula given below in Step 9</p>
+</li>
+<li><p><code>=$C2=1</code> and Select the colour of your choice.</p>
+</li>
+<li><p>See that the Companies Found in List 1 are highlighted.</p>
+</li>
+</ol>
+",321999,1564787,1565045,772,39333
+46133,0,"<p>The first thing I would try is to reset everything (including voltages) to auto.</p>
+
+<p>Second, higher voltage does not always yield better performance.  Sometimes it will impede performance by causing higher heat production.</p>
+
+<p>Start with the default voltage and if you aren't getting reliability at full speed try incrementing it a small amount of time.   A utility such as MemTest86+ can help with this.   </p>
+
+<p>Don't worry about getting the full timings.  Some processor motherboard combinations will never get your full optimized timings on timing optimized RAM.  </p>
+",162119,1352228,1532390,774,13744
+46362,0,"<p>If we take starting amount as A, Rate of deduction as r % ( in decimal form  so for 2% we enter 0.02 ), and Iterations = N then final amount X can be given by a simple formula as :</p>
+
+<p>X=A*(1-r)^(N-1)</p>
+
+<p>So in First Row Give Titles to Columns as :</p>
+
+<p>""Amount"", ""Percent r "", "" N "", "" Final "".</p>
+
+<p>Accordingly enter data in Second row in Cell A2=100, B2=0.02, C2=5</p>
+
+<p>Enter the formula in D2 as =A2*(1-B2)^(C2-1)</p>
+
+<p>The result is 92.23682.</p>
+
+<p>Copy the formula of D2, down the rows....</p>
+
+<p>Now if you enter in third row data as : 1000, 0.04, 8</p>
+
+<p>Then you get the final result in D3 as 751.44747811</p>
+
+<p>So it becomes flexible for any type of data.</p>
+
+<p>If the compounding is to increase then for r=.02, the change would 1+.02</p>
+
+<p>So the Compounding Plus formula would be</p>
+
+<p>X=A*(1+r)^(N-1).</p>
+
+<p>Thanks.  </p>
+",321999,1526455,1526673,772,13005
+46370,0,"<p>Instead of using cell references (<code>A1</code> <code>A2</code> etc.), enter one more column in <code>Tab1</code> on the left and enter the data in rows as <code>A1</code>, <code>A2</code>, <code>A3</code>, <code>A4</code>, <code>A5</code>. In the second column enter the results: <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code> etc. When you drag <code>A1</code> and <code>A2</code> together down the rows you do get <code>A3</code>, <code>A4</code> etc. So you can enter as many as you want.</p>
+
+<p>Now use '&amp;' to concatenate the strings in cell <code>A1</code> of <code>Tab2</code> as below:</p>
+
+<p><code>=""Result Of ""&amp;'Tab1'!A1&amp;'Tab1'!B1</code></p>
+
+<p>(You need not type. Just select the relative cell of Worksheet Tab1)</p>
+
+<p>Copy it down the rows to get the desired output.</p>
+",321999,1524781,1524870,772,39790
+47074,0,"<p>There is no way to transmit display control commands (which are not standardised anyways and thus differ from manufacturer to manufacturer and probably even on different models of the same brand) over a video input.</p>
+<p>If your current situation really does not allow you to use your OSD/the display buttons to change your current video source, I suggest looking into KVM-switches (which would eliminate the need for sets of peripherals (keyboard and mice) for each computer as a neat side effect).</p>
+<p>Those can be usually placed on or under your desk and will allow some easy manual switching between KVM-controlled devices. There might be even some software to interface the KVM-switch, but that will be only found on some higher priced models.</p>
+",860537,1577264,1577269,770,40357
+47721,0,"<p>No, CPUs that are soldered on can't be upgraded.</p>
+",1168142,1569818,1569823,776,40863
+47941,0,"<p>There's a thread on Reddit about this issue, it can be BIOS related:
+<a href=""https://www.reddit.com/r/computers/comments/cvxapf/anybody_know_why_my_ram_stays_lit_when_in_sleep/"" rel=""nofollow noreferrer"">https://www.reddit.com/r/computers/comments/cvxapf/anybody_know_why_my_ram_stays_lit_when_in_sleep/</a></p>
+",1168142,1568749,1568775,776,41030
+47979,-3,"<p>In my opinion the IP address is always a big binary number written using <code>0</code> and <code>1</code> only.</p>
+
+<p>In your IP address <code>15.243.21.1</code> when converted to binary digits</p>
+
+<ul>
+<li><strong>15</strong>: <code>00001111</code></li>
+<li><strong>243</strong>: <code>11110011</code></li>
+<li><strong>21</strong>: <code>00010101</code></li>
+<li><strong>1</strong>: <code>00000001</code></li>
+</ul>
+
+<p>So it is a 32 Bits IP Address Sysytem</p>
+
+<p>So IP address in text format would be combination of all these four digits.</p>
+
+<p>So it will be:</p>
+
+<pre><code>00001111111100110001010100000001
+</code></pre>
+
+<p>The derivation is very easy and you can write a formula in Excel to convert your IP address in binary address. The hardware understands only <code>0</code> and <code>1</code>. <code>0</code> means bit off <code>1</code> means bit is set on.</p>
+
+<p>So entire computer hardware whatever it may be, the undergoing signals sent are sequences of <code>0</code>'s and <code>1</code>'s only. But what you see in the screen or printer is again converted back to readable form.</p>
+",321999,1450449,1451049,772,41051
+48222,-1,"<ol>
+<li>Various dates for the data is in the column A</li>
+<li>Data for the given date is in column B, C, D,…etc.</li>
+<li>So data is row wise.</li>
+<li>Suppose your today's date is stored in cell J1 using formula  <code>=today()</code></li>
+<li>Now in the last column you enter the formula as given in Step 6.</li>
+<li><code>=if(A2-$j$1)=1),""Next Day"", """")</code></li>
+<li>Copy the formula of step 6 down the rows.</li>
+<li>So every day the current date would be used as per system date in Cell J1.</li>
+<li>You can sort, or give colour using conditional formatting to highlight the next day jobs.</li>
+</ol>
+",321999,1512353,1512651,772,32095
+48366,-1,"<p>I'm not sure, but the bottom one looks like it might be an IBM High Speed Serial port.  It might also be some sort of proprietary port.</p>
+
+<p>The connector you want to look for is a Centronics parallel connector.  You need to get a USB adapter.
+Here is an image credit Wikipedia:
+<a href=""https://i.stack.imgur.com/wKSnY.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/wKSnY.png"" alt=""enter image description here""></a></p>
+",162119,1547133,1547172,774,2129
+48367,-1,"<p>Your best option is to ban by MAC address.</p>
+
+<p>This varies by device and operating system, but should be found in advanced settings.  This will make your device refuse to communicate directly with the extender in question.  (It will communicate with devices using that extender indirectly through any other Access Point.)</p>
+
+<p>If you have the option you should change the SSID of your access point instead, as another user pointed out.</p>
+",162119,1547062,1547174,774,6780
