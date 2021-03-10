@@ -22,7 +22,7 @@ def create_datasets(file, split_date):
     split_date = eval(split_date)
     
     # Use only needed data and convert to right format
-    relevant = posts[['PostTypeId', 'CreationDate', 'Body', 'Tags', 'OwnerUserId', 'AnswerCount', 'ParentId']]
+    relevant = posts[['PostTypeId', 'CreationDate', 'Title', 'Body', 'Tags', 'OwnerUserId', 'AnswerCount', 'ParentId']]
     relevant['CreationDate'] = pd.to_datetime(relevant['CreationDate'])
     
     # Split the data to include only answered data after a certain date
@@ -38,10 +38,11 @@ def create_datasets(file, split_date):
 def main(configs):
     FILE = configs['file']
     SPLIT_DATE = configs['split_date']
-    OUTPUT = configs['output']
+    QUESTIONS = configs['questions_file']
+    ANSWERS = configs['answers_file']
     data_q, data_a = create_datasets(FILE, SPLIT_DATE)
-    data_q.to_csv(OUTPUT + '/Questions.csv')
-    data_a.to_csv(OUTPUT + '/Answers.csv')
+    data_q.to_csv(QUESTIONS)
+    data_a.to_csv(ANSWERS)
     print('########### Data Created ###########')
     
     
