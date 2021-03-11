@@ -59,6 +59,7 @@ def main():
     user_dict = dict(user_indices)
     user_id = list(user_indices.values)
     post_indices = pd.Series(range(len(filtered_a['ParentId'].unique())), index=filtered_a['ParentId'].unique()).drop_duplicates()
+    post_indices.to_csv('post_mappings.csv')
     user_ind = lambda x: user_indices.loc[x]
     post_ind = lambda x: post_indices.loc[x]
 

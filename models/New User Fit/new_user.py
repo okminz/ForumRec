@@ -18,16 +18,18 @@ from lightfm.data import Dataset
 
 
 def main():
-#     n = len(sys.argv)
-#     if n > 0:
-#         f = sys.argv[0]
-#     else:
-#         f = 'new_sample.csv'
     f = 'new_sample.csv'    
     print(f)
     user_indicies = np.load('user_indicies.npy')
     print(max(user_indicies))
     post_indicies = np.load('post_indicies.npy')
+    post_mappings = pd.read_csv('post_mappings.csv')
+    print(post_mappings.columns)
+    post_mappings.columns = [ 'ParentId', 'post_indicies']
+    post_mappings.index = post_mappings['ParentId']
+    post_mappings = post_mappings['post_indicies']
+    print(post_mappings.index[:10])
+    post_ind = lambda x: post_mappings.loc[x]
     print(max(post_indicies))
     model = pickle.load(open("savefile.pickle", "rb"))
     dataset = Dataset()
@@ -38,19 +40,18 @@ def main():
     print(dataset.interactions_shape())
     new = pd.read_csv(f)
     print(new.columns)
-    new = new[['Score', 'Body', 'OwnerUserId', 'ParentId', 'Id', 'user_indicies',
-       'post_indicies']]
+    print(new.dtypes)
+    new['post_indicies'] = new['ParentId'].apply(post_ind)
     print(new.columns)
-    print(new[['Score','OwnerUserId', 'ParentId', 'Id', 'user_indicies',
-       'post_indicies']].values[0])
     new_user_indicies = dict()
     for i in range(len(new.OwnerUserId.unique())):
         new_user_indicies[new.OwnerUserId.unique()[i]] = dummies[i]
     new['user_indicies'] = new.OwnerUserId.apply(lambda x: new_user_indicies[x])
+    new = new[['user_indicies','post_indicies', 'Score', 'OwnerUserId', 'ParentId']]
     print(new['user_indicies'].values)
     dataset.fit_partial((x for x in new.user_indicies.values),
              (x for x in new.post_indicies.values))
-    (new_interactions, new_weights) = dataset.build_interactions(((x[5], x[6], x[0]) for x in new.values))
+    (new_interactions, new_weights) = dataset.build_interactions(((x[0], x[1], x[2]) for x in new.values))
     #interactions = sparse.load_npz("interactions.npz")
     item_features = sparse.load_npz("item_features.npz")
     for i in new.user_indicies.unique():
