@@ -4,10 +4,8 @@ from os import listdir, path, makedirs
 import sys
 import json
 from src.data import etl, api_etl
-from src.models import model
-from src.models import new_user
-from src.baselines import baseline
-
+from src.models import model, new_user, create_model
+from src.baselines import create_baseline
 
 
 def main(targets):
@@ -23,15 +21,20 @@ def main(targets):
         print('')
         api_etl.main(filepath)
         print('')
-        print('########### Post Based Model ###########')
-        CosinePostModel.main(configs)
-        print('')
-        print('########### User Based Model ###########')
-        CosineUserModel.main(configs)
         
-        print("####################")
-        baseline.main(configs)
-        print("####################")
+        print('########### Created Model and Model Inputs ###########')
+        create_model.main(configs)
+        print(' ')
+        print('########### Generate Recommendations ###########')
+        model.main(configs)
+        print('')
+        print('########### Add User to Model ###########')
+        new_user.main(configs)
+        
+        print('####################')
+        create_baseline.main(configs)
+        model.main(configs, True)
+        print('####################')
 
     if targets == 'data' or targets == 'all':
         filepath = 'config/etl_params.json'
@@ -48,11 +51,14 @@ def main(targets):
         print('')
         
     if targets == 'models' or targets == 'all':
-        filepath = 'config/etl_params.json'
+        filepath = 'config/models_params.json'
         with open(filepath) as file:
             configs = json.load(file)
             
-        print('########### Create Model And Generate Recommendations ###########')
+        print('########### Created Model and Model Inputs ###########')
+        create_model.main(configs)
+        print(' ')
+        print('########### Generate Recommendations ###########')
         model.main(configs)
         print('')
         print('########### Add User to Model ###########')
@@ -60,12 +66,13 @@ def main(targets):
         
         
     if targets == 'baselines' or targets == 'all':
-        filepath = 'config/etl_params.json'
+        filepath = 'config/models_params.json'
         with open(filepath) as file:
             configs = json.load(file)        
         
         print('####################')
-        baseline.main(configs)
+        create_baseline.main(configs)
+        models.main(configs, True)
         print('####################')
 
     return None
