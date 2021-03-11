@@ -8,7 +8,7 @@ from scipy import sparse
 from lightfm.data import Dataset
 
 def main(configs):
-    # Get new samples and epochs
+    # Get new samples of user chosen questions from the website and epochs
     f = configs["new_sample"]   
     new_epochs = configs["new_epochs"]
     
