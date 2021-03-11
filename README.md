@@ -19,7 +19,7 @@ For this project, we have files for retriving the data, running the models, and 
 
 > model.py: Passes in the configs file related to it a boolean parameter to determine if running for baselines (default is False). This file the generated model and gather its inputs in order to make recommendations for based on the interactions between users, questions, answers, text, and tags. These recommendations will be returned in a file.
 
-> new_user.py: Passes in the configs file related to it. This file will take in newly generated data in order to gather new and fresh recommendations for the user by fitting partially to the already generated model and replacing it. This script is used for the website's cold start function mostly. 
+> new_user.py: Passes in the configs file related to it. This file will take in user response data from the website in order to gather new and fresh recommendations for the user by fitting partially to the already generated model and replacing it. This script is used for the website's cold start function mostly. 
 
 > create_baseline.py: Passes in the configs file related to it. Baseline file that return the recommendations given to a user using a simple collaborative filtering model so that it can be compared against the model's results.
 
