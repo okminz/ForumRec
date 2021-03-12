@@ -1,0 +1,188 @@
+,Score,Body,OwnerUserId,ParentId,Id,user_indicies,post_indicies
+1,1,"<p>If you've got sensitive information you need to recover on it, I'd suggest a repair business with a clean room environment, because this would be the only way to ""open it up and see what's stuck (mechanically) inside"".</p>
+
+<p>Those services are sort of expensive (usually $100+/workhour in a clean room, plus additional costs of e.g. donor parts or for more difficult problems (disk encryption etc.)). Keep in mind, that they usually WON'T CHARGE anything if they can't recover your data, but since this seems to be a mechanical fault, maybe inside the drive motor or HSA (head stack assembly) motor, I am quite confident that a mechanic could fix it.</p>
+
+<p>The behaviour you observed is not uncommon - due to changing environmental factors (mainly temperature), devices you thought were dead will ""magically"" work again. But as a hard drive contains spinning parts, generating vibrational forces, a possible loose connection could get torn apart again after a few minutes running.</p>
+
+<p>If you want further reading on hard drive recovery, you can read on this company's site:
+<a href=""https://www.harddriverecovery.org/pricing.html"" rel=""nofollow noreferrer"">harddriverecovery.org</a></p>
+",860537,1607589,1607589,1,0
+23175,1,"<p>I found a little macro that will do the work for you.
+I tested it and it works but you have to do some settings around macros in ppt.
+My translation is not perfect to that but i'll try.</p>
+
+<ol>
+<li>Enable visual basic:</li>
+</ol>
+
+<p>enable the developer-tools in ppt by going to file-options-menubar, make a check to the ""developer tools"". leave by clicking ok. </p>
+
+<ol start=""2"">
+<li>get the needed exelobjects for ppt:</li>
+</ol>
+
+<p>go to the new tab ""developer-tools"" and select ""visual basic""
+then select ""extras"" on the top and after that ""lookup"". Find and make a check on ""microsoft excel 14.0 object library"" or similar. end it by clicking ok</p>
+
+<ol start=""3"">
+<li>build a module for the macrocode:</li>
+</ol>
+
+<p>do a right-click on the first line of the ""project-explorer"", f.e. ""vba-project(myproject)"", choose insert, module</p>
+
+<p>paste the macrocode into the new code-window seen in the middle</p>
+
+<pre><code>Sub CreateSlides()
+    '*** Original Sourcecode taken from http://superuser.com/questions/323408/excel-data-into-powerpoint-slides ***
+    'Open the Excel workbook. Change the filename here.
+    Dim OWB As New Excel.Workbook
+
+    Set OWB = Excel.Application.Workbooks.Open(""C:\Tmp\List1.xlsx"")
+    'Grab the first Worksheet in the Workbook
+    Dim WS As Excel.Worksheet
+    Dim sCurrentText As String
+    Dim sIdentifier As String
+    Dim oSl As Slide
+    Dim oSh As Shape
+    Set WS = OWB.Worksheets(1)
+    Dim i As Long
+    'Loop through each used row in Column A
+
+    For i = 3 To WS.Range(""A65536"").End(xlUp).Row
+        Debug.Print ""Bin hier""
+        'Copy the first slide and paste at the end of the presentation
+        ActivePresentation.Slides(1).Copy
+        ActivePresentation.Slides.Paste
+        Set oSl = ActivePresentation.Slides(ActivePresentation.Slides.Count)
+
+        For c = 1 To 3
+
+            sCurrentText = WS.Cells(i, c).Value
+            sIdentifier = WS.Cells(2, c).Value
+
+            ' find each shape with sIdentifier of the current column (e.g. ""field1~"", ""field2~"", and so on) in text, replace it with value from worksheet
+            For Each oSh In oSl.Shapes
+                ' Make sure the shape can hold text and if is, that it IS holding text
+                If oSh.HasTextFrame Then
+                    If oSh.TextFrame.HasText Then
+                        ' it's got text, do the replace
+                        With oSh.TextFrame.TextRange
+                          .Replace sIdentifier, sCurrentText
+                        End With
+                    End If
+                End If
+            Next
+        Next
+    Next
+
+    ActiveWorkbook.Close
+
+End Sub
+</code></pre>
+
+<p>go back to the default ppt-view by clicking the symbol to the top-left or by hitting alt+f11</p>
+
+<ol start=""4"">
+<li>build exelsheet:</li>
+</ol>
+
+<p>build an excel-sheet with 1-3 columns (for 1-3 textfields) stored at the same name and folder like in the macro. f.e. ""C:\Tmp\List1.xlsx"" </p>
+
+<p>the first row is not used</p>
+
+<p>the second row names the default-text of the depending textfield like ""field1""</p>
+
+<p>the next rows should include the text of every following slide</p>
+
+<p>struct like:</p>
+
+<pre><code>not used               not used
+field1                 field2
+mytextforbox1slide1    mytextforbox2slide1
+mytextforbox1slide2    mytextforbox2slide2
+....
+</code></pre>
+
+<p>5.build a ppt:</p>
+
+<p>insert a texfield to the first slide and just write ""field1"" to it</p>
+
+<p>insert a second textfield and just write ""field2"" to it </p>
+
+<p>maybe you have to rearrange the  following top-slides after the macro has finished
+because only the top one will be used to make copies and fills</p>
+
+<ol start=""6"">
+<li>run the macro at the developer-tab, macros, run macro </li>
+</ol>
+
+<p>if you understand how the macro works and with a little vba experience you can change the code 
+for your special wants</p>
+
+<p>hope i could help a little bit</p>
+
+<p>busybyte</p>
+",1003311,1607663,1607663,5,10
+6,1,"<ol>
+<li><p>First prepare a table for binary numbers Up to 8 as under in 2 columns so as to substitute the binary value of octal numbers as given below</p></li>
+<li><p><code>0, 000---;  1, 001---;2,010---; 3, 011---;4, 100---;5,101---;6, 110---;7,111</code>. Suppose the Table is in the Cells <code>V4:W11</code>.</p></li>
+<li><p>For every bit of your 16 digits; use vertical look up formula to get value of the bit place it in a cell. Copy the formula for all 16 digits using absolute reference</p></li>
+<li><p>Complete all 16 bits value search from the Table of Step 2.</p></li>
+<li><p>For eg. for your 16 Digits given number the vertical look up value of first digit <code>6</code> = <code>110</code>, <code>( =Vlookup(digit,$V$4:$W$11,2)..(Value is in Second Column of the Table) )</code> Second digit <code>4 = 100</code> Third Digit <code>0=000</code>, 4th Digit <code>1</code> is <code>001</code> and so on for all 16 Characters.</p></li>
+<li><p>Now you combine all 48 digits found from 16 digits by combining them using concatenate Formula eg. <code>Digit1&amp;Digit2&amp;Digit3&amp;.......&amp;Digit16</code>.</p></li>
+<li><p>This will give you the desired string of length 48 now in binary.</p></li>
+<li><p>Copy formula down the rows to get the desired results.</p></li>
+</ol>
+",321999,1607629,1607629,6,8
+3,1,"<p>We cannot write the script for you, but I can help outline the steps and programming logic I would recommend.  </p>
+
+<p>First, you presumably have the /path/to/studentsnumbers/ where you are finding the folder structure you list above.  Store that in a variable here we will call PathToStudNumbs.  </p>
+
+<pre><code>PathToStudNumbs=""/path/to/studentsnumbers/"" 
+</code></pre>
+
+<p>Next there are a couple of useful tools you will want to explore:  basename and dirname.  These will obtain information about the elements of a path to a specific file.  You may not need these for this case because all of the files you are changing are apparently named the same (coursework).  </p>
+
+<p>Since we don't know how you are iterating over your directories, I leave it to you to sort out what use basename and dirname will be to your specific situation.  </p>
+
+<p>Let's reframe how we see the current paths.  We can rework that to something containing the elements we care about using variables.  (I assume below the coursework number also changes over time.)  </p>
+
+<pre><code>""${PathToStudNumbs}/${StudNumbs}/${courseworkNumb}/coursework.thy""  
+</code></pre>
+
+<p>If you work this into a cp statement to a different directory, it would look something like this:  </p>
+
+<pre><code>cp ""${PathToStudNumbs}/${StudNumbs}/${courseworkNumb}/coursework.thy"" ""${PathToDestination}/${StudNumbs}_${courseworkNumb}.thy"" 
+</code></pre>
+
+<p>This would make a copy of the target file in a folder of your choosing where the new file would be named something like 123456_coursework1.thy (which is to say the student number, an underscore, the coursework number, and the file extension).  </p>
+
+<p>Or you could rename the existing file in place with mv, something like this:  </p>
+
+<pre><code>mv ""${PathToStudNumbs}/${StudNumbs}/${courseworkNumb}/coursework.thy"" ""${PathToStudNumbs}/${StudNumbs}/${courseworkNumb}/${StudNumbs}_${courseworkNumb}.thy"" 
+</code></pre>
+
+<p>Ask questions if you'd like.  I'll do what I'm able to assist.  </p>
+",1104836,1607575,1607575,3,4
+0,1,"<p>Of course it will just fit in (thanks to ATX-standards), because the 8-Pin EPS-variant on your motherboard is just 2x 4-Pin (but mirrored).<br>
+Using only one 4-Pin connector halves the amount of +12V and GND pins to two (Instead four)
+Despite your PSU featuring only single rail +12V, it really won't make that much difference if you use the 4-Pin connector only. The Core i7 8700k has a TDP of 95W (according to Intel) which the two +12V cables a 4-Pin connector features can handle. If you take a total of ~4 Amps per line (95W / (12V x 2)), that should work.
+Suggest to just test if the PC will boot at all and than do a stress test of > 30 Min while you watch for smoke etc.  </p>
+
+<hr>
+
+<p><a href=""https://forums.anandtech.com/threads/4-pin-cpu-power.2245709/"" rel=""nofollow noreferrer"">4 pin cpu power on AnandTech</a><br>
+<a href=""http://www.playtool.com/pages/psuconnectors/connectors.html#atx12v4"" rel=""nofollow noreferrer"">PSU connectors --> scroll to shortly above 8Pin EPS</a><br>
+<a href=""https://i.stack.imgur.com/Xd87d.png"" rel=""nofollow noreferrer"">Image of 4-Pin and 8-Pin (EPS) connector pin out</a></p>
+",860537,1607585,1607585,0,2
+7,1,"<p>The simplest solution is to simply add a set of pronoun sets in the database.  </p>
+
+<p>If the pronoun sets are not filled on completing the form, they should default based on the filling of the gender option by a simple autofill function.</p>
+
+<p>You can then pull these boxes just like any other data attached to the address card from the database.</p>
+
+<p>The use of these fields not only eliminates unneeded runtime macros to select pronouns, but also permits the freefilling of forms for non-standard situations.   </p>
+
+<p>This solution is thus, all around better because of KISS (Keep It Simple ""Silly"") principal.</p>
+",162119,1607614,1607614,7,7

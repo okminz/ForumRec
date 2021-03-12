@@ -1,0 +1,8 @@
+{
+    "file": "data/Posts.xml",
+    "split_date": "pd.datetime(2019, 9, 1)",
+    "num_answers_threshold": 9,
+    "unfinished_questions_file": "data/unfinished_questions.csv",
+    "answers_file": "data/answers.csv",
+    "post_mappings": "data/post_mappings.csv"
+}
