@@ -11,17 +11,17 @@ For this project, we have files for retriving the data, running the models, and 
 
 > api_etl.py: Passes in the configs file path related to it. It uses the [Stack Exchange API](https://api.stackexchange.com/) on the Super User forum to gather recent questions and answers from the Super User forum, concatenates the questions and answers and saves them into a continuously updating file so it can be used for new recommendations.
 
-> run.py: Runs etl on the data. Runs api_etl on the api parameters. Runs the hybrid model (collaborative and content-based filterling) creation and recommendation files. Runs the baseline file to get the baseline comparison values. Can also run all of these files on test data.
+> run.py: Runs etl on the data. Runs api_etl on the api parameters. Runs the hybrid model (collaborative and content-based filterling) creation and recommendation files creation along with evaluating the model. Runs the baseline file to get the baseline comparison values. Can also run all of these files on test data.
 
 > create_model.py: Passes in the configs file related to it. This file will run create_inputs.py and gather inputs from that file. It will then use those inputs to a generate a model. 
 
 > create_inputs.py: Passes in the configs file related to it. This file will use processed questions and answers to generate the necessary matrices and files and save them so that they may be used in create_model.py to create a model.
 
-> model.py: Passes in the configs file related to it a boolean parameter to determine if running for baselines (default is False). This file the generated model and gather its inputs in order to make recommendations for based on the interactions between users, questions, answers, text, and tags. These recommendations will be returned in a file.
+> model.py: Passes in the configs file related to it a boolean parameter to determine if running for baselines (default is False). This file the generated model and gather its inputs in order to make recommendations for based on the interactions between users, questions, answers, text, and tags. These recommendations will be returned in a file. It will also produce the evaluations of the model using precision, recall, auc score, and recriprical rank.
 
 > new_user.py: Passes in the configs file related to it. This file will take in user response data from the website in order to gather new and fresh recommendations for the user by fitting partially to the already generated model and replacing it. This script is used for the website's cold start function mostly. 
 
-> create_baseline.py: Passes in the configs file related to it. Baseline file that return the recommendations given to a user using a simple collaborative filtering model so that it can be compared against the model's results.
+> create_baseline.py: Passes in the configs file related to it. Baseline file that return the recommendations given to a user using a simple collaborative filtering model so that it can be compared against the model's recommendations and evaluation metrics.
 
 > requirements.txt: Contains the amount of processing resources recommended to run the files and the packages needed and the versions that were used to run all the processes.
 
@@ -76,7 +76,7 @@ To run the hybrid filtering model on the data, run this following command on the
 ```
 python run.py models
 ```
-Where hybrid filtering model and its inputs will be created and used to generate new recommendations.
+Where hybrid filtering model and its inputs will be created and used to generate new recommendations and then evaluated using specific metrics.
 
 ### Comparing the model to baselines
 
