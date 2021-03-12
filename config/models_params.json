@@ -24,6 +24,7 @@
     "user_id": 3,
     "recommendation_threshold": 0,
     "num_recommendations": 50,
+    "k_num": 100,
     "new_sample": "data/model/api_data.csv",
     "new_epochs": 10
 }

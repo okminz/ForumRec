@@ -17,20 +17,11 @@ def main(configs):
     post_indicies = np.load(configs["post_indicies"])
     post_mappings = pd.read_csv(configs["post_mappings"])
     
-    # Print values
-    print(max(user_indicies))
-    print(max(post_indicies))
-    print(post_mappings.columns)
-    
     # Restructure Post Mappings
     post_mappings.columns = [ 'ParentId', 'post_indicies']
     post_mappings.index = post_mappings['ParentId']
     post_mappings = post_mappings['post_indicies']
     post_ind = lambda x: post_mappings.loc[x]
-    
-    # Print values
-    print(post_mappings.index[:10])
-    print(max(post_indicies))
   
     # Get model
     model = pickle.load(open(configs["model"], "rb"))
@@ -41,14 +32,10 @@ def main(configs):
             (x for x in post_indicies))
     dummies = range(max(user_indicies) + 1, max(user_indicies)+100)
     dataset.fit_partial((x for x in dummies))  
+    print(dataset.interactions_shape())
     
     # Read in new sample
     new = pd.read_csv(f)
-    
-    # Print values
-    print(dataset.interactions_shape())
-    print(new.columns)
-    print(new.dtypes)
     
     # Apply post mapping
     new['post_indicies'] = new['ParentId'].apply(post_ind)

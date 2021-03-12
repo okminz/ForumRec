@@ -38,6 +38,7 @@
     "user_id": 3,
     "recommendation_threshold": 0,
     "num_recommendations": 4,
+    "k_num": 5,
     "new_sample": "test/model/new_sample.csv",
     "new_epochs": 10
 

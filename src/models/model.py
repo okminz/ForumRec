@@ -4,6 +4,7 @@ import pickle
 import os
 import sys
 from scipy import sparse
+from lightfm.cross_validation import random_train_test_split
 from lightfm.evaluation import auc_score, precision_at_k, recall_at_k, reciprocal_rank
 
 def mean_recommendation_user(model, interactions, item_features, user_id,  
@@ -42,6 +43,23 @@ def mean_recommendation_user(model, interactions, item_features, user_id,
  
     return scores, recs
 
+def evaluate_model(model, interactions, train, test, item_features, k_num):
+    print("Test precision: %.4f" % precision_at_k(model, test_interactions = interactions, 
+            train_interactions= interactions, item_features = item_features, k=k_num,check_intersections= False).mean())
+    print("Test Recall: %.4f" % recall_at_k(model, test_interactions = test, check_intersections= False,
+            train_interactions= train, item_features = item_features, k=k_num).mean())
+    print("Test AUC score: %.4f" % auc_score(model, test_interactions = test, check_intersections= False,
+            train_interactions= train, item_features = item_features).mean())
+    print("Test reciprocal rank: %.4f" % reciprocal_rank(model, test_interactions = test, check_intersections= False,
+            train_interactions= train, item_features = item_features).mean())
+    print("Train precision: %.4f" % precision_at_k(model, train, 
+                                    item_features = item_features, k=k_num).mean())
+    print("Train Recall: %.4f" % recall_at_k(model, train, 
+                                    item_features = item_features, k=k_num).mean())
+    print("Train AUC Score: %.4f" % auc_score(model, train, 
+                                    item_features = item_features).mean())
+    print("Train reciprocal rank: %.4f" % reciprocal_rank(model, train, 
+                                    item_features = item_features).mean())
 
 def main(configs, baseline=False):
     # Get API data
@@ -52,6 +70,9 @@ def main(configs, baseline=False):
     user_id = configs["user_id"]
     threshold = configs["recommendation_threshold"]
     nrec = configs["num_recommendations"]
+    test_percent = configs["test_percent"]
+    split_random_state = configs["split_random_state"]
+    k_num = configs["k_num"]
 
     
     # If running baselines during test:
@@ -67,7 +88,6 @@ def main(configs, baseline=False):
         model = pickle.load(open(configs["model"], "rb"))
         print(model)
         item_dict = pickle.load(open(configs["item_dict"],"rb"))
-
         
     # Generate Recommendations for user
     scores, recs = mean_recommendation_user(model, interactions,  item_features, user_id, 
@@ -75,6 +95,14 @@ def main(configs, baseline=False):
     
     # Save Recommendations
     recs.to_csv(configs["recommendations"] + str(user_id) + ".csv")
+    
+    print('')
+    print('##### Evaluate The Model ###')
+    # Generate train and test for evaluation
+    train, test = random_train_test_split(interactions, test_percentage=test_percent, random_state = split_random_state)
+    
+    # Evaluate model using metrics
+    evaluate_model(model, interactions, train, test, item_features, k_num)
     
     
 if __name__ == "__main__":

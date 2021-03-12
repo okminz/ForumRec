@@ -60,10 +60,6 @@ def get_inputs(configs, filtered_a, filtered_q):
     dummies = range(max(filtered_a.user_indicies.values)+1, max(filtered_a.user_indicies.values)+100)
     dataset.fit_partial((x for x in dummies))   
     
-    # Print column information
-    print(filtered_a.columns)
-    print(filtered_a.dtypes)
-    
     # Save user and post indices
     np.save(configs["user_indicies"], filtered_a.user_indicies.values)
     np.save(configs["post_indicies"], filtered_a.post_indicies.values)

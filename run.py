@@ -32,6 +32,7 @@ def main(targets):
         new_user.main(configs)
         
         print('####################')
+        print('########### Baseline ###########')
         create_baseline.main(configs)
         model.main(configs, True)
         print('####################')
@@ -71,6 +72,7 @@ def main(targets):
             configs = json.load(file)        
         
         print('####################')
+        print('########### Baseline ###########')
         create_baseline.main(configs)
         models.main(configs, True)
         print('####################')
